@@ -9,24 +9,25 @@ function generate(){
     var arraysize = +document.getElementById("arraySize").value;
     var minValue=+document.getElementById("minValue").value;
     var maxValue=+document.getElementById("maxValue").value;
-
-    document.getElementsByClassName("Array")[0].innerHTML="";
-    document.getElementsByClassName("Array")[1].innerHTML="[";
+    
+    first="";
+    second="[";
     for(let i=0;i<arraysize;i++){
         let value=random(minValue,maxValue)
-        document.getElementsByClassName("Array")[0].innerHTML+=value+" ";
+        first+=value+" ";
 
         if(i!=arraysize-1){
-            document.getElementsByClassName("Array")[1].innerHTML+=value+", ";
+            second+=value+", ";
         }
         else{
-            document.getElementsByClassName("Array")[1].innerHTML+=value;
+            second+=value;
         }
     }
-    document.getElementsByClassName("Array")[1].innerHTML+="]";
-
-    copyText = document.getElementById("myInput");
-    console.log(copyText);
+    second+="]";
+    document.getElementsByClassName("Array")[0].innerHTML=first;
+    document.getElementsByClassName("Array")[1].innerHTML=second;
+    
+    
 }
 function time(input,output,loop,inputspeed,outputspeed,loopspeed){
     return input/inputspeed+output/outputspeed+loop/loopspeed;
