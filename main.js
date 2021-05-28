@@ -43,7 +43,7 @@ function calculate(){
     var tpy=time(input,output,loop,1e6,5*1e5,5*1e6).toFixed(2)
     var tpypy=time(input,output,loop,1e6,2*1e5,1e8).toFixed(2)
     var tpybig=(tpypy*3).toFixed(2)
-    document.getElementById("time").innerHTML="Time for "+input+" input "+output+" output "+loop+" loop in "+"<br>"
+    document.getElementById("time").innerHTML="Time for "+input+" input, "+output+" output and "+loop+" loop in "+"<br>"
     document.getElementById("time").innerHTML+="cpp(fastio) is "+tcpp+"s"+"<br>";
     document.getElementById("time").innerHTML+="python(fastio) is "+tpy+"s"+"<br>";
     document.getElementById("time").innerHTML+="pypy(bigint and fastio) is "+tpybig+"s"+"<br>";
