@@ -66,14 +66,13 @@ function calculate(){
     var output=+document.getElementById("outputSize").value;
     var loop=+document.getElementById("loop").value;
     console.log(loop)
-    var tcpp=time(input,output,loop,5*1e6,1e6,5*1e8).toFixed(2)
-    var tpy=time(input,output,loop,1e6,5*1e5,5*1e6).toFixed(2)
-    var tpypy=time(input,output,loop,1e6,2*1e5,1e8).toFixed(2)
-    var tpybig=(tpypy*3).toFixed(2)
+    var tcpp=time(input,output,loop,8*1e6,2*1e6,5*1e8).toFixed(3)
+    var tpy=time(input,output,loop,5*1e5,9*1e5,5*1e6).toFixed(3)
+    var tpypy=time(input,output,loop,3*1e5,3*1e5,5*1e7).toFixed(3)
+
     document.getElementById("time").innerHTML="Time for "+input+" input, "+output+" output and "+loop+" loop in "+"<br>"
     document.getElementById("time").innerHTML+="cpp(fastio) is "+tcpp+"s"+"<br>";
     document.getElementById("time").innerHTML+="python(fastio) is "+tpy+"s"+"<br>";
-    document.getElementById("time").innerHTML+="pypy(bigint and fastio) is "+tpybig+"s"+"<br>";
     document.getElementById("time").innerHTML+="pypy(fastio) is "+tpypy+"s"+"<br>";
 }
 function resettime(){
