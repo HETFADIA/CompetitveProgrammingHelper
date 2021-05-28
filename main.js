@@ -29,6 +29,10 @@ function generate(){
     
     
 }
+function resetarray(){
+    document.getElementsByClassName("Array")[0].innerHTML="";
+    document.getElementsByClassName("Array")[1].innerHTML="";
+}
 function time(input,output,loop,inputspeed,outputspeed,loopspeed){
     return input/inputspeed+output/outputspeed+loop/loopspeed;
 }
@@ -49,6 +53,14 @@ function calculate(){
     document.getElementById("time").innerHTML+="python(fastio) is "+tpy+"s"+"<br>";
     document.getElementById("time").innerHTML+="pypy(bigint and fastio) is "+tpybig+"s"+"<br>";
     document.getElementById("time").innerHTML+="pypy(fastio) is "+tpypy+"s"+"<br>";
+}
+function resettime(){
+    string="Time Taken for cpp: 0s"+
+        "<br>"+
+        "Time Taken for python: 0s"+
+        "<br>"+
+        "Time Taken for pypy: 0s"
+    document.getElementById("time").innerHTML=string;
 }
 function CopyToClipboard(id)
 {
