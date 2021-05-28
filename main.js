@@ -33,6 +33,28 @@ function resetarray(){
     document.getElementsByClassName("Array")[0].innerHTML="";
     document.getElementsByClassName("Array")[1].innerHTML="";
 }
+function Permutation(n){
+    var arr=[]
+    for(var i=1;i<=n;i++){
+        arr.push(i);
+    }
+    for(var i=0;i<n;i++){
+        index=random(0,n);
+        [arr[i],arr[index]]=[arr[index],arr[i]]
+    }
+    string="";
+    for(var i=0;i<n;i++){
+        string += arr[i]+" ";
+    }
+    document.getElementsByClassName("Permutation")[0].innerHTML=string;
+}
+function resetPermutation(){
+    document.getElementsByClassName("Permutation")[0].innerHTML="";
+}
+function generatePermutation(){
+    var n=+document.getElementById("permutation").value;
+    Permutation(n);
+}
 function time(input,output,loop,inputspeed,outputspeed,loopspeed){
     return input/inputspeed+output/outputspeed+loop/loopspeed;
 }

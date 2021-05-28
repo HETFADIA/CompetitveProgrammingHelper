@@ -11,9 +11,9 @@
     <title>Competitive Programming Helper</title>
 </head>
 <body>
-    Array size : <input type="text" id="arraySize" value="100">
+    Array size : <input type="text" id="arraySize" value="5">
     Min value: <input type="text" id="minValue" value="0">
-    Max value: <input type="text" id="maxValue" value="100000">
+    Max value: <input type="text" id="maxValue" value="10">
     <br>
     <br>
     <button type="button" class="btn btn-primary" onclick="generate()">Generate Array</button>
@@ -28,6 +28,28 @@
     <div class="alert alert-primary Array" id="myInput1" role="alert">
         
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    Permutation of 1...n : <input type="text" id="permutation" value="10">
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="generatePermutation()">Generate Permutation</button>
+    <button type="button" class="btn btn-primary" onclick="resetPermutation()">Reset</button>
+    <br>
+    <br>
+    <a href="#" onclick="CopyToClipboard('outPermutation');return false;">Copy Text</a>
+    <div class="alert alert-primary Permutation" id="outPermutation" role="alert">
+        
+    </div>
+
+
+
+
+
+
     <br>
     <br>
     <br>
