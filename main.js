@@ -55,6 +55,75 @@ function generatePermutation(){
     var n=+document.getElementById("permutation").value;
     Permutation(n);
 }
+function isPrime(n){
+    if(n<0){
+        return 0;
+    }
+    var sqrta=Math.sqrt(n);
+    if(n<=2){
+        return n==2;
+    }
+    if(n%2==0){
+        return 0;
+    }
+    for(var i=3;i<=sqrta;i+=2){
+        if(n%i==0){
+            return 0;
+        }
+    }
+    return 1;
+}
+function GeneratePrevPrime(){
+    var num=+document.getElementById("numberForPrevPrime").value;
+    var counter=+document.getElementById("numberOfPrevPrime").value;
+    var arr=[]
+    for(var i=num;i>=2;i--){
+        if(isPrime(i)){
+            arr.push(i);
+            counter--;
+        }
+        if(counter==0){
+            break;
+        }
+    }
+    arr.reverse();
+    var string="";
+    for(var i=0;i<arr.length;i++){
+        string+=arr[i];
+        string+="  ";
+    }
+    document.getElementById("PrevPrimes").innerHTML=string;
+}
+function GenerateNextPrime(){
+    var num=+document.getElementById("numberForNextPrime").value;
+    var counter=+document.getElementById("numberOfNextPrime").value;
+    var arr=[]
+    if(num<0){
+        num=0;
+    }
+    for(var i=num;;i++){
+        if(isPrime(i)){
+            arr.push(i);
+            counter--;
+        }
+        if(counter==0){
+            break;
+        }
+    }
+
+    var string="";
+    for(var i=0;i<arr.length;i++){
+        string+=arr[i];
+        string+="  ";
+    }
+    document.getElementById("NextPrimes").innerHTML=string;
+}
+function resetPrevPrime(){
+    document.getElementById("PrevPrimes").innerHTML="";
+}
+function resetNextPrime(){
+    document.getElementById("NextPrimes").innerHTML="";
+}
 function time(input,output,loop,inputspeed,outputspeed,loopspeed){
     return input/inputspeed+output/outputspeed+loop/loopspeed;
 }

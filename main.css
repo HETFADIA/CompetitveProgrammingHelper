@@ -1,4 +1,11 @@
 body {
   padding: 10px;
   margin: 10px;
+  /* background-image: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("img/confetti.jpg"); */
+  /* background-repeat: no-repeat; */
+  background-color: aqua;
 }
