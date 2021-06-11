@@ -8,7 +8,7 @@ function generate(){
     
     var arraysize = +document.getElementById("arraySize").value;
     var minValue=+document.getElementById("minValue").value;
-    var maxValue=+document.getElementById("maxValue").value;
+    var maxValue=+document.getElementById("maxValue").value+1;
     
     first="";
     second="[";
@@ -117,6 +117,38 @@ function GenerateNextPrime(){
         string+="  ";
     }
     document.getElementById("NextPrimes").innerHTML=string;
+}
+function GeneratePrimesInRange(){
+    var start=+document.getElementById("startnumber").value;
+    var end=+document.getElementById("endnumber").value;
+    if(start<0){
+        start=1;
+    }
+    var arr=[];
+    for(var i=start;i<=end;i++){
+        if(isPrime(i)){
+            arr.push(i);
+        }
+    }
+    var string="";
+    for(var i=0;i<arr.length;i++){
+        string+=arr[i];
+        string+="  ";
+    }
+    var countprimes
+    if(arr.length>1){
+
+        countprimes="The number of the primes in the range are " +arr.length;
+    }
+    else{
+        countprimes="The number of the primes in the range is " +arr.length;
+    }
+    document.getElementById("numberOfPrimesInRange").innerHTML=countprimes;
+    document.getElementById("PrimesInRange").innerHTML=string;
+}
+function resetPrimesInRange(){
+    document.getElementById("numberOfPrimesInRange").innerHTML="";
+    document.getElementById("PrimesInRange").innerHTML="";
 }
 function resetPrevPrime(){
     document.getElementById("PrevPrimes").innerHTML="";
