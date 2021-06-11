@@ -10,7 +10,27 @@ function beautify(string){
     updatefont(string);
 }
 
+function sieveOfErantosthenes(n,start=2) {
+    var array = [], upperLimit = Math.sqrt(n), output = [];
+    for (var i = 0; i < n; i++) {
+        array.push(true);
+    }
 
+    for (var i = 2; i <= upperLimit; i++) {
+        if (array[i]) {
+            for (var j = i * i; j < n; j += i) {
+                array[j] = false;
+            }
+        }
+    }
+    for (var i = start; i < n; i++) {
+        if(array[i]) {
+            output.push(i);
+        }
+    }
+
+    return output;
+};
 function random(a,b){
     let minimum=a;
     let difference=b-a;
@@ -140,10 +160,27 @@ function GeneratePrimesInRange(){
     if(start<0){
         start=1;
     }
-    var arr=[];
-    for(var i=start;i<=end;i++){
-        if(isPrime(i)){
-            arr.push(i);
+    if (end>1){
+        sievetime=end*Math.log(Math.log(end));
+    }
+    else{
+        sievetime=0;
+    }
+    if(end>=0){
+        normaltime=Math.sqrt(end)*(end-start);
+    }
+    else{
+        normaltime=0;
+    }
+    if(sievetime<=normaltime){
+        var arr=sieveOfErantosthenes(end+1,start);
+    }
+    else{
+        var arr=[];
+        for(var i=start;i<=end;i++){
+            if(isPrime(i)){
+                arr.push(i);
+            }
         }
     }
     var string="";
@@ -163,6 +200,51 @@ function GeneratePrimesInRange(){
     document.getElementById("PrimesInRange").innerHTML=string;
     beautify("numberOfPrimesInRange");
     beautify("PrimesInRange");
+}
+function CountPrimesInRange(){
+    var start=+document.getElementById("startnumberPrimeCount").value;
+    var end=+document.getElementById("endnumberPrimeCount").value;
+    if(start<0){
+        start=1;
+    }
+    var sievetime,normaltime;
+    if (end>1){
+        sievetime=end*Math.log(Math.log(end));
+    }
+    else{
+        sievetime=0;
+    }
+    if(end>=0){
+        normaltime=Math.sqrt(end)*(end-start);
+    }
+    else{
+        normaltime=0;
+    }
+    console.log(sievetime,normaltime);
+    if(sievetime<=normaltime){
+        var arr=sieveOfErantosthenes(end+1,start);
+        
+    }
+    else{
+        var arr=[];
+        for(var i=start;i<=end;i++){
+            if(isPrime(i)){
+                arr.push(i);
+            }
+        }
+    }
+    var countprimes;
+    if(arr.length>1){
+        countprimes="The number of the primes in the range are " +arr.length;
+    }
+    else{
+        countprimes="The number of the primes in the range is " +arr.length;
+    }
+    document.getElementById("countnumberOfPrimesInRange").innerHTML=countprimes;
+    beautify("countnumberOfPrimesInRange");
+}
+function resetCountInRange(){
+    document.getElementById("countnumberOfPrimesInRange").innerHTML="";
 }
 function resetPrimesInRange(){
     document.getElementById("numberOfPrimesInRange").innerHTML="";
@@ -184,7 +266,6 @@ function calculate(){
     var input = +document.getElementById("inputSize").value;
     var output=+document.getElementById("outputSize").value;
     var loop=+document.getElementById("loop").value;
-    console.log(loop)
     var tcpp=time(input,output,loop,8*1e6,2*1e6,5*1e8).toFixed(3)
     var tpy=time(input,output,loop,5*1e5,9*1e5,5*1e6).toFixed(3)
     var tpypy=time(input,output,loop,3*1e5,3*1e5,5*1e7).toFixed(3)

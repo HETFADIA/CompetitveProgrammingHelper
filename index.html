@@ -169,11 +169,17 @@
             
             End Number: 
         </span>
-        <input type="text" id="endnumberPrimeCount" value="100000000">
+        <input type="text" id="endnumberPrimeCount" value="10000000">
         <br>
         <br>
-        <button type="button" class="btn btn-primary" onclick="GeneratePrimesInRange()">Generate Primes</button>
-        <button type="button" class="btn btn-primary" onclick="resetPrimesInRange()">Clear Primes</button>
+        <button type="button" class="btn btn-primary" onclick="CountPrimesInRange()">Count Primes</button>
+        <button type="button" class="btn btn-primary" onclick="resetCountInRange()">Clear Primes</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('countnumberOfPrimesInRange');return false;">Copy Text</a>
+        <div class="alert alert-primary" id="countnumberOfPrimesInRange" role="alert">
+            
+        </div>
     </div>
 
 
