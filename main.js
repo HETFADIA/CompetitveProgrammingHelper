@@ -23,7 +23,7 @@ function sieveOfErantosthenes(n,start=2) {
             }
         }
     }
-    for (var i = start; i < n; i++) {
+    for (var i = Math.max(start,2); i < n; i++) {
         if(array[i]) {
             output.push(i);
         }
