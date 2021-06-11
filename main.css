@@ -1,3 +1,8 @@
+* {
+  padding: 2px 10px 2px 10px;
+  margin: 2px;
+  align-items: center;
+}
 body {
   color: blue;
   font-family: verdana, helvetica;
@@ -16,6 +21,9 @@ div {
   color: rgb(226, 208, 44);
   font-family: sans-serif;
   background-color: yellowgreen;
+}
+div:hover {
+  color: aliceblue;
 }
 input {
   align-items: center;
