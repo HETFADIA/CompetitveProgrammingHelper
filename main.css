@@ -1,11 +1,25 @@
 body {
-  padding: 10px;
-  margin: 10px;
+  font-family: verdana, helvetica;
+  padding: 20px;
+  margin: 20px;
   /* background-image: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.1)
-    ),
-    url("img/confetti.jpg"); */
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1)
+      ),
+      url("img/confetti.jpg"); */
   /* background-repeat: no-repeat; */
   background-color: aqua;
+}
+div {
+  color: rgb(226, 208, 44);
+  font-family: sans-serif;
+  background-color: yellowgreen;
+}
+input {
+  padding: 3 px;
+  margin: 3px;
+  border: 1px;
+  border-radius: 2px;
+  background-color: rgb(247, 235, 242);
+  color: blue;
 }

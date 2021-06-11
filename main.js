@@ -1,4 +1,16 @@
 var copyText="";
+function updatecolor(string){
+    document.getElementById(string).style.color="blue";
+}
+function updatefont(string){
+    document.getElementById(string).style.fontFamily="verdana";
+}
+function beautify(string){
+    updatecolor(string);
+    updatefont(string);
+}
+
+
 function random(a,b){
     let minimum=a;
     let difference=b-a;
@@ -24,9 +36,10 @@ function generate(){
         }
     }
     second+="]";
-    document.getElementsByClassName("Array")[0].innerHTML=first;
-    document.getElementsByClassName("Array")[1].innerHTML=second;
-    
+    document.getElementById("myInput").innerHTML=first;
+    document.getElementById("myInput1").innerHTML=second;
+    beautify("myInput");
+    beautify("myInput1");
     
 }
 function resetarray(){
@@ -46,7 +59,8 @@ function Permutation(n){
     for(var i=0;i<n;i++){
         string += arr[i]+" ";
     }
-    document.getElementsByClassName("Permutation")[0].innerHTML=string;
+    document.getElementById("outPermutation").innerHTML=string;
+    beautify("outPermutation");
 }
 function resetPermutation(){
     document.getElementsByClassName("Permutation")[0].innerHTML="";
@@ -93,6 +107,7 @@ function GeneratePrevPrime(){
         string+="  ";
     }
     document.getElementById("PrevPrimes").innerHTML=string;
+    beautify("PrevPrimes");
 }
 function GenerateNextPrime(){
     var num=+document.getElementById("numberForNextPrime").value;
@@ -117,6 +132,7 @@ function GenerateNextPrime(){
         string+="  ";
     }
     document.getElementById("NextPrimes").innerHTML=string;
+    beautify("NextPrimes");
 }
 function GeneratePrimesInRange(){
     var start=+document.getElementById("startnumber").value;
@@ -145,6 +161,8 @@ function GeneratePrimesInRange(){
     }
     document.getElementById("numberOfPrimesInRange").innerHTML=countprimes;
     document.getElementById("PrimesInRange").innerHTML=string;
+    beautify("numberOfPrimesInRange");
+    beautify("PrimesInRange");
 }
 function resetPrimesInRange(){
     document.getElementById("numberOfPrimesInRange").innerHTML="";
@@ -175,6 +193,7 @@ function calculate(){
     document.getElementById("time").innerHTML+="cpp(fastio) is "+tcpp+"s"+"<br>";
     document.getElementById("time").innerHTML+="python(fastio) is "+tpy+"s"+"<br>";
     document.getElementById("time").innerHTML+="pypy(fastio) is "+tpypy+"s"+"<br>";
+    beautify("time");
 }
 function resettime(){
     string="Time Taken for cpp: 0s"+
