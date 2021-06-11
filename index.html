@@ -11,143 +11,211 @@
     <title>Competitive Programming Helper</title>
 </head>
 <body onload="calculate()">
-    
-    Array size : <input type="text" id="arraySize" value="5">
-    Min value: <input type="text" id="minValue" value="0">
-    Max value: <input type="text" id="maxValue" value="10">
-    <br>
-    <br>
-    <button type="button" class="btn btn-primary" onclick="generate()">Generate Array</button>
-    <button type="button" class="btn btn-primary" onclick="resetarray()">Clear Array</button>
-    <br>
-    <br>
-    <a href="#" onclick="CopyToClipboard('myInput');return false;">Copy Text</a>
-    <div class="alert alert-primary Array" id="myInput" role="alert">
-        
-    </div>
-    <a href="#" onclick="CopyToClipboard('myInput1');return false;">Copy Text</a>
-    <div class="alert alert-primary Array" id="myInput1" role="alert">
-        
-    </div>
+    <div class="Array label">
 
-    <br>
-    <br>
-    <br>
-    <br>
-    Permutation of 1...n : <input type="text" id="permutation" value="10">
-    <br>
-    <br>
-    <button type="button" class="btn btn-primary" onclick="generatePermutation()">Generate Permutation</button>
-    <button type="button" class="btn btn-primary" onclick="resetPermutation()">Clear Permutation</button>
-    <br>
-    <br>
-    <a href="#" onclick="CopyToClipboard('outPermutation');return false;">Copy Text</a>
-    <div class="alert alert-primary Permutation" id="outPermutation" role="alert">
-        
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    Prev primes Generator
-    <br>
-    <br>
-    Number :  <input type="text" id="numberForPrevPrime" value="100000007">
-    <br>
-    <br>
-    Number of Prev primes: <input type="text" id="numberOfPrevPrime" value="10">
-    <br>
-    <br>
-    <button type="button" class="btn btn-primary" onclick="GeneratePrevPrime()">Generate Prev Primes</button>
-    <button type="button" class="btn btn-primary" onclick="resetPrevPrime()">Clear Primes</button>
-    <br>
-    <br>
-    <a href="#" onclick="CopyToClipboard('PrevPrimes');return false;">Copy Text</a>
-    <div class="alert alert-primary Permutation" id="PrevPrimes" role="alert">
-        
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    Next primes Generator
-    <br>
-    <br>
-    Number :  <input type="text" id="numberForNextPrime" value="100000007">
-    <br>
-    <br>
-    Number of Next primes: <input type="text" id="numberOfNextPrime" value="10">
-    <br>
-    <br>
-    <button type="button" class="btn btn-primary" onclick="GenerateNextPrime()">Generate Next Primes</button>
-    <button type="button" class="btn btn-primary" onclick="resetNextPrime()">Clear Primes</button>
-    <br>
-    <br>
-    <a href="#" onclick="CopyToClipboard('NextPrimes');return false;">Copy Text</a>
-    <div class="alert alert-primary" id="NextPrimes" role="alert">
-        
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    Primes in a range
-    <br>
-    <br>
-    Start Number :  <input type="text" id="startnumber" value="2">
-    <br>
-    <br>
-    End Number: <input type="text" id="endnumber" value="100">
-    <br>
-    <br>
-    <button type="button" class="btn btn-primary" onclick="GeneratePrimesInRange()">Generate Primes</button>
-    <button type="button" class="btn btn-primary" onclick="resetPrimesInRange()">Clear Primes</button>
-    <br>
-    <br>
-    <a href="#" onclick="CopyToClipboard('numberOfPrimesInRange');return false;">Copy Text</a>
-    <div class="alert alert-primary" id="numberOfPrimesInRange" role="alert">
-        
-    </div>
-    <a href="#" onclick="CopyToClipboard('PrimesInRange');return false;">Copy Text</a>
-    <div class="alert alert-primary" id="PrimesInRange" role="alert">
-        
-    </div>
-
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    Input size: <input type="text" id="inputSize" value="10000">
-    Output size: <input type="text" id="outputSize" value="10000">
-    Loop:<input type="text" id="loop" value="1000000">
-    <br>
-    <br>
-    <br>
-    <button type="button" class="btn btn-primary" onclick="calculate()">Calculate Time</button>
-    <button type="button" class="btn btn-primary" onclick="resettime()">Clear Time</button>
-
-    <br>
-    <br>
-    <a href="#" onclick="CopyToClipboard('time');return false;">Copy Text</a>
-    <div class="alert alert-primary Array" id="time" role="alert">
-        Time Taken for cpp: 0s
+        <span class="text">Array size :</span><input type="text" id="arraySize" value="5">
+         
+        <span class="text">Min value:</span> <input type="text" id="minValue" value="0">
+        <span class="text">Max value:</span> <input type="text" id="maxValue" value="10">
         <br>
-        Time Taken for python: 0s
         <br>
-        Time Taken for pypy: 0s
-
+        <button type="button" class="btn btn-primary" onclick="generate()">Generate Array</button>
+        <button type="button" class="btn btn-primary" onclick="resetarray()">Clear Array</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('myInput');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="myInput" role="alert">
+            
+        </div>
+        <a href="#" onclick="CopyToClipboard('myInput1');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="myInput1" role="alert">
+            
+        </div>
     </div>
-    
-    <script type="text/javascript" src="main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+
+    <div class="permutation label">
+
+        <span class="text">
+            Permutation of 1...n :
+        </span> 
+        <input type="text" id="permutation" value="10">
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="generatePermutation()">Generate Permutation</button>
+        <button type="button" class="btn btn-primary" onclick="resetPermutation()">Clear</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('outPermutation');return false;">Copy Text</a>
+        <div class="alert alert-primary Permutation" id="outPermutation" role="alert">
+            
+        </div>
+    </div>
+
+    <div class="prevPrime label">
+
+        <span class="text">
+            
+            Prev primes Generator
+        </span>
+        <br>
+        <br>
+        <span class="text">
+            Number :  
+        </span>
+        <input type="text" id="numberForPrevPrime" value="100000007">
+        <br>
+        <br>
+        <span class="text">
+            
+            Number of Prev primes: 
+        </span>
+        <input type="text" id="numberOfPrevPrime" value="10">
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="GeneratePrevPrime()">Generate Prev Primes</button>
+        <button type="button" class="btn btn-primary" onclick="resetPrevPrime()">Clear Primes</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('PrevPrimes');return false;">Copy Text</a>
+        <div class="alert alert-primary Permutation" id="PrevPrimes" role="alert">
+            
+        </div>
+    </div>
+    <div class="nextPrime label">
+
+
+        <span class="text">
+            Next primes Generator
+        </span>
+        
+        <br>
+        <br>
+        <span class="text">
+            
+            Number : 
+        </span>
+        <input type="text" id="numberForNextPrime" value="100000007">
+        <br>
+        <br>
+        <span class="text">
+            
+            Number of Next primes: 
+        </span>
+        <input type="text" id="numberOfNextPrime" value="10">
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="GenerateNextPrime()">Generate Next Primes</button>
+        <button type="button" class="btn btn-primary" onclick="resetNextPrime()">Clear Primes</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('NextPrimes');return false;">Copy Text</a>
+        <div class="alert alert-primary" id="NextPrimes" role="alert">
+            
+        </div>
+    </div>
+
+    <div class="primeRange label">
+
+        <span class="text">
+            
+            Primes in a range
+        </span>
+        <br>
+        <br>
+        <span class="text">
+            
+            Start Number :  
+        </span>
+        <input type="text" id="startnumber" value="2">
+        <br>
+        <br>
+        <span class="text">
+            
+            End Number: 
+        </span>
+        <input type="text" id="endnumber" value="100">
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="GeneratePrimesInRange()">Generate Primes</button>
+        <button type="button" class="btn btn-primary" onclick="resetPrimesInRange()">Clear Primes</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('numberOfPrimesInRange');return false;">Copy Text</a>
+        <div class="alert alert-primary" id="numberOfPrimesInRange" role="alert">
+            
+        </div>
+        <a href="#" onclick="CopyToClipboard('PrimesInRange');return false;">Copy Text</a>
+        <div class="alert alert-primary" id="PrimesInRange" role="alert">
+            
+        </div>
+        
+    </div>
+
+    <div class="primeCount label">
+        <span class="text">
+            
+            Primes Count in a Range
+        </span>
+        <br>
+        <br>
+        <span class="text">
+            
+            Start Number :  
+        </span>
+        <input type="text" id="startnumberPrimeCount" value="1">
+        <br>
+        <br>
+        <span class="text">
+            
+            End Number: 
+        </span>
+        <input type="text" id="endnumberPrimeCount" value="100000000">
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="GeneratePrimesInRange()">Generate Primes</button>
+        <button type="button" class="btn btn-primary" onclick="resetPrimesInRange()">Clear Primes</button>
+    </div>
+
+
+
+    <div class="time label">
+
+        <span class="text">
+            
+            Input size: 
+        </span>
+        <input type="text" id="inputSize" value="10000">
+        <span class="text">
+            
+            Output size: 
+        </span>
+        <input type="text" id="outputSize" value="10000">
+        <span class="text">
+            
+            Loop:
+        </span>
+        <input type="text" id="loop" value="1000000">
+        <br>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="calculate()">Calculate Time</button>
+        <button type="button" class="btn btn-primary" onclick="resettime()">Clear Time</button>
+        
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('time');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="time" role="alert">
+            Time Taken for cpp: 0s
+            <br>
+            Time Taken for python: 0s
+            <br>
+            Time Taken for pypy: 0s
+            
+        </div>
+        
+    </div>
+        <script type="text/javascript" src="main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
