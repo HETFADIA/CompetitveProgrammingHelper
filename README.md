@@ -7,10 +7,10 @@ You can create Random Arrays, Permutations, Primes, PrimesCount, NextPrimes, Pre
 
 ## Instructions on How to Run
 
-Go to the github pages link
-In the input boxes set the values or sizes.
-The input boxes automatically evaluates the input.
-Click on Generate button to generate the arrays or permutations.
+<p>Go to the github pages link</p>
+<p>In the input boxes set the values or sizes.</p>
+<p>The input boxes automatically evaluates the input.</p>
+<p>Click on Generate button to generate the arrays or permutations.</p>
 
 ## Evaluation of the input
 
@@ -18,12 +18,16 @@ The program automatically evaluates the input.
 
 - `10` Evaluated as 10
 - `1e7` Evaluated as 10000000
+- `2*10*3/2` Evaluated as its value ie. 30
 - `pow(10,5)` Evaluated as 100000
 - `sqrt(100)` Evaluated as 10
 - `cbrt(1000)` Evaluated as 10
 - `log(1000)` Evaluated as Math.log(1000)=6.9
 - `log2(1000)` Evaluated as Math.log2(1000)=9.96
 - `log10(1000)` Evaluated as Math.log10(1000)=3
+- `exp(3)` Evaluated as e raised to 3= 20.08
+- `2*1e5*3` Evaluated as 6\* Million
+  Many other expressions are also evaluated such as tan, sin, cos etc
 
 ## Algorithms used
 
