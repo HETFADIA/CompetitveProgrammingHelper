@@ -52,6 +52,7 @@ function sieveOfErantosthenes(n,start=2) {
 var spf=[0,1];
 function sievePF(n){
     if(spf.length>=n){
+        console.log('spf not run to save time as it already calcualted')
         return;
     }
     spf=[0,1]
