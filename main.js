@@ -131,8 +131,8 @@ function generate(){
     
 }
 function resetarray(){
-    document.getElementsByClassName("Array")[0].innerHTML="";
-    document.getElementsByClassName("Array")[1].innerHTML="";
+    document.getElementById("myInput").innerHTML="";
+    document.getElementById("myInput1").innerHTML="";
 }
 function Permutation(n){
     var arr=[]
