@@ -3,9 +3,9 @@ https://hetfadia.github.io/CompetitveProgrammingHelper/
 
 ## About The Project
 
-You can create Random Arrays, Random Permutations, Primes, PrimesCount, NextPrimes, PreviousPrimes, Prime Factors of Numbers in a Given Range, Approx Time for a program etc using this project.
-The Generated output can be used to test a code, hack a code, debug a code easily and in no time.
-The output can also determine the time the code would take when submitted so that we can determine whether it is TLE or not.
+<p>You can create Random Arrays, Random Permutations, Primes, PrimesCount, NextPrimes, PreviousPrimes, Prime Factors of Numbers in a Given Range, Approx Time for a program etc using this project.</p>
+<p>The Generated output can be used to test a code, hack a code, debug a code easily and in no time.</p>
+<p>The output can also determine the time the code would take when submitted so that we can determine whether it is TLE or not.</p>
 
 ## Instructions on How to Run
 
