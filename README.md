@@ -26,9 +26,12 @@ The program automatically evaluates the input.
 - `log2(1000)` Evaluated as Math.log2(1000)=9.96
 - `log10(1000)` Evaluated as Math.log10(1000)=3
 - `exp(3)` Evaluated as e raised to 3= 20.08
-- `2*1e5*3` Evaluated as 6\* Million
+- `2*1e5*3` Evaluated as 6 into Million
+- `sin(1)` Evaluated as sin of 1 radian
+- `cos(1)` Evaluated as cos of 1 radian
+- `tan(1)` Evaluated as tan of 1 radian
 <p>
-  Many other expressions are also evaluated such as tan, sin, cos etc
+  Many other expressions are also evaluated by writing Math.atan, Math.acos etc.
 </p>
 
 ## Algorithms used
