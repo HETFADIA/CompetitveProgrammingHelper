@@ -15,6 +15,7 @@ body {
       ),
       url("img/confetti.jpg"); */
   /* background-repeat: no-repeat; */
+  /* background-color: aqua; */
   background-color: lightblue;
 }
 
@@ -54,3 +55,6 @@ input:hover {
   color: rgb(240, 71, 212);
   /* float: left; */
 }
+/* #loop {
+  size: 100px;
+} */

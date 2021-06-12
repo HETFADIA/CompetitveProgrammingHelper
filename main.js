@@ -9,7 +9,16 @@ function beautify(string){
     updatecolor(string);
     updatefont(string);
 }
-
+function sin(a) { return Math.sin(a) };
+function cos(a) { return Math.cos(a) };
+function tan(a) { return Math.tan(a) };
+function sqrt(a) { return Math.sqrt(a) };
+function cbrt(a) { return Math.cbrt(a) };
+function log(a) { return Math.log(a) };
+function log2(a) { return Math.log2(a) };
+function log10(a) { return Math.log10(a) };
+function pow(a, b) { return Math.pow(a, b) };
+function exp(a) { return Math.exp(a) };
 function sieveOfErantosthenes(n,start=2) {
     var array = [], upperLimit = Math.sqrt(n), output = [];
     for (var i = 0; i < n; i++) {
@@ -87,9 +96,9 @@ function random(a,b){
 }
 function generate(){
     
-    var arraysize = +document.getElementById("arraySize").value;
-    var minValue=+document.getElementById("minValue").value;
-    var maxValue=+document.getElementById("maxValue").value+1;
+    var arraysize = eval(document.getElementById("arraySize").value);
+    var minValue=eval(document.getElementById("minValue").value);
+    var maxValue=eval(document.getElementById("maxValue").value+1);
     
     first="";
     second="[";
@@ -135,7 +144,7 @@ function resetPermutation(){
     document.getElementsByClassName("Permutation")[0].innerHTML="";
 }
 function generatePermutation(){
-    var n=+document.getElementById("permutation").value;
+    var n=eval(document.getElementById("permutation").value);
     Permutation(n);
 }
 function isPrime(n){
@@ -157,8 +166,8 @@ function isPrime(n){
     return 1;
 }
 function GeneratePrevPrime(){
-    var num=+document.getElementById("numberForPrevPrime").value;
-    var counter=+document.getElementById("numberOfPrevPrime").value;
+    var num=eval(document.getElementById("numberForPrevPrime").value);
+    var counter=eval(document.getElementById("numberOfPrevPrime").value);
     var arr=[]
     for(var i=num;i>=2;i--){
         if(isPrime(i)){
@@ -179,8 +188,8 @@ function GeneratePrevPrime(){
     beautify("PrevPrimes");
 }
 function GenerateNextPrime(){
-    var num=+document.getElementById("numberForNextPrime").value;
-    var counter=+document.getElementById("numberOfNextPrime").value;
+    var num=eval(document.getElementById("numberForNextPrime").value);
+    var counter=eval(document.getElementById("numberOfNextPrime").value);
     var arr=[]
     if(num<0){
         num=0;
@@ -204,8 +213,8 @@ function GenerateNextPrime(){
     beautify("NextPrimes");
 }
 function GeneratePrimesInRange(){
-    var start=+document.getElementById("startnumber").value;
-    var end=+document.getElementById("endnumber").value;
+    var start=eval(document.getElementById("startnumber").value);
+    var end=eval(document.getElementById("endnumber").value);
     if(start<0){
         start=1;
     }
@@ -251,8 +260,8 @@ function GeneratePrimesInRange(){
     beautify("PrimesInRange");
 }
 function CountPrimesInRange(){
-    var start=+document.getElementById("startnumberPrimeCount").value;
-    var end=+document.getElementById("endnumberPrimeCount").value;
+    var start=eval(document.getElementById("startnumberPrimeCount").value);
+    var end=eval(document.getElementById("endnumberPrimeCount").value);
     if(start<0){
         start=1;
     }
@@ -293,8 +302,8 @@ function CountPrimesInRange(){
     beautify("countnumberOfPrimesInRange");
 }
 function spfPrimesInRange(){
-    var start=+document.getElementById("startnumberspf").value;
-    var end=+document.getElementById("endnumberspf").value;
+    var start=eval(document.getElementById("startnumberspf").value);
+    var end=eval(document.getElementById("endnumberspf").value);
     
     if(start<=0){
         start=1;
@@ -366,9 +375,9 @@ function pow(a,b){
     return Math.pow(a,b);
 }
 function calculate(){
-    var input = +document.getElementById("inputSize").value;
-    var output=+document.getElementById("outputSize").value;
-    var loop=+document.getElementById("loop").value;
+    var input = eval(document.getElementById("inputSize").value);
+    var output=eval(document.getElementById("outputSize").value);
+    var loop=eval(document.getElementById("loop").value);
     var tcpp=time(input,output,loop,8*1e6,2*1e6,5*1e8).toFixed(3)
     var tpy=time(input,output,loop,1e6,9*1e5,1e7).toFixed(3)
     var tpypy=time(input,output,loop,1e6,3*1e5,4*1e8).toFixed(3)
