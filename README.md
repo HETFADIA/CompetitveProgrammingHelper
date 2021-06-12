@@ -9,9 +9,25 @@ You can create Random Arrays, Permutations, Primes, PrimesCount, NextPrimes, Pre
 
 Go to the github pages link
 In the input boxes set the values or sizes.
+The input boxes automatically evaluates the input.
 Click on Generate button to generate the arrays or permutations.
+
+## Evaluation of the input
+
+The program automatically evaluates the input.
+
+- `10` Evaluated as 10
+- `1e7` Evaluated as 10000000
+- `pow(10,5)` Evaluated as 100000
+- `sqrt(100)` Evaluated as 10
+- `cbrt(1000)` Evaluated as 10
+- `log(1000)` Evaluated as Math.log(1000)=6.9
+- `log2(1000)` Evaluated as Math.log2(1000)=9.96
+- `log10(1000)` Evaluated as Math.log10(1000)=3
 
 ## Algorithms used
 
-Sieve Of Erantosthenes: Sieve is used wherever it can fasten the codes.
-Sieve Prime Factorization(spf): SPF is used in the prime factorization of large prime numbers.
+Sieve Of Erantosthenes: Sieve is used to find whether Integers in a large interval are prime or not.
+Sieve Prime Factorization(spf): SPF is used in the prime factorization of integers in a large interval.
+
+The Program automatically detects whether SPF and Sieve can fasten the code. If they can then Sieve or SPF are used respectively.
