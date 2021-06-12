@@ -108,8 +108,8 @@ function generate(){
     
     var arraysize = eval(document.getElementById("arraySize").value);
     var minValue=eval(document.getElementById("minValue").value);
-    var maxValue=eval(document.getElementById("maxValue").value+1);
-    
+    var maxValue=eval(document.getElementById("maxValue").value)+1;
+    console.log(minValue,maxValue);
     first="";
     second="[";
     for(let i=0;i<arraysize;i++){
@@ -389,7 +389,10 @@ function calculate(){
     var tpy=time(input,output,loop,1e6,9*1e5,1e7).toFixed(3)
     var tpypy=time(input,output,loop,1e6,3*1e5,4*1e8).toFixed(3)
 
-    document.getElementById("time").innerHTML="Time for "+input+" input, "+output+" output and "+loop+" loop in "+"<br>"
+    var inputr=Math.round(input)
+    var outputr=Math.round(output)
+    var loopr=Math.round(loop)
+    document.getElementById("time").innerHTML="Time for "+inputr+" input, "+outputr+" output and "+loopr+" loops in "+"<br>"
     document.getElementById("time").innerHTML+="C++17(fastio) is "+tcpp+"s"+"<br>";
     document.getElementById("time").innerHTML+="Python3(fastio) is "+tpy+"s"+"<br>";
     document.getElementById("time").innerHTML+="Pypy3(fastio) is "+tpypy+"s"+"<br>";
