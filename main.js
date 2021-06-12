@@ -33,6 +33,9 @@ function sieveOfErantosthenes(n,start=2) {
 };
 var spf=[0,1];
 function sievePF(n){
+    if(spf.length>=n){
+        return;
+    }
     spf=[0,1]
     var upperLimit = Math.sqrt(n), output = [];
     for (var i = 2; i < n; i++) {
@@ -307,7 +310,7 @@ function spfPrimesInRange(){
     console.log(spftime,normaltime);
     if(spftime<=normaltime){
         sievePF(end+1);
-        var out="";
+        var out="Number-> Prime Factors of the Number"+"<br>";
 
         var stringofarr="";
         for(var i=start;i<=end;i++){
@@ -322,7 +325,7 @@ function spfPrimesInRange(){
         document.getElementById("spfInRange").innerHTML=out;
     }
     else{
-        var out="";
+        var out="Number-> Prime Factors of the Number"+"<br>";
 
         var stringofarr="";
         for(var i=start;i<=end;i++){
@@ -336,7 +339,7 @@ function spfPrimesInRange(){
         }
         document.getElementById("spfInRange").innerHTML=out;
     }
-    
+    beautify("spfInRange");
 
 }
 function resetspfPrimesInRange(){
@@ -366,22 +369,23 @@ function calculate(){
     var output=+document.getElementById("outputSize").value;
     var loop=+document.getElementById("loop").value;
     var tcpp=time(input,output,loop,8*1e6,2*1e6,5*1e8).toFixed(3)
-    var tpy=time(input,output,loop,5*1e5,9*1e5,5*1e6).toFixed(3)
-    var tpypy=time(input,output,loop,3*1e5,3*1e5,5*1e7).toFixed(3)
+    var tpy=time(input,output,loop,1e6,9*1e5,1e7).toFixed(3)
+    var tpypy=time(input,output,loop,1e6,3*1e5,4*1e8).toFixed(3)
 
     document.getElementById("time").innerHTML="Time for "+input+" input, "+output+" output and "+loop+" loop in "+"<br>"
-    document.getElementById("time").innerHTML+="cpp(fastio) is "+tcpp+"s"+"<br>";
-    document.getElementById("time").innerHTML+="python(fastio) is "+tpy+"s"+"<br>";
-    document.getElementById("time").innerHTML+="pypy(fastio) is "+tpypy+"s"+"<br>";
+    document.getElementById("time").innerHTML+="C++17(fastio) is "+tcpp+"s"+"<br>";
+    document.getElementById("time").innerHTML+="Python3(fastio) is "+tpy+"s"+"<br>";
+    document.getElementById("time").innerHTML+="Pypy3(fastio) is "+tpypy+"s"+"<br>";
     beautify("time");
 }
 function resettime(){
-    string="Time Taken for cpp: 0s"+
+    string="Time Taken for Cpp+17: 0s"+
         "<br>"+
-        "Time Taken for python: 0s"+
+        "Time Taken for Python3: 0s"+
         "<br>"+
-        "Time Taken for pypy: 0s"
+        "Time Taken for Pypy3: 0s"
     document.getElementById("time").innerHTML=string;
+    beautify("time");
 }
 function CopyToClipboard(id)
 {

@@ -11,15 +11,20 @@
     <title>Competitive Programming Helper</title>
 </head>
 <body onload="calculate()">
-    <a href="#arrayGen">Go to Array Generator</a>
-    <a href="#permutationGen">Go to Permutation Generator</a>
-    <a href="#prevPrimeGen">Go to PrevPrimeFinder</a>
-    <a href="#nextPrimeGen">Go to Next Prime Finder</a>
-    <a href="#primeRangeGen">Go to primerange Generator</a>
-    <a href="#primeCountGen">Go to prime count</a>
-    <a href="#spfGen">Go to SPF</a>
-    <a href="#timecalc">Go to Time Calculator</a>
+    <a href="#arrayGen" id="linker">Array Generator</a>
+    <a href="#permutationGen" id="linker">Permutation Generator</a>
+    <a href="#prevPrimeGen" id="linker">Prev Primes Finder</a>
+    <a href="#nextPrimeGen" id="linker">Next Primes Finder</a>
+    <a href="#primeRangeGen" id="linker">Get Primes in a Range</a>
+    <a href="#primeCountGen" id="linker">Prime count in a Range</a>
+    <a href="#spfGen" id="linker">Prime Factorization in a Range</a>
+    <a href="#timecalc" id="linker">Aprox Time for a Program</a>
     <div class="Array label" id="arrayGen">
+        <span class="text">
+            Random Array Generator
+        </span>
+        <br>
+
 
         <span class="text">Array size :</span><input type="text" id="arraySize" value="5">
          
@@ -44,8 +49,12 @@
     <div class="permutation label" id="permutationGen">
 
         <span class="text">
-            Permutation of 1...n :
+            Permutation of 1...n 
         </span> 
+        <br>
+        <span class="text">
+            Enter n:
+        </span>
         <input type="text" id="permutation" value="10">
         <br>
         <br>
@@ -210,8 +219,8 @@
         <input type="text" id="endnumberspf" value="10000">
         <br>
         <br>
-        <button type="button" class="btn btn-primary" onclick="spfPrimesInRange()">Count Primes</button>
-        <button type="button" class="btn btn-primary" onclick="resetspfPrimesInRange()">Clear Primes</button>
+        <button type="button" class="btn btn-primary" onclick="spfPrimesInRange()">Prime Factorize</button>
+        <button type="button" class="btn btn-primary" onclick="resetspfPrimesInRange()">Clear</button>
         <br>
         <br>
         <a href="#" onclick="CopyToClipboard('spfInRange');return false;">Copy Text</a>
@@ -238,7 +247,7 @@
             
             Loop:
         </span>
-        <input type="text" id="loop" value="1000000">
+        <input type="text" id="loop" value="5000000">
         <br>
         <br>
         <br>
@@ -249,11 +258,11 @@
         <br>
         <a href="#" onclick="CopyToClipboard('time');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="time" role="alert">
-            Time Taken for cpp: 0s
+            Time Taken for C++17: 0s
             <br>
-            Time Taken for python: 0s
+            Time Taken for Python3: 0s
             <br>
-            Time Taken for pypy: 0s
+            Time Taken for Pypy3: 0s
             
         </div>
         

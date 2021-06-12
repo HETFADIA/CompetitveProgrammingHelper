@@ -49,3 +49,7 @@ input:hover {
 .label:last-of-type {
   padding-bottom: 0px;
 }
+#linker {
+  padding-left: 2px;
+  /* float: left; */
+}
