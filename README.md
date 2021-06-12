@@ -37,6 +37,8 @@ The program automatically evaluates the input.
 - `tan(1)` Evaluated as tan of 1 radian
 <p>
   Many other expressions are also evaluated by writing Math.atan, Math.acos etc.
+</p>
+<p>
   Thus any integer expression in any of the input boxes can be replaced by 1e7, log2(3) and the program will work fine.
 </p>
 
