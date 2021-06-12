@@ -27,7 +27,9 @@ The program automatically evaluates the input.
 - `log10(1000)` Evaluated as Math.log10(1000)=3
 - `exp(3)` Evaluated as e raised to 3= 20.08
 - `2*1e5*3` Evaluated as 6\* Million
+<p>
   Many other expressions are also evaluated such as tan, sin, cos etc
+</p>
 
 ## Algorithms used
 
