@@ -37,7 +37,7 @@ function sievePF(n){
         return;
     }
     spf=[0,1]
-    var upperLimit = Math.sqrt(n), output = [];
+    var upperLimit = Math.sqrt(n);
     for (var i = 2; i < n; i++) {
         spf.push(i);
     }
@@ -296,7 +296,7 @@ function spfPrimesInRange(){
     var start=+document.getElementById("startnumberspf").value;
     var end=+document.getElementById("endnumberspf").value;
     
-    if(start<0){
+    if(start<=0){
         start=1;
     }
     if(end<=0){
@@ -307,6 +307,7 @@ function spfPrimesInRange(){
     }
     var spftime=end*Math.log(end);
     var normaltime=(end-start)*Math.sqrt(end);
+    console.log(start);
     console.log(spftime,normaltime);
     if(spftime<=normaltime){
         sievePF(end+1);

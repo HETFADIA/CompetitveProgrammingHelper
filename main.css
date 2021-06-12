@@ -51,5 +51,6 @@ input:hover {
 }
 #linker {
   padding-left: 2px;
+  color: rgb(240, 71, 212);
   /* float: left; */
 }
