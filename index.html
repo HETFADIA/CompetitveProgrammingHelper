@@ -15,6 +15,7 @@
         <nav>
             <ul class="nav_links">  
                 <li><a href="#arrayGen" id="linker">Array Generator</a></li>
+                <li><a href="#arrayGenSort" id="linker">Sort Array</a></li>
                 <li><a href="#permutationGen" id="linker">Permutation Generator</a></li>
                 <li><a href="#prevPrimeGen" id="linker">Prev Primes Finder</a></li>
                 <li><a href="#nextPrimeGen" id="linker">Next Primes Finder</a></li>
@@ -51,6 +52,32 @@
         <div class="alert alert-primary Array" id="myInput1" role="alert">
             
         </div>
+    </div>
+    <div class="Array label sort" id="arrayGenSort">
+        <span class="text">
+            Sort Array in Ascending and Descending order
+        </span>
+        <br>
+
+
+        <span class="text">Array  :</span>
+        <br>
+        <input type="text" id="array" value="1 2 3 -8">
+         
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="sortarray()">Sort Array</button>
+        <button type="button" class="btn btn-primary" onclick="resetsortarray()">Clear Array</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('sortedout');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="sortedout" role="alert">
+            
+        </div>
+        <div class="alert alert-primary Array" id="revsortedout" role="alert">
+            
+        </div>
+        
     </div>
 
     <div class="permutation label" id="permutationGen">

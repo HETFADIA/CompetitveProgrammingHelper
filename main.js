@@ -130,6 +130,40 @@ function generate(){
     beautify("myInput1");
     
 }
+function arraytostring(array){
+    string="";
+    for(var i=0;i<array.length;i++){
+        string+=array[i]+" ";
+    }
+    return string;
+}
+function splitarray(arr){
+    arr=arr.split(" ");
+    newarr=[]
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]!=""){
+            newarr.push(arr[i]);
+        }
+    }
+    return newarr;
+}
+function sortarray(){
+    var array=document.getElementById("array").value;
+
+    array=splitarray(array);
+    for(var i=0;i<array.length;i++){
+        array[i]=+array[i];
+    }
+    array.sort(function(a,b){return a-b;});
+
+    document.getElementById("sortedout").innerHTML=arraytostring(array);
+    array.reverse();
+    document.getElementById("revsortedout").innerHTML=arraytostring(array);
+}
+function resetsortarray(){
+    document.getElementById("sortedout").innerHTML="";
+    document.getElementById("revsortedout").innerHTML="";
+}
 function resetarray(){
     document.getElementById("myInput").innerHTML="";
     document.getElementById("myInput1").innerHTML="";
