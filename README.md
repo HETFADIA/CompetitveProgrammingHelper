@@ -3,14 +3,17 @@ https://hetfadia.github.io/CompetitveProgrammingHelper/
 
 ## About The Project
 
-You can create Random Arrays, Permutations, Primes, PrimesCount, NextPrimes, PreviousPrimes, Approx Time for a program etc using this project
+You can create Random Arrays, Random Permutations, Primes, PrimesCount, NextPrimes, PreviousPrimes, Prime Factors of Numbers in a Given Range, Approx Time for a program etc using this project.
+The Generated output can be used to test a code, hack a code, debug a code easily and in no time.
+The output can also determine the time the code would take when submitted so that we can determine whether it is TLE or not.
 
 ## Instructions on How to Run
 
 <p>Go to the github pages link</p>
-<p>In the input boxes set the values or sizes.</p>
+<p>Enter the numbers or array size in the input boxes</p>
 <p>The input boxes automatically evaluates the input.</p>
-<p>Click on Generate button to generate the arrays or permutations.</p>
+<p>Click on Generate button to generate the output(arrays or permutations or prime factors).</p>
+<p>Click on clear button to reset the generated output.</p>
 
 ## Evaluation of the input
 
@@ -41,4 +44,4 @@ The program automatically evaluates the input.
 Sieve Of Erantosthenes: Sieve is used to find whether Integers in a large interval are prime or not.
 Sieve Prime Factorization(spf): SPF is used in the prime factorization of integers in a large interval.
 
-The Program automatically detects whether SPF and Sieve can fasten the code. If they can then Sieve or SPF are used respectively.
+The Program automatically detects whether SPF and Sieve can fasten the code. If they can save time using them then Sieve or SPF are used respectively.
