@@ -63,13 +63,13 @@ function getFactorization(x){
     
     return ret
 }
-function normalFactorization(x){
+function normalFactorization(n){
     var ret=[]
     while (n%2==0){
         ret.push(2);
         n/=2;
     }
-    for(var i=3;i<Math.sqrt(x);i+=2){
+    for(var i=3;i<Math.sqrt(n);i+=2){
         while (n%i==0){
             ret.push(i);
             n/=i;
@@ -292,26 +292,51 @@ function CountPrimesInRange(){
 function spfPrimesInRange(){
     var start=+document.getElementById("startnumberspf").value;
     var end=+document.getElementById("endnumberspf").value;
+    
     if(start<0){
         start=1;
     }
-    if(end<0){
+    if(end<=0){
         end=1;
     }
-    sievePF(end+1);
-    var out="";
-
-    var stringofarr="";
-    for(var i=start;i<=end;i++){
-        var primefactors=getFactorization(i);
-        stringofarr="";
-        for(var j=0;j<primefactors.length;j++){
-            stringofarr+=primefactors[j]+" ";
-        }
-        out+=i+" -> "+stringofarr+"<br>";
-
+    if(start>end){
+        return;
     }
-    document.getElementById("spfInRange").innerHTML=out;
+    var spftime=end*Math.log(end);
+    var normaltime=(end-start)*Math.sqrt(end);
+    console.log(spftime,normaltime);
+    if(spftime<=normaltime){
+        sievePF(end+1);
+        var out="";
+
+        var stringofarr="";
+        for(var i=start;i<=end;i++){
+            var primefactors=getFactorization(i);
+            stringofarr="";
+            for(var j=0;j<primefactors.length;j++){
+                stringofarr+=primefactors[j]+" ";
+            }
+            out+=i+" -> "+stringofarr+"<br>";
+
+        }
+        document.getElementById("spfInRange").innerHTML=out;
+    }
+    else{
+        var out="";
+
+        var stringofarr="";
+        for(var i=start;i<=end;i++){
+            var primefactors=normalFactorization(i);
+            stringofarr="";
+            for(var j=0;j<primefactors.length;j++){
+                stringofarr+=primefactors[j]+" ";
+            }
+            out+=i+" -> "+stringofarr+"<br>";
+
+        }
+        document.getElementById("spfInRange").innerHTML=out;
+    }
+    
 
 }
 function resetspfPrimesInRange(){
