@@ -381,9 +381,6 @@ function resetNextPrime(){
 function time(input,output,loop,inputspeed,outputspeed,loopspeed){
     return input/inputspeed+output/outputspeed+loop/loopspeed;
 }
-function pow(a,b){
-    return Math.pow(a,b);
-}
 function calculate(){
     var input = eval(document.getElementById("inputSize").value);
     var output=eval(document.getElementById("outputSize").value);
@@ -415,4 +412,58 @@ function CopyToClipboard(id)
     window.getSelection().addRange(r);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
+}
+function printTreeEdges(prufier){
+    var m=prufier.length;
+    var vertices=m+2;
+    var vertex_set=[];
+    var tree=[];
+    for(var i=0;i<vertices;i++){
+        vertex_set.push(0);
+    }
+    for(var i=0;i<m;i++){
+        vertex_set[prufier[i]-1]+=1;
+    }
+    var j=0;
+    for(var i=0;i<m;i++){
+        for(var j=0;j<vertices;j++){
+            if(vertex_set[j]==0){
+                vertex_set[j]=-1;
+                tree.push([j+1,prufier[i]]);
+                vertex_set[prufier[i]-1]--;
+                break;
+            }
+        }
+    }
+    var j=0;
+    var last=[];
+    for(var i=0;i<vertices;i++){
+        if(vertex_set[i]==0 && j==0){
+            last.push(i+1);
+            j++;
+        }
+        else if(vertex_set[i]==0 && j==1){
+            last.push(i+1);
+        }
+    }
+    tree.push(last);
+    return tree;
+}
+function generateRandomTree(){
+    var n=eval(document.getElementById("startnumbertree").value);
+    var arr=[];
+    for(var i=0;i<n-2;i++){
+        var randomnumber=random(1,n+1);
+        arr.push(randomnumber);
+    }
+    tree=printTreeEdges(arr);
+    outstring="";
+    for(var i=0;i<n-1;i++){
+        outstring+=tree[i][0]+" "+tree[i][1]+"<br>";
+    }
+    document.getElementById("tree").innerHTML=outstring;
+    beautify("tree");
+}
+function resetRandomTree(){
+    document.getElementById("tree").innerHTML="";
 }

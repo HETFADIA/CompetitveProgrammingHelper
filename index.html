@@ -21,6 +21,7 @@
                 <li><a href="#primeRangeGen" id="linker">Get Primes in a Range</a></li>
                 <li><a href="#primeCountGen" id="linker">Prime count in a Range</a></li>
                 <li><a href="#spfGen" id="linker">Prime Factorization in a Range</a></li>
+                <li><a href="#treeGen" id="linker">Tree of n nodes</a></li>
                 <li><a href="#timecalc" id="linker">Aprox Time for a Program</a></li>
             </ul>
         </nav>
@@ -231,6 +232,32 @@
         <br>
         <a href="#" onclick="CopyToClipboard('spfInRange');return false;">Copy Text</a>
         <div class="alert alert-primary" id="spfInRange" role="alert">
+            
+        </div>
+    </div>
+    <div class="tree" id="treeGen">
+        <span class="text">
+            
+            Generate Random Tree of n nodes
+        </span>
+        <br>
+        <br>
+        <span class="text">
+            
+            Enter n:
+        </span>
+        <input type="text" id="startnumbertree" value="5">
+        <br>
+        <br>
+        
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="generateRandomTree()">Generate Tree</button>
+        <button type="button" class="btn btn-primary" onclick="resetRandomTree()">Clear</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('tree');return false;">Copy Text</a>
+        <div class="alert alert-primary" id="tree" role="alert">
             
         </div>
     </div>
