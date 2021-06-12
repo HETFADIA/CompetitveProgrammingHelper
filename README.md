@@ -42,6 +42,7 @@ The program automatically evaluates the input.
 ## Algorithms used
 
 Sieve Of Erantosthenes: Sieve is used to find whether Integers in a large interval are prime or not.
+
 Sieve Prime Factorization(spf): SPF is used in the prime factorization of integers in a large interval.
 
 The Program automatically detects whether SPF and Sieve can fasten the code. If they can save time using them then Sieve or SPF are used respectively.

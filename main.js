@@ -23,20 +23,21 @@ pi=Math.pi;
 PI=Math.PI;
 e=Math.E;
 function sieveOfErantosthenes(n,start=2) {
-    var array = [], upperLimit = Math.sqrt(n), output = [];
+    var upperLimit = Math.sqrt(n), output = [];
+    var arraysieve=[];
     for (var i = 0; i < n; i++) {
-        array.push(true);
+        arraysieve.push(true);
     }
 
     for (var i = 2; i <= upperLimit; i++) {
-        if (array[i]) {
+        if (arraysieve[i]) {
             for (var j = i * i; j < n; j += i) {
-                array[j] = false;
+                arraysieve[j] = false;
             }
         }
     }
     for (var i = Math.max(start,2); i < n; i++) {
-        if(array[i]) {
+        if(arraysieve[i]) {
             output.push(i);
         }
     }
