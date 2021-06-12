@@ -54,11 +54,7 @@ input:hover {
 .label:last-of-type {
   padding-bottom: 0px;
 }
-#linker {
-  padding-left: 2px;
-  color: rgb(240, 71, 212);
-  /* float: left; */
-}
+
 /* #loop {
   size: 100px;
 } */
@@ -75,14 +71,19 @@ header {
 }
 /* .nav_links {
   list-style: none;
-}
-.nav_links li {
+} */
+/* .nav_links li {
   display: inline-block;
   padding: 0px 20px;
-}
-.nav_links li a {
+} */
+/* .nav_links li a {
   transition: all 0.3s ease 0s;
-}
+} */
 .nav_links li a:hover {
   color: blue;
-} */
+}
+#linker {
+  padding-left: 2px;
+  color: rgb(240, 71, 212);
+  font-style: italic;
+}

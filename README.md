@@ -45,4 +45,6 @@ Sieve Of Erantosthenes: Sieve is used to find whether Integers in a large interv
 
 Sieve Prime Factorization(spf): SPF is used in the prime factorization of integers in a large interval.
 
+Prufer Sequence is used to generate random tree.
+
 The Program automatically detects whether SPF and Sieve can fasten the code. If they can save time using them then Sieve or SPF are used respectively.
