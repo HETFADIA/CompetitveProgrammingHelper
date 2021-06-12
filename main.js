@@ -19,6 +19,9 @@ function log2(a) { return Math.log2(a) };
 function log10(a) { return Math.log10(a) };
 function pow(a, b) { return Math.pow(a, b) };
 function exp(a) { return Math.exp(a) };
+pi=Math.pi;
+PI=Math.PI;
+e=Math.E;
 function sieveOfErantosthenes(n,start=2) {
     var array = [], upperLimit = Math.sqrt(n), output = [];
     for (var i = 0; i < n; i++) {
