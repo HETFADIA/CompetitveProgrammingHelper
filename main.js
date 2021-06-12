@@ -301,11 +301,14 @@ function spfPrimesInRange(){
     sievePF(end+1);
     var out="";
 
-
+    var stringofarr="";
     for(var i=start;i<=end;i++){
         var primefactors=getFactorization(i);
-        
-        out+=i+" -> "+primefactors+"<br>";
+        stringofarr="";
+        for(var j=0;j<primefactors.length;j++){
+            stringofarr+=primefactors[j]+" ";
+        }
+        out+=i+" -> "+stringofarr+"<br>";
 
     }
     document.getElementById("spfInRange").innerHTML=out;
