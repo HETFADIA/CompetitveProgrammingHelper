@@ -22,19 +22,24 @@ function exp(a) { return Math.exp(a) };
 pi=Math.pi;
 PI=Math.PI;
 e=Math.E;
+var arraysieve=[];
 function sieveOfErantosthenes(n,start=2) {
     var upperLimit = Math.sqrt(n), output = [];
-    var arraysieve=[];
-    for (var i = 0; i < n; i++) {
-        arraysieve.push(true);
-    }
-
-    for (var i = 2; i <= upperLimit; i++) {
-        if (arraysieve[i]) {
-            for (var j = i * i; j < n; j += i) {
-                arraysieve[j] = false;
+    if(arraysieve.length<n){
+        for (var i = 0; i < n; i++) {
+            arraysieve.push(true);
+        }
+    
+        for (var i = 2; i <= upperLimit; i++) {
+            if (arraysieve[i]) {
+                for (var j = i * i; j < n; j += i) {
+                    arraysieve[j] = false;
+                }
             }
         }
+    }
+    else{
+        console.log("sieve not run to save time as the arr already exists")
     }
     for (var i = Math.max(start,2); i < n; i++) {
         if(arraysieve[i]) {
