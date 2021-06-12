@@ -31,6 +31,52 @@ function sieveOfErantosthenes(n,start=2) {
 
     return output;
 };
+var spf=[0,1];
+function sievePF(n){
+    spf=[0,1]
+    var upperLimit = Math.sqrt(n), output = [];
+    for (var i = 2; i < n; i++) {
+        spf.push(i);
+    }
+    for(var i=4;i<n;i+=2){
+        spf[i]=2;
+    }
+
+    for (var i = 3; i <= upperLimit; i++) {
+        if (spf[i]==i) {
+            for (var j = i * i; j < n; j += i) {
+                if(spf[j]==j){
+                    spf[j]=i;
+                }
+            }
+        }
+    }
+}
+function getFactorization(x){
+
+    var ret = []
+    while (x != 1){
+
+        ret.push(spf[x])
+        x = x/spf[x]
+    }
+    
+    return ret
+}
+function normalFactorization(x){
+    var ret=[]
+    while (n%2==0){
+        ret.push(2);
+        n/=2;
+    }
+    for(var i=3;i<Math.sqrt(x);i+=2){
+        while (n%i==0){
+            ret.push(i);
+            n/=i;
+        }
+    }
+    return ret;
+}
 function random(a,b){
     let minimum=a;
     let difference=b-a;
@@ -242,6 +288,31 @@ function CountPrimesInRange(){
     }
     document.getElementById("countnumberOfPrimesInRange").innerHTML=countprimes;
     beautify("countnumberOfPrimesInRange");
+}
+function spfPrimesInRange(){
+    var start=+document.getElementById("startnumberspf").value;
+    var end=+document.getElementById("endnumberspf").value;
+    if(start<0){
+        start=1;
+    }
+    if(end<0){
+        end=1;
+    }
+    sievePF(end+1);
+    var out="";
+
+
+    for(var i=start;i<=end;i++){
+        var primefactors=getFactorization(i);
+        
+        out+=i+" -> "+primefactors+"<br>";
+
+    }
+    document.getElementById("spfInRange").innerHTML=out;
+
+}
+function resetspfPrimesInRange(){
+    document.getElementById("spfInRange").innerHTML="";
 }
 function resetCountInRange(){
     document.getElementById("countnumberOfPrimesInRange").innerHTML="";

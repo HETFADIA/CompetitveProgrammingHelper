@@ -14,4 +14,4 @@ Click on Generate button to generate the arrays or permutations.
 ## Algorithms used
 
 Sieve Of Erantosthenes: Sieve is used wherever it can fasten the codes.
-
+Sieve Prime Factorization(spf): SPF is used in the prime factorization of large prime numbers.
