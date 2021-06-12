@@ -152,7 +152,7 @@ function sortarray(){
 
     array=splitarray(array);
     for(var i=0;i<array.length;i++){
-        array[i]=+array[i];
+        array[i]=eval(array[i]);
     }
     array.sort(function(a,b){return a-b;});
 
