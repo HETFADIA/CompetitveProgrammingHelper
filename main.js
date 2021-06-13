@@ -20,6 +20,8 @@ function log10(a) { return Math.log10(a) };
 function pow(a, b) { return Math.pow(a, b) };
 function exp(a) { return Math.exp(a) };
 pi=Math.PI;
+Pi=Math.PI;
+pI=Math.PI;
 PI=Math.PI;
 e=Math.E;
 var arraysieve=[];
@@ -106,9 +108,11 @@ function random(a,b){
 }
 function generate(){
     
-    var arraysize = eval(document.getElementById("arraySize").value);
+    var arraysize = parseInt(eval(document.getElementById("arraySize").value));
     var minValue=eval(document.getElementById("minValue").value);
     var maxValue=eval(document.getElementById("maxValue").value)+1;
+    minValue=parseInt(minValue);
+    maxValue=parseInt(maxValue);
     console.log(minValue,maxValue);
     first="";
     second="[";
@@ -267,6 +271,8 @@ function GenerateNextPrime(){
 function GeneratePrimesInRange(){
     var start=eval(document.getElementById("startnumber").value);
     var end=eval(document.getElementById("endnumber").value);
+    start=parseInt(start);
+    end=parseInt(end);
     if(start<0){
         start=1;
     }
@@ -314,6 +320,8 @@ function GeneratePrimesInRange(){
 function CountPrimesInRange(){
     var start=eval(document.getElementById("startnumberPrimeCount").value);
     var end=eval(document.getElementById("endnumberPrimeCount").value);
+    start=parseInt(start);
+    end=parseInt(end);
     if(start<0){
         start=1;
     }
@@ -356,7 +364,8 @@ function CountPrimesInRange(){
 function spfPrimesInRange(){
     var start=eval(document.getElementById("startnumberspf").value);
     var end=eval(document.getElementById("endnumberspf").value);
-    
+    start=parseInt(start);
+    end=parseInt(end);
     if(start<=0){
         start=1;
     }
