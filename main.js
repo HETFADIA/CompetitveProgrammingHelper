@@ -19,7 +19,7 @@ function log2(a) { return Math.log2(a) };
 function log10(a) { return Math.log10(a) };
 function pow(a, b) { return Math.pow(a, b) };
 function exp(a) { return Math.exp(a) };
-pi=Math.pi;
+pi=Math.PI;
 PI=Math.PI;
 e=Math.E;
 var arraysieve=[];
@@ -192,6 +192,9 @@ function generatePermutation(){
     Permutation(n);
 }
 function isPrime(n){
+    if(Number.isInteger(n)==0){
+        return 0;
+    }
     if(n<0){
         return 0;
     }
@@ -211,7 +214,9 @@ function isPrime(n){
 }
 function GeneratePrevPrime(){
     var num=eval(document.getElementById("numberForPrevPrime").value);
+    num=parseInt(num);
     var counter=eval(document.getElementById("numberOfPrevPrime").value);
+    counter=parseInt(counter);
     var arr=[]
     for(var i=num;i>=2;i--){
         if(isPrime(i)){
@@ -234,6 +239,9 @@ function GeneratePrevPrime(){
 function GenerateNextPrime(){
     var num=eval(document.getElementById("numberForNextPrime").value);
     var counter=eval(document.getElementById("numberOfNextPrime").value);
+    num=parseInt(num);
+    counter=parseInt(counter);
+    console.log(num,counter);
     var arr=[]
     if(num<0){
         num=0;
