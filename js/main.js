@@ -1,11 +1,11 @@
 var copyText="";
-function updatecolor(string){
+const updatecolor=(string)=>{
     document.getElementById(string).style.color="blue";
 }
-function updatefont(string){
+const updatefont=(string)=>{
     document.getElementById(string).style.fontFamily="verdana";
 }
-function beautify(string){
+const beautify=(string)=>{
     updatecolor(string);
     updatefont(string);
 }
