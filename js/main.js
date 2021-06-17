@@ -134,6 +134,42 @@ function generate(){
     beautify("myInput1");
     
 }
+function generateOneTC(length,valuelow,valuehigh){
+    var string=length+"<br>";
+    for(var i=0;i<length;i++){
+        string+=random(valuelow,valuehigh)+" ";
+    }
+    string+="<br>"
+    return string
+}
+function TtestCases(TC,low,high,valuelow,valuehigh){
+    var string=TC.toString();
+    string+="<br>"
+    for(var i=0;i<TC;i++){
+        string+=generateOneTC(random(low,high),valuelow,valuehigh);
+
+    }
+    return string;
+}
+function genTC(){
+    var isChecked=document.getElementById('testCases').checked;
+    var TC=5;
+    var low=1;// min value of n
+    var high=10;// max value of n
+    var valuelow=1;// the minimum value of the array of n
+    var valuehigh=10;// the max value of array of n
+    if(isChecked){
+        string=TtestCases(TC,low,high,valuelow,valuehigh);
+    }
+    else{
+        string=generateOneTC(random(low,high),valuelow,valuehigh);
+    }
+    document.getElementById("tc").innerHTML=string;
+    beautify("tc");
+}
+function resetgenTC(){
+    document.getElementById("tc").innerHTML="";
+}
 function arraytostring(array){
     string="";
     for(var i=0;i<array.length;i++){

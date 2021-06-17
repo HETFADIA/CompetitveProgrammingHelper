@@ -16,6 +16,7 @@
             <ul class="nav_links">  
                 <li><a href="#arrayGen" id="linker">Array Generator</a></li>
                 <li><a href="#arrayGenSort" id="linker">Sort Array</a></li>
+                <li><a href="#tcGen" id="linker">Test Cases Generator</a></li>
                 <li><a href="#permutationGen" id="linker">Permutation Generator</a></li>
                 <li><a href="#prevPrimeGen" id="linker">Prev Primes Finder</a></li>
                 <li><a href="#nextPrimeGen" id="linker">Next Primes Finder</a></li>
@@ -80,7 +81,30 @@
         </div>
         
     </div>
+    <div class="tc gen" id="tcGen">
+        <span class="text">
+            Generate Test Cases
+        </span>
+        <br>
 
+        <span class="text">Test Cases:</span>
+        <input class="check-input" type="checkbox" id="testCases" name="testCases" value="TC" checked="true">
+        
+        
+         
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="genTC()">Generate TC</button>
+        <button type="button" class="btn btn-primary" onclick="resetgenTC()">Clear TC</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('tc');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="tc" role="alert">
+            
+        </div>
+        
+    </div>
+    
     <div class="permutation label" id="permutationGen">
 
         <span class="text">
