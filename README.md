@@ -44,6 +44,7 @@ The program automatically evaluates the input.
 </p>
 
 ## Algorithms used
+
 <p>
 Sieve Of Erantosthenes: Sieve is used to find whether Integers in a large interval are prime or not.
 </p>
@@ -56,3 +57,12 @@ Prufer Sequence is used to generate random tree.
 <p>
 The Program automatically detects whether SPF and Sieve can fasten the code. If they can save time using them then Sieve or SPF are used respectively.
 </p>
+
+## Features
+
+<p>The program input accepts integers as well as scientific notations.</p>
+<p>The Test cases generator also gives a colored output.</p>
+
+## Warning
+
+The program input currently only accepts integers. However in sort you have to give input as 'a' 'b' 'c' 'd' if you want to sort strings and characters.
