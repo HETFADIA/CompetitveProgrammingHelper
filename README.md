@@ -65,4 +65,9 @@ The Program automatically detects whether SPF and Sieve can fasten the code. If 
 
 ## Warning
 
-The program input currently only accepts integers. However in sort you have to give input as 'a' 'b' 'c' 'd' if you want to sort strings and characters.
+<p>
+The program input currently only generates array of integers in random integers.
+</p>
+<p>
+For using string and characters in sort, you have to input manually like 'a' 'abc' 'str' 't'
+</p>
