@@ -87,3 +87,32 @@ header {
   color: rgb(240, 71, 212);
   font-style: italic;
 }
+.redcolor {
+  padding: 0px;
+  margin: 0px;
+  color: red;
+}
+.greenyellowcolor {
+  padding: 0px;
+  margin: 0px;
+  color: greenyellow;
+}
+.greencolor {
+  padding: 0px;
+  margin: 0px;
+  color: rgb(248, 9, 236);
+}
+.pinkcolor {
+  padding: 0px;
+  margin: 0px;
+  color: rgb(248, 9, 236);
+}
+.orangecolor {
+  padding: 0px;
+  margin: 0px;
+  color: rgb(248, 125, 9);
+}
+.nocolor {
+  padding: 0px;
+  margin: 0px;
+}

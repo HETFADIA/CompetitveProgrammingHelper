@@ -135,15 +135,17 @@ function generate(){
     
 }
 function generateOneTC(length,valuelow,valuehigh){
-    var string=length+"<br>";
+    var string="<span class='pinkcolor'>"+length+"</span>"+"<br>";//replace class with nocolor for no color
+    // string+="<span class='orangecolor'>"
     for(var i=0;i<length;i++){
         string+=random(valuelow,valuehigh)+" ";
     }
+    // string+="</span>"
     string+="<br>"
     return string
 }
 function TtestCases(TC,low,high,valuelow,valuehigh){
-    var string=TC.toString();
+    var string="<span class='redcolor'>"+TC.toString()+"</span>";//replace class with nocolor for no color
     string+="<br>"
     for(var i=0;i<TC;i++){
         string+=generateOneTC(random(low,high),valuelow,valuehigh);
