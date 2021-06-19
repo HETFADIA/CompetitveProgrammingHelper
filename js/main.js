@@ -495,7 +495,7 @@ function __calculateMemory(sizearray,memory){
         console.log(res)
     }
 
-    res=(res/10**6).toFixed(3)
+    res=Math.ceil(res/10**3)
     console.log(res)
     return res;
 }
@@ -511,10 +511,12 @@ function calculateMemory(){
     var ispython=pylist | pytuple;
     console.log(bool)
     var sizearray=[bitset,bool,int,ll,int128,pytuple,pylist]
-    var memory=[1/8,1,4,8,16,120,36]
-    var MemoryUsed=__calculateMemory(sizearray,memory);
-    let string=`Memory usage is ${MemoryUsed} MB<br>`
-    if(MemoryUsed>=256){
+    var memory=[1/8,1,4,8,16,120,8]
+    var MemoryUsedKB=__calculateMemory(sizearray,memory);
+    var MemoryUsedMB=Math.ceil(MemoryUsedKB/1000);
+    let string=`Memory usage is ${MemoryUsedKB} KB<br>`
+    string+=`Memory usage is ${MemoryUsedMB} MB<br>`
+    if(MemoryUsedMB>=256){
         string+="Memory Usage is High<br>"
         if(ispython){
             string+="Use tuples and bitArray to reduce memory<br>";
@@ -531,7 +533,7 @@ function resetMemory(){
     for(var i=0;i<stringarr.length;i++){
         document.getElementById(stringarr[i]).value=0
     }
-    document.getElementById("memory").innerHTML="Memory usage is 0 MB";
+    document.getElementById("memory").innerHTML="Memory usage is 0 KB";
     beautify("memory")
 }
 function resettime(){
