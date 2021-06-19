@@ -403,9 +403,17 @@
         </span>
         <input type="text" id="pythonlistSize" value="0" >
         <br>
+        <span class="text">
+            
+            Memory limit (in MB)
+        </span>
+        <input type="text" id="MemoryLimit" value="256" >
+
+        <br>
         <br>
         <br>
         <button type="button" class="btn btn-primary" onclick="calculateMemory()">Calculate Memory</button>
+        <button type="button" class="btn btn-primary" onclick="calculateMemoryInfo()">Max size</button>
         <button type="button" class="btn btn-primary" onclick="resetMemory()">Clear</button>
         
         <br>
@@ -413,6 +421,10 @@
         <a href="#" onclick="CopyToClipboard('memory');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="memory" role="alert">
             Memory Usage : 0 MB
+        </div>
+        <a href="#" onclick="CopyToClipboard('memoryinfo');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="memoryinfo" role="alert">
+            
         </div>
         
     </div>

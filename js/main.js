@@ -507,6 +507,7 @@ function calculateMemory(){
     var int128 = eval(document.getElementById(stringarr[4]).value);
     var pytuple = eval(document.getElementById(stringarr[5]).value);
     var pylist = eval(document.getElementById(stringarr[6]).value);
+    var MemoryLimit=eval(document.getElementById("MemoryLimit").value)
     var ispython=pylist | pytuple;
     console.log(bool)
     var sizearray=[bitset,bool,int,ll,int128,pytuple,pylist]
@@ -527,7 +528,7 @@ function calculateMemory(){
     }
     
     
-    if(MemoryUsedBytes>=256*10**6){
+    if(MemoryUsedBytes>=MemoryLimit*10**6){
         string+="Memory Usage is High<br>"
         if(ispython){
             string+="Use tuples and bitArray to reduce memory<br>";
@@ -539,13 +540,29 @@ function calculateMemory(){
     document.getElementById("memory").innerHTML=string;
     beautify("memory")
 }
+function calculateMemoryInfo(){
+    var MemoryLimit=eval(document.getElementById("MemoryLimit").value);
+    var string="";
+    string+=`In a program of ${MemoryLimit} MB Limit you can make<br>`
+    string+=`Bitset of max ${(MemoryLimit*10**6*8).toExponential(2)} size or<br>`
+    string+=`Bool array of max ${(MemoryLimit*10**6).toExponential(2)} size or<br>`
+    string+=`Int array of max ${((MemoryLimit*10**6)/4).toExponential(2)} size or<br>`
+    string+=`Long long array of max ${((MemoryLimit*10**6)/8).toExponential(2)} size or<br>`
+    string+=`int128 array of max ${((MemoryLimit*10**6)/16).toExponential(2)} size or<br>`
+    string+=`${((MemoryLimit*10**6)/120).toExponential(2)} python tuples of any size or<br>`
+    string+=`Python List of max ${((MemoryLimit*10**6)/8).toExponential(2)} size<br>`
+    document.getElementById("memoryinfo").innerHTML=string;
+    beautify("memoryinfo");
+}
 function resetMemory(){
     var stringarr=["bitsetSize","boolSize","intarraySize","longlongarraySize","__int128_tarraySize","pythontupleSize","pythonlistSize"]
     for(var i=0;i<stringarr.length;i++){
         document.getElementById(stringarr[i]).value=0
     }
     document.getElementById("memory").innerHTML="Memory usage is 0 KB";
-    beautify("memory")
+    document.getElementById("memoryinfo").innerHTML="";
+    beautify("memory");
+
 }
 function resettime(){
     string="Time Taken for Cpp+17: 0s"+
