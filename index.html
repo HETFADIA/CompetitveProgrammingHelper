@@ -25,6 +25,7 @@
                 <li><a href="#spfGen" id="linker">Prime Factorization in a Range</a></li>
                 <li><a href="#treeGen" id="linker">Tree of n nodes</a></li>
                 <li><a href="#timecalc" id="linker">Approx Time for a Program</a></li>
+                <li><a href="#memorycalc" id="linker">Memory for a Program</a></li>
             </ul>
         </nav>
     </header>
@@ -350,6 +351,65 @@
             <br>
             Time Taken for Pypy3: 0s
             
+        </div>
+        
+    </div>
+    <div class="memory label" id="memorycalc">
+
+        <span class="text">
+            
+            Enter the size of following arrays used in program:
+        </span>
+        <br>
+        <span class="bitset">
+            Bitset
+        </span>
+        <input type="text" id="bitsetSize" value="0">
+        <br>
+        <span class="bool">
+            Bool array
+        </span>
+        <input type="text" id="boolSize" value="0">
+        <br>
+        <span class="intarray">
+            int array
+        </span>
+        <input type="text" id="intarraySize" value="0">
+        <br>
+        <span class="longlongarray">
+            long long array
+        </span>
+        <input type="text" id="longlongarraySize" value="0">
+        <br>
+        <span class="text">
+            
+            __int128_t array
+        </span>
+        <input type="text" id="__int128_tarraySize" value="0">
+        <br>
+        
+        <span class="text">
+            
+            no of python tuples
+        </span>
+        <input type="text" id="pythontupleSize" value="0" >
+        <br>
+        <span class="text">
+            
+            python list
+        </span>
+        <input type="text" id="pythonlistSize" value="0" >
+        <br>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="calculateMemory()">Calculate Memory</button>
+        <button type="button" class="btn btn-primary" onclick="resetMemory()">Clear</button>
+        
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('memory');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="memory" role="alert">
+            Memory Usage : 0 MB
         </div>
         
     </div>

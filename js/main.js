@@ -486,6 +486,53 @@ function calculate(){
     document.getElementById("time").innerHTML+="Python3(fastio) is "+tpy+"s"+"<br>";
     document.getElementById("time").innerHTML+="Pypy3(fastio) is "+tpypy+"s"+"<br>";
     beautify("time");
+    beautify("memory")
+}
+function __calculateMemory(sizearray,memory){
+    var res=0;
+    for(var i=0;i<sizearray.length;i++){
+        res+=Math.ceil(sizearray[i]*memory[i]);
+        console.log(res)
+    }
+
+    res=(res/10**6).toFixed(3)
+    console.log(res)
+    return res;
+}
+function calculateMemory(){
+    var stringarr=["bitsetSize","boolSize","intarraySize","longlongarraySize","__int128_tarraySize","pythontupleSize","pythonlistSize"]
+    var bitset = eval(document.getElementById(stringarr[0]).value);
+    var bool = eval(document.getElementById(stringarr[1]).value);
+    var int = eval(document.getElementById(stringarr[2]).value);
+    var ll = eval(document.getElementById(stringarr[3]).value);
+    var int128 = eval(document.getElementById(stringarr[4]).value);
+    var pytuple = eval(document.getElementById(stringarr[5]).value);
+    var pylist = eval(document.getElementById(stringarr[6]).value);
+    var ispython=pylist | pytuple;
+    console.log(bool)
+    var sizearray=[bitset,bool,int,ll,int128,pytuple,pylist]
+    var memory=[1/8,1,4,8,16,120,36]
+    var MemoryUsed=__calculateMemory(sizearray,memory);
+    let string=`Memory usage is ${MemoryUsed} MB<br>`
+    if(MemoryUsed>=256){
+        string+="Memory Usage is High<br>"
+        if(ispython){
+            string+="Use tuples and bitArray to reduce memory<br>";
+        }
+        else{
+            string+="Use bitset to reduce memory<br>";
+        }
+    }
+    document.getElementById("memory").innerHTML=string;
+    beautify("memory")
+}
+function resetMemory(){
+    var stringarr=["bitsetSize","boolSize","intarraySize","longlongarraySize","__int128_tarraySize","pythontupleSize","pythonlistSize"]
+    for(var i=0;i<stringarr.length;i++){
+        document.getElementById(stringarr[i]).value=0
+    }
+    document.getElementById("memory").innerHTML="Memory usage is 0 MB";
+    beautify("memory")
 }
 function resettime(){
     string="Time Taken for Cpp+17: 0s"+
