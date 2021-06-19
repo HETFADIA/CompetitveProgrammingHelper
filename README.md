@@ -1,4 +1,4 @@
-<p>Click below to use Competitive Programming Helper</p>
+<p aling="center">Click below to use Competitive Programming Helper</p>
 https://hetfadia.github.io/CompetitveProgrammingHelper/
 
 <details open="open">
@@ -7,15 +7,11 @@ https://hetfadia.github.io/CompetitveProgrammingHelper/
     <li><a href="#About">About</a></li>
     <li><a href="#howtorun">Instructions on How to Run</a></li>
     <li><a href="#input">Input features</a></li>
-    <li><a href="#Monte-Carlo-Simulation">Monte Carlo Simulation</a></li>
-    <li><a href="#How-to-Select-and-Unselect-a-cell">How to Select and Unselect a cell</a></li>
-    <li><a href="#Details-about-the-page">Details about the page</a></li>
-    <li><a href="#Randomly-Select-Button">Simulation</a></li>
-    <li><a href="#Data-Structures-Used">Data Structures Used</a></li>
-    <li><a href="#Implementation">Implementation</a></li>
-    <li><a href="#timecomplexity">Time Complexity</a></li>
+    <li><a href="#algoused">Algorithms Used</a></li>
+    <li><a href="#Features">Features</a></li>
+    <li><a href="#Warnings">Warnings</a></li>
     <li><a href="#ScreenShots">ScreenShots</a></li>
-    <li><a href="#sources">Sources</a></li>
+    
   </ol>
 </details>
 
@@ -67,6 +63,8 @@ The program automatically evaluates the input.
   Thus any integer expression in any of the input boxes can be replaced by 1e7, log2(3) and the program will work fine.
 </p>
 
+<p id="algoused"></p>
+
 ## Algorithms used
 
 <p>
@@ -87,11 +85,27 @@ The Program automatically detects whether SPF and Sieve can fasten the code. If 
 <p>The program input accepts integers as well as scientific notations.</p>
 <p>The Test cases generator also gives a colored output.</p>
 
+
+
 ## Warning
 
 <p>
 The program input currently only generates array of integers in random integers.
-</p>
+</>
 <p>
 For using string and characters in sort, you have to input manually like 'a' 'abc' 'str' 't'
+</p>
+
+
+<p id="ScreenShots"></p>
+
+## Screen Shots
+
+Here are the few Screenshots
+
+<p>
+  <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/primeFactorsRange.png" alt="Logo" width="1080" height="500">
+</p>
+<p>
+  <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/primesRange.png" alt="Logo" width="1080" height="500">
 </p>
