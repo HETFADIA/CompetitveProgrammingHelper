@@ -1,6 +1,9 @@
-<p aling="center">Click below to use Competitive Programming Helper</p>
+<p align="center">Click below to use Competitive Programming Helper</p>
+<p align="center">
 https://hetfadia.github.io/CompetitveProgrammingHelper/
-
+</p>
+<br>
+<br>
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
@@ -103,6 +106,15 @@ For using string and characters in sort, you have to input manually like 'a' 'ab
 
 Here are the few Screenshots
 
+<p>
+  <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/array.png" alt="Logo" width="1080" height="500">
+</p>
+<p>
+  <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/permutation.png" alt="Logo" width="1080" height="500">
+</p>
+<p>
+  <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/prevprimes.png" alt="Logo" width="1080" height="500">
+</p>
 <p>
   <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/primeFactorsRange.png" alt="Logo" width="1080" height="500">
 </p>
