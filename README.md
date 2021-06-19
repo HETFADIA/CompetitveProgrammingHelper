@@ -1,12 +1,34 @@
 <p>Click below to use Competitive Programming Helper</p>
 https://hetfadia.github.io/CompetitveProgrammingHelper/
 
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#About">About</a></li>
+    <li><a href="#howtorun">Instructions on How to Run</a></li>
+    <li><a href="#input">Input features</a></li>
+    <li><a href="#Monte-Carlo-Simulation">Monte Carlo Simulation</a></li>
+    <li><a href="#How-to-Select-and-Unselect-a-cell">How to Select and Unselect a cell</a></li>
+    <li><a href="#Details-about-the-page">Details about the page</a></li>
+    <li><a href="#Randomly-Select-Button">Simulation</a></li>
+    <li><a href="#Data-Structures-Used">Data Structures Used</a></li>
+    <li><a href="#Implementation">Implementation</a></li>
+    <li><a href="#timecomplexity">Time Complexity</a></li>
+    <li><a href="#ScreenShots">ScreenShots</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</details>
+
+<p id="About"><p>
+
 ## About The Project
 
 <p>You can create Random Arrays, Random Permutations, Primes, PrimesCount, NextPrimes, PreviousPrimes, Prime Factors of Numbers in a Given Range, Random Trees of N nodes, Approx Time for a program, Memory used by a Program etc using this project.</p>
 <p>The Generated output can be used to test a code, hack a code, debug a code easily and in no time.</p>
 <p>The output can also determine the time the code would take when submitted so that we can determine whether it is TLE or not.</p>
 <p>Using the above functionalities we can also simple test cases, worst test cases etc</p>
+
+<p id="howtorun"></p>
 
 ## Instructions on How to Run
 
@@ -16,7 +38,9 @@ https://hetfadia.github.io/CompetitveProgrammingHelper/
 <p>Click on Generate button to generate the output(arrays or permutations or prime factors).</p>
 <p>Click on clear button to reset the generated output.</p>
 
-## Evaluation of the input
+<p id="input"></p>
+
+## Input Features
 
 The program automatically evaluates the input.
 
