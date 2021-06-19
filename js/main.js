@@ -511,7 +511,7 @@ function calculateMemory(){
     var ispython=pylist | pytuple;
     console.log(bool)
     var sizearray=[bitset,bool,int,ll,int128,pytuple,pylist]
-    var memory=[1/8,1,4,8,16,120,8]
+    var memory=[1/8,1,4,8,16,8,8]
     var MemoryUsedBytes=__calculateMemory(sizearray,memory);
     let string="";
     if(MemoryUsedBytes<10**3){
@@ -531,7 +531,7 @@ function calculateMemory(){
     if(MemoryUsedBytes>=MemoryLimit*10**6){
         string+="Memory Usage is High<br>"
         if(ispython){
-            string+="Use tuples and bitArray to reduce memory<br>";
+            string+="Use bytesArray or bitArray to reduce memory<br>";
         }
         else{
             string+="Use bitset to reduce memory<br>";
@@ -549,7 +549,7 @@ function calculateMemoryInfo(){
     string+=`Int array of max ${((MemoryLimit*10**6)/4).toExponential(2)} size or<br>`
     string+=`Long long array of max ${((MemoryLimit*10**6)/8).toExponential(2)} size or<br>`
     string+=`int128 array of max ${((MemoryLimit*10**6)/16).toExponential(2)} size or<br>`
-    string+=`${((MemoryLimit*10**6)/120).toExponential(2)} python tuples of any size or<br>`
+    string+=`Python List of max ${((MemoryLimit*10**6)/8).toExponential(2)} size<br>`
     string+=`Python List of max ${((MemoryLimit*10**6)/8).toExponential(2)} size<br>`
     document.getElementById("memoryinfo").innerHTML=string;
     beautify("memoryinfo");
