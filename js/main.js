@@ -491,12 +491,11 @@ function calculate(){
 function __calculateMemory(sizearray,memory){
     var res=0;
     for(var i=0;i<sizearray.length;i++){
-        res+=Math.ceil(sizearray[i]*memory[i]);
-        console.log(res)
+        res+=sizearray[i]*memory[i];
+
     }
 
-    res=Math.ceil(res/10**3)
-    console.log(res)
+    
     return res;
 }
 function calculateMemory(){
@@ -512,11 +511,23 @@ function calculateMemory(){
     console.log(bool)
     var sizearray=[bitset,bool,int,ll,int128,pytuple,pylist]
     var memory=[1/8,1,4,8,16,120,8]
-    var MemoryUsedKB=__calculateMemory(sizearray,memory);
-    var MemoryUsedMB=Math.ceil(MemoryUsedKB/1000);
-    let string=`Memory usage is ${MemoryUsedKB} KB<br>`
-    string+=`Memory usage is ${MemoryUsedMB} MB<br>`
-    if(MemoryUsedMB>=256){
+    var MemoryUsedBytes=__calculateMemory(sizearray,memory);
+    let string="";
+    if(MemoryUsedBytes<10**3){
+        string+=`Memory usage is ${MemoryUsedBytes} Bytes<br>`
+    }
+    else if(MemoryUsedBytes<10**6){
+        string+=`Memory usage is ${(MemoryUsedBytes/1000).toPrecision(4)} KB<br>`
+    }
+    else if(MemoryUsedBytes<10**9){
+        string+=`Memory usage is ${(MemoryUsedBytes/10**6).toPrecision(4)} MB<br>`
+    }
+    else{
+        string+=`Memory usage is ${(MemoryUsedBytes/10**9).toPrecision(4)} GB<br>`
+    }
+    
+    
+    if(MemoryUsedBytes>=256*10**6){
         string+="Memory Usage is High<br>"
         if(ispython){
             string+="Use tuples and bitArray to reduce memory<br>";
