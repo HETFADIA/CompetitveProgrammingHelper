@@ -726,11 +726,12 @@ function nthCatalan(n){
     if(n==0){
         return 1;
     }
-    catalanarr=[]
-    for(var i=0;i<=n;i++){
+    let start=catalanarr.length;
+    for(var i=start;i<=n;i++){
         catalanarr.push(1);
     }
-    for(var i=1;i<=n;i++){
+    if(start==0){start++;}
+    for(var i=start;i<=n;i++){
         if(n<=500){
 
             catalanarr[i]=catalanarr[i-1]*(2*(2*i+1))/(i+2)
