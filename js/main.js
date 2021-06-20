@@ -202,48 +202,57 @@ function sortarray(){
     array.reverse();
     document.getElementById("revsortedout").innerHTML=arraytostring(array);
 }
-function zeroone01(n){
+function zeroone01(n,m){
     let arr=['0','1']
     let res="";
-    for(let i=0;i<n;i++){
-        var indexa=random(0,arr.length)
-        console.log(indexa)
-        res+=arr[indexa];
+    for(let j=0;j<m;j++){
+        for(let i=0;i<n;i++){
+            var indexa=random(0,arr.length)
+            res+=arr[indexa];
+        }
+        res+="<br>"
     }
     return res;
 }
-function stardot(n){
+function stardot(n,m){
     let arr=['.','*']
     let res="";
-    for(let i=0;i<n;i++){
-        var indexa=random(0,arr.length)
-        console.log(indexa)
-        res+=arr[indexa];
+    for(let j=0;j<m;j++){
+        for(let i=0;i<n;i++){
+            var indexa=random(0,arr.length)
+            res+=arr[indexa];
+        }
+        res+="<br>"
     }
     return res;
 }
-function zeronine09(n){
+function zeronine09(n,m){
     let arr=['0','1','2','3','4','5','6','7','8','9']
     let res="";
-    for(let i=0;i<n;i++){
-        var indexa=random(0,arr.length)
-        console.log(indexa)
-        res+=arr[indexa];
+    for(let j=0;j<m;j++){
+        for(let i=0;i<n;i++){
+            var indexa=random(0,arr.length)
+            res+=arr[indexa];
+        }
+        res+="<br>"
     }
     return res;
 }
-function az(n){
+function az(n,m){
     let arr="abcdefghijklmnopqrstuvwxyz"
     let res="";
-    for(let i=0;i<n;i++){
-        var indexa=random(0,arr.length)
-        console.log(indexa)
-        res+=arr[indexa];
+    for(let j=0;j<m;j++){
+        for(let i=0;i<n;i++){
+            var indexa=random(0,arr.length)
+            res+=arr[indexa];
+        }
+        res+="<br>"
     }
     return res;
 }
 function genString(){
     var n=stringsize=document.getElementById("stringSize").value;
+    var m=stringwidth=document.getElementById("stringwidth").value;
     console.log(stringsize)
     var type;
     var arrtype=['01','0-9','a-z','*.']
@@ -261,19 +270,22 @@ function genString(){
     }
     let outstring="";
     if(type=='01'){
-        outstring=zeroone01(n);
+        outstring=zeroone01(n,m);
     }
     else if(type=='0-9'){
-        outstring=zeronine09(n);
+        outstring=zeronine09(n,m);
     }
     else if(type=='a-z'){
-        outstring=az(n);
+        outstring=az(n,m);
     }
     else if(type=='*.'){
-        outstring=stardot(n);
+        outstring=stardot(n,m);
     }
     document.getElementById("string").innerHTML=outstring;
 
+}
+function resetgenString(){
+    document.getElementById("string").innerHTML=""
 }
 function resetsortarray(){
     document.getElementById("sortedout").innerHTML="";
