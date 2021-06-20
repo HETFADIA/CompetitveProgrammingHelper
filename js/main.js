@@ -662,7 +662,7 @@ function generateCatalan(){
     result=nthCatalan(n);
     if(typeof result=="bigint"){
         result=result.toString();
-        result=result.slice(0,2)+"e+"+(result.length-2)
+        result=result.slice(0,1)+"e+"+(result.length-1)
     }
     document.getElementById("catalan").innerHTML=result;
     beautify("catalan")
