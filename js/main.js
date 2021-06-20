@@ -202,6 +202,79 @@ function sortarray(){
     array.reverse();
     document.getElementById("revsortedout").innerHTML=arraytostring(array);
 }
+function zeroone01(n){
+    let arr=['0','1']
+    let res="";
+    for(let i=0;i<n;i++){
+        var indexa=random(0,arr.length)
+        console.log(indexa)
+        res+=arr[indexa];
+    }
+    return res;
+}
+function stardot(n){
+    let arr=['.','*']
+    let res="";
+    for(let i=0;i<n;i++){
+        var indexa=random(0,arr.length)
+        console.log(indexa)
+        res+=arr[indexa];
+    }
+    return res;
+}
+function zeronine09(n){
+    let arr=['0','1','2','3','4','5','6','7','8','9']
+    let res="";
+    for(let i=0;i<n;i++){
+        var indexa=random(0,arr.length)
+        console.log(indexa)
+        res+=arr[indexa];
+    }
+    return res;
+}
+function az(n){
+    let arr="abcdefghijklmnopqrstuvwxyz"
+    let res="";
+    for(let i=0;i<n;i++){
+        var indexa=random(0,arr.length)
+        console.log(indexa)
+        res+=arr[indexa];
+    }
+    return res;
+}
+function genString(){
+    var n=stringsize=document.getElementById("stringSize").value;
+    console.log(stringsize)
+    var type;
+    var arrtype=['01','0-9','a-z','*.']
+    if(document.getElementById(arrtype[0]).checked){
+        type=arrtype[0]
+    }
+    else if(document.getElementById(arrtype[1]).checked){
+        type=arrtype[1]
+    }
+    else if(document.getElementById(arrtype[2]).checked){
+        type=arrtype[2]
+    }
+    else if(document.getElementById(arrtype[3]).checked){
+        type=arrtype[3]
+    }
+    let outstring="";
+    if(type=='01'){
+        outstring=zeroone01(n);
+    }
+    else if(type=='0-9'){
+        outstring=zeronine09(n);
+    }
+    else if(type=='a-z'){
+        outstring=az(n);
+    }
+    else if(type=='*.'){
+        outstring=stardot(n);
+    }
+    document.getElementById("string").innerHTML=outstring;
+
+}
 function resetsortarray(){
     document.getElementById("sortedout").innerHTML="";
     document.getElementById("revsortedout").innerHTML="";
