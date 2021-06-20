@@ -660,7 +660,8 @@ function generateCatalan(){
     var n=eval(document.getElementById("catalanNumber").value);
     n=parseInt(n);
     result=nthCatalan(n);
-    if(typeof result=="BigInt"){
+    if(typeof result=="bigint"){
+        result=result.toString();
         result=result.slice(0,2)+"e+"+(result.length-2)
     }
     document.getElementById("catalan").innerHTML=result;
