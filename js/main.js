@@ -636,3 +636,27 @@ function generateRandomTree(){
 function resetRandomTree(){
     document.getElementById("tree").innerHTML="";
 }
+var catalanarr=[]
+function nthCatalan(n){
+    if(n==0){
+        return 1;
+    }
+    catalanarr=[]
+    for(var i=0;i<=n;i++){
+        catalanarr.push(1);
+    }
+    for(var i=1;i<=n;i++){
+        catalanarr[i]=catalanarr[i-1]*(2*(2*i+1))/(i+2)
+    }
+    return catalanarr[n-1]
+}
+function generateCatalan(){
+    var n=eval(document.getElementById("catalanNumber").value);
+    n=parseInt(n);
+    result=nthCatalan(n);
+    document.getElementById("catalan").innerHTML=result;
+    beautify("catalan")
+}
+function resetCatalan(){
+    document.getElementById("catalan").innerHTML="";
+}
