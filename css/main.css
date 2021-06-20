@@ -116,3 +116,7 @@ header {
   padding: 0px;
   margin: 0px;
 }
+#largetext{
+  font-size: 28px;
+  color:rgb(26, 179, 250);
+}
