@@ -646,7 +646,13 @@ function nthCatalan(n){
         catalanarr.push(1);
     }
     for(var i=1;i<=n;i++){
-        catalanarr[i]=catalanarr[i-1]*(2*(2*i+1))/(i+2)
+        if(n<=500){
+
+            catalanarr[i]=catalanarr[i-1]*(2*(2*i+1))/(i+2)
+        }
+        else{
+            catalanarr[i]=BigInt(catalanarr[i-1])*BigInt(2n*(2n*BigInt(i)+1n))/(BigInt(i)+2n);
+        }
     }
     return catalanarr[n-1]
 }
@@ -654,6 +660,9 @@ function generateCatalan(){
     var n=eval(document.getElementById("catalanNumber").value);
     n=parseInt(n);
     result=nthCatalan(n);
+    if(typeof result=="BigInt"){
+        result=result.slice(0,2)+"e+"+(result.length-2)
+    }
     document.getElementById("catalan").innerHTML=result;
     beautify("catalan")
 }
