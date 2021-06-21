@@ -736,7 +736,7 @@ function nthCatalan(n){
     if(n==0){
         return 1;
     }
-    if(n>1e5){
+    if(n>7*1e4){
         return verybigcatalan(n);
     }
     let start=catalanarr.length;
