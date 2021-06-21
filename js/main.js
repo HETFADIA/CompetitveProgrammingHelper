@@ -725,9 +725,19 @@ function resetRandomTree(){
     document.getElementById("tree").innerHTML="";
 }
 var catalanarr=[]
+function verybigcatalan(n){
+    let start=1n;
+    for(var i=1;i<=n;i++){
+        start=(start*(2n*(2n*BigInt(i-1)+1n)))/(BigInt(i-1)+2n)
+    }
+    return start;
+}
 function nthCatalan(n){
     if(n==0){
         return 1;
+    }
+    if(n>1e5){
+        return verybigcatalan(n);
     }
     let start=catalanarr.length;
     for(var i=start;i<=n;i++){
