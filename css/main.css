@@ -80,12 +80,14 @@ header {
   transition: all 0.3s ease 0s;
 } */
 .nav_links li a:hover {
+  cursor: pointer;
   color: blue;
 }
 #linker {
   padding-left: 2px;
-  color: rgb(240, 71, 212);
-  font-style: italic;
+  color: rgb(220, 71, 240);
+  font-size:large;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .redcolor {
   padding: 0px;
