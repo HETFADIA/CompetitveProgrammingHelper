@@ -42,8 +42,7 @@ body {
 
 div {
   padding: 0px;
-  padding-top: 20px;
-  padding-bottom: 175px;
+
   /* color: rgb(226, 208, 44);
   font-family: sans-serif;
   background-color: yellowgreen; */
@@ -110,6 +109,7 @@ header {
   filter:blur(0.1px);
   /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   font-family:'font-1';
+  cursor:pointer;
   
 }
 .redcolor {
