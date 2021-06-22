@@ -17,7 +17,7 @@ body {
         rgba(255, 255, 255, 0.3),
         rgba(255, 255, 255, 0.1)
       ),
-      url("../img/background/travel.jpeg");
+      url("../img/background/alien.jpg");
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -87,7 +87,7 @@ header {
 }
 #linker {
   padding-left: 2px;
-  color: rgb(241, 243, 131);
+  color: black;
   font-size:large;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
