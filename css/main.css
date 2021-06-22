@@ -7,7 +7,22 @@
   align-items: center;
   /* background: linear-gradient(0deg, #000, #262626); */
 }
-
+@font-face {
+  font-family: 'font-1';
+  src:url('fonts/AstroSpace-eZ2Bg.ttf');
+}
+@font-face {
+  font-family: 'font-2';
+  src:url('fonts/MandatoryPlaything-nRRd0.ttf');
+}
+@font-face {
+  font-family: 'font-3';
+  src:url('fonts/Revamped-X3q1a.ttf');
+}
+@font-face {
+  font-family: 'font-4';
+  src:url('fonts/Squaresharps-D663.ttf');
+}
 body {
   color: blue;
   font-family: verdana, helvetica;
@@ -86,10 +101,15 @@ header {
   color: blue;
 }
 #linker {
+  size: 15px;
   padding-left: 2px;
-  color: black;
+  color: rgb(7, 7, 6);
   font-size:large;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #1fdbe9;
+  border-radius: 4px;
+  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family:'font-1';
+  
 }
 .redcolor {
   padding: 0px;
