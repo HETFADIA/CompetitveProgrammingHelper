@@ -107,7 +107,7 @@ header {
 #linker {
   size: 15px;
   padding-left: 2px;
-  color: rgb(0, 0, 0);
+  color: rgb(230, 48, 236);
   font-size:large;
   /* background-color: #1fdbe9; */
   /* border-radius: 4px; */
@@ -116,6 +116,7 @@ header {
   font-family:'font-1';
   cursor:pointer;
   font-style: italic;
+  text-decoration: underline;
 }
 .redcolor {
   padding: 0px;

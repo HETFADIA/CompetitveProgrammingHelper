@@ -112,11 +112,12 @@ function random(a,b){
 function showarray(string){
     document.getElementById("links").style.display="none"
     document.getElementById(string).style.display="block"
-
+    // document.body.style.backgroundImage='url("../img/background/alien.jpg")';
 }
 function home(string){
     document.getElementById("links").style.display="block"
     document.getElementById(string).style.display="none"
+    document.body.style.backgroundImage='none';
 }
 function generate(){
     
@@ -584,6 +585,7 @@ function calculate(){
     document.getElementById("time").innerHTML+="Pypy3(fastio) is "+tpypy+"s"+"<br>";
     beautify("time");
     beautify("memory")
+    document.body.style.backgroundImage="none";
 }
 function __calculateMemory(sizearray,memory){
     var res=0;
