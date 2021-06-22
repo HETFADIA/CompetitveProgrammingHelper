@@ -109,6 +109,11 @@ function random(a,b){
     let difference=b-a;
     return Math.floor(minimum+Math.random()*difference);
 }
+function showarray(string){
+    document.getElementById("links").style.display="none"
+    document.getElementById(string).style.display="block"
+
+}
 function generate(){
     
     var arraysize = parseInt(eval(document.getElementById("arraySize").value));

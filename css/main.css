@@ -116,7 +116,49 @@ header {
   padding: 0px;
   margin: 0px;
 }
-#largetext{
+#largetext {
   font-size: 28px;
-  color:rgb(26, 179, 250);
+  color: rgb(26, 179, 250);
+}
+#arrayGen {
+  display: none;
+}
+#arrayGenSort {
+  display: none;
+}
+#stringGen {
+  display: none;
+}
+#tcGen {
+  display: none;
+}
+#permutationGen {
+  display: none;
+}
+#prevPrimeGen {
+  display: none;
+}
+#nextPrimeGen {
+  display: none;
+}
+#primeRangeGen {
+  display: none;
+}
+#primeCountGen {
+  display: none;
+}
+#spfGen {
+  display: none;
+}
+#treeGen {
+  display: none;
+}
+#catalanGen {
+  display: none;
+}
+#timecalc {
+  display: none;
+}
+#memorycalc {
+  display: none;
 }
