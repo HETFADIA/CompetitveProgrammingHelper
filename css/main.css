@@ -95,10 +95,10 @@ header {
 /* .nav_links li a {
   transition: all 0.3s ease 0s;
 } */
-.nav_links{
+/* .nav_links{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
+} */
 .nav_links li a:hover {
   cursor: pointer;
   color: blue;
@@ -111,11 +111,11 @@ header {
   font-size:large;
   /* background-color: #1fdbe9; */
   /* border-radius: 4px; */
-  filter:blur(0.1px);
+  /* filter:blur(0.1px); */
   /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   font-family:'font-1';
   cursor:pointer;
-  background-color: aqua;
+
  
   
 }

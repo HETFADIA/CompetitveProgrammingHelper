@@ -7,33 +7,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Competitive Programming Helper</title>
 </head>
+
 <body onload="calculate()">
     <div open="open" id="links">
-        
+
         <ul class="nav_links">
-            <div  class="alert alert-success" id="linker" onclick="showarray('arrayGen')" >Array Generator</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('arrayGenSort')">Sort Array</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('stringGen')">Random String</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('tcGen')">Test Cases Generator</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('permutationGen')">Permutation Generator</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('prevPrimeGen')">Prev Primes Finder</div>
-            <div class="alert alert-success"  id="linker"  onclick="showarray('nextPrimeGen')">Next Primes Finder</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('primeRangeGen')">Get Primes in a Range</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('primeCountGen')">Prime count in a Range</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('spfGen')">Prime Factorization in a Range</div>
-            <div class="alert alert-success"  id="linker"  onclick="showarray('treeGen')">Tree of n nodes</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('catalanGen')">nth Catalan</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('timecalc')">Approx Time for a Program</div>
-            <div class="alert alert-success"  id="linker" onclick="showarray('memorycalc')">Memory for a Program</div>
-          
+            <div id="linker" onclick="showarray('arrayGen')">Array Generator</div>
+            <div id="linker" onclick="showarray('arrayGenSort')">Sort Array</div>
+            <div id="linker" onclick="showarray('stringGen')">Random String</div>
+            <div id="linker" onclick="showarray('tcGen')">Test Cases Generator</div>
+            <div id="linker" onclick="showarray('permutationGen')">Permutation Generator</div>
+            <div id="linker" onclick="showarray('prevPrimeGen')">Prev Primes Finder</div>
+            <div id="linker" onclick="showarray('nextPrimeGen')">Next Primes Finder</div>
+            <div id="linker" onclick="showarray('primeRangeGen')">Get Primes in a Range</div>
+            <div id="linker" onclick="showarray('primeCountGen')">Prime count in a Range</div>
+            <div id="linker" onclick="showarray('spfGen')">Prime Factorization in a Range</div>
+            <div id="linker" onclick="showarray('treeGen')">Tree of n nodes</div>
+            <div id="linker" onclick="showarray('catalanGen')">nth Catalan</div>
+            <div id="linker" onclick="showarray('timecalc')">Approx Time for a Program</div>
+            <div id="linker" onclick="showarray('memorycalc')">Memory for a Program</div>
+
         </ul>
-      </div>
-    
+    </div>
+
     <div class="Array label" id="arrayGen">
-        
+
         <h2>
             Random Array Generator
         </h2>
@@ -41,7 +42,7 @@
 
 
         <span class="text">Array size :</span><input type="text" id="arraySize" value="5">
-         
+
         <span class="text">Min value:</span> <input type="text" id="minValue" value="0">
         <span class="text">Max value:</span> <input type="text" id="maxValue" value="10">
         <br>
@@ -53,25 +54,25 @@
         <br>
         <a href="#" onclick="CopyToClipboard('myInput');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="myInput" role="alert">
-            
+
         </div>
         <a href="#" onclick="CopyToClipboard('myInput1');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="myInput1" role="alert">
-            
+
         </div>
     </div>
     <div class="Array label sort" id="arrayGenSort">
-        
+
         <h2>
             Sort Array in Ascending and Descending order
         </h2>
         <br>
 
 
-        <span class="text">Array  :</span>
+        <span class="text">Array :</span>
         <br>
         <input type="text" id="array" value="1 2 3 -8" size="30">
-         
+
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="sortarray()">Sort Array</button>
@@ -81,16 +82,16 @@
         <br>
         <a href="#" onclick="CopyToClipboard('sortedout');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="sortedout" role="alert">
-            
+
         </div>
         <a href="#" onclick="CopyToClipboard('revsortedout');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="revsortedout" role="alert">
-            
+
         </div>
-        
+
     </div>
     <div class="string gen" id="stringGen">
-        
+
         <h2>
             Generate String
         </h2>
@@ -103,11 +104,11 @@
         <label for="a-z">a-z</label><br>
         <input type="radio" id="0-9" name="string" value="0-9">
         <label for="0-9">0-9</label><br>
-        
+
         <input type="radio" id="*." name="string" value="*.">
         <label for=".*">*.</label><br>
 
-        
+
         <br>
         <button type="button" class="btn btn-success" onclick="genString()">Generate string</button>
         <button type="button" class="btn btn-primary" onclick="resetgenString()">Clear</button>
@@ -116,12 +117,12 @@
         <br>
         <a href="#" onclick="CopyToClipboard('string');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="string" role="alert">
-            
+
         </div>
-        
+
     </div>
     <div class="tc gen" id="tcGen">
-        
+
         <h2>
             Generate Test Cases
         </h2>
@@ -129,9 +130,9 @@
 
         <span class="text">Test Cases:</span>
         <input class="check-input" type="checkbox" id="testCases" name="testCases" value="TC" checked="true">
-        
-        
-         
+
+
+
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="genTC()">Generate TC</button>
@@ -141,16 +142,16 @@
         <br>
         <a href="#" onclick="CopyToClipboard('tc');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="tc" role="alert">
-            
+
         </div>
-        
+
     </div>
-    
+
     <div class="permutation label" id="permutationGen">
         <h2>
-            Permutation of 1..n 
+            Permutation of 1..n
         </h2>
-        
+
         <br>
         <span class="text">
             Enter n:
@@ -165,7 +166,7 @@
         <br>
         <a href="#" onclick="CopyToClipboard('outPermutation');return false;">Copy Text</a>
         <div class="alert alert-primary Permutation" id="outPermutation" role="alert">
-            
+
         </div>
     </div>
 
@@ -173,18 +174,18 @@
         <h2>
             Generate Previous Primes
         </h2>
-        
+
 
         <br>
         <span class="text">
-            Number :  
+            Number :
         </span>
         <input type="text" id="numberForPrevPrime" value="1e9+7">
         <br>
         <br>
         <span class="text">
-            
-            Number of Prev primes: 
+
+            Number of Prev primes:
         </span>
         <input type="text" id="numberOfPrevPrime" value="10">
         <br>
@@ -196,7 +197,7 @@
         <br>
         <a href="#" onclick="CopyToClipboard('PrevPrimes');return false;">Copy Text</a>
         <div class="alert alert-primary Permutation" id="PrevPrimes" role="alert">
-            
+
         </div>
     </div>
     <div class="nextPrime label" id="nextPrimeGen">
@@ -204,19 +205,19 @@
         <h2>
             Generate Next Primes
         </h2>
-        
+
         <br>
-        
+
         <span class="text">
-            
-            Number : 
+
+            Number :
         </span>
         <input type="text" id="numberForNextPrime" value="1e9+7">
         <br>
         <br>
         <span class="text">
-            
-            Number of Next primes: 
+
+            Number of Next primes:
         </span>
         <input type="text" id="numberOfNextPrime" value="10">
         <br>
@@ -228,7 +229,7 @@
         <br>
         <a href="#" onclick="CopyToClipboard('NextPrimes');return false;">Copy Text</a>
         <div class="alert alert-primary" id="NextPrimes" role="alert">
-            
+
         </div>
     </div>
 
@@ -238,15 +239,15 @@
         </h2>
         <br>
         <span class="text">
-            
-            Start Number :  
+
+            Start Number :
         </span>
         <input type="text" id="startnumber" value="2">
         <br>
         <br>
         <span class="text">
-            
-            End Number: 
+
+            End Number:
         </span>
         <input type="text" id="endnumber" value="1e2">
         <br>
@@ -258,32 +259,32 @@
         <br>
         <a href="#" onclick="CopyToClipboard('numberOfPrimesInRange');return false;">Copy Text</a>
         <div class="alert alert-primary" id="numberOfPrimesInRange" role="alert">
-            
+
         </div>
         <a href="#" onclick="CopyToClipboard('PrimesInRange');return false;">Copy Text</a>
         <div class="alert alert-primary" id="PrimesInRange" role="alert">
-            
+
         </div>
-        
+
     </div>
 
     <div class="primeCount label" id="primeCountGen">
         <h2>
             Primes Numbers Count in a Range
         </h2>
-        
+
 
         <br>
         <span class="text">
-            
-            Start Number :  
+
+            Start Number :
         </span>
         <input type="text" id="startnumberPrimeCount" value="1">
         <br>
         <br>
         <span class="text">
-            
-            End Number: 
+
+            End Number:
         </span>
         <input type="text" id="endnumberPrimeCount" value="1e6">
         <br>
@@ -295,25 +296,25 @@
         <br>
         <a href="#" onclick="CopyToClipboard('countnumberOfPrimesInRange');return false;">Copy Text</a>
         <div class="alert alert-primary" id="countnumberOfPrimesInRange" role="alert">
-            
+
         </div>
     </div>
     <div class="spf" id="spfGen">
         <h2>
             Primes Factors of numbers in the Range
         </h2>
-        
+
         <br>
         <span class="text">
-            
-            Start Number :  
+
+            Start Number :
         </span>
         <input type="text" id="startnumberspf" value="1">
         <br>
         <br>
         <span class="text">
-            
-            End Number: 
+
+            End Number:
         </span>
         <input type="text" id="endnumberspf" value="10">
         <br>
@@ -325,7 +326,7 @@
         <br>
         <a href="#" onclick="CopyToClipboard('spfInRange');return false;">Copy Text</a>
         <div class="alert alert-primary" id="spfInRange" role="alert">
-            
+
         </div>
     </div>
     <div class="tree" id="treeGen">
@@ -333,16 +334,16 @@
             Random Tree of n Nodes
         </h2>
         <br>
-        
-        
+
+
         <span class="text">
-            
+
             Enter n:
         </span>
         <input type="text" id="startnumbertree" value="5">
         <br>
         <br>
-        
+
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="generateRandomTree()">Generate Tree</button>
@@ -352,7 +353,7 @@
         <br>
         <a href="#" onclick="CopyToClipboard('tree');return false;">Copy Text</a>
         <div class="alert alert-primary" id="tree" role="alert">
-            
+
         </div>
     </div>
     <div class="catalan" id="catalanGen">
@@ -360,17 +361,17 @@
             Catalan of n
         </h2>
         <br>
-        
-        
+
+
         <span class="text">
-            
+
             Enter n (max 300000):
         </span>
         <input type="text" id="catalanNumber" value="9">
         <br>
         <br>
-        
-        
+
+
         <button type="button" class="btn btn-success" onclick="generateCatalan()">Find nth Catalan</button>
         <button type="button" class="btn btn-primary" onclick="resetCatalan()">Clear</button>
         <button type="button" class="btn btn-danger" onclick="home('catalanGen')">Back</button>
@@ -378,7 +379,7 @@
         <br>
         <a href="#" onclick="CopyToClipboard('catalan');return false;">Copy Text</a>
         <div class="alert alert-primary" id="catalan" role="alert">
-            
+
         </div>
     </div>
 
@@ -390,18 +391,18 @@
         </h2>
         <br>
         <span class="text">
-            
-            Input size: 
+
+            Input size:
         </span>
         <input type="text" id="inputSize" value="1e4">
         <span class="text">
-            
-            Output size: 
+
+            Output size:
         </span>
         <input type="text" id="outputSize" value="1e4">
         <br>
         <span class="text">
-            
+
             Loop:
         </span>
         <input type="text" id="loop" value="2*1e5*log2(2*1e5)" size="30">
@@ -411,7 +412,7 @@
         <button type="button" class="btn btn-success" onclick="calculate()">Calculate Time</button>
         <button type="button" class="btn btn-primary" onclick="resettime()">Clear Time</button>
         <button type="button" class="btn btn-danger" onclick="home('timecalc')">Back</button>
-        
+
         <br>
         <br>
         <a href="#" onclick="CopyToClipboard('time');return false;">Copy Text</a>
@@ -421,9 +422,9 @@
             Time Taken for Python3: 0s
             <br>
             Time Taken for Pypy3: 0s
-            
+
         </div>
-        
+
     </div>
     <div class="memory label" id="memorycalc">
         <h2>
@@ -431,7 +432,7 @@
         </h2>
         <br>
         <span class="text">
-            
+
             Enter the size of following arrays used in program:
         </span>
         <br>
@@ -469,16 +470,16 @@
         <input type="text" id="pythontupleSize" value="0" > -->
         <br>
         <span class="text">
-            
+
             python list
         </span>
-        <input type="text" id="pythonlistSize" value="0" >
+        <input type="text" id="pythonlistSize" value="0">
         <br>
         <span class="text">
-            
+
             Memory limit (in MB)
         </span>
-        <input type="text" id="MemoryLimit" value="256" >
+        <input type="text" id="MemoryLimit" value="256">
 
         <br>
         <br>
@@ -487,7 +488,7 @@
         <button type="button" class="btn btn-primary" onclick="calculateMemoryInfo()">Max size</button>
         <button type="button" class="btn btn-primary" onclick="resetMemory()">Clear</button>
         <button type="button" class="btn btn-danger" onclick="home('memorycalc')">Back</button>
-        
+
         <br>
         <br>
         <a href="#" onclick="CopyToClipboard('memory');return false;">Copy Text</a>
@@ -496,12 +497,12 @@
         </div>
         <a href="#" onclick="CopyToClipboard('memoryinfo');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="memoryinfo" role="alert">
-            
+
         </div>
-        
+
     </div>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
