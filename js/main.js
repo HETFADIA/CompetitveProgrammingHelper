@@ -589,7 +589,6 @@ function __calculateMemory(sizearray,memory){
     var res=0;
     for(var i=0;i<sizearray.length;i++){
         res+=sizearray[i]*memory[i];
-
     }
 
     
@@ -601,8 +600,10 @@ function calculateMemory(){
     var bool = eval(document.getElementById(stringarr[1]).value);
     var int = eval(document.getElementById(stringarr[2]).value);
     var ll = eval(document.getElementById(stringarr[3]).value);
-    var int128 = eval(document.getElementById(stringarr[4]).value);
-    var pytuple = eval(document.getElementById(stringarr[5]).value);
+    // var int128 = eval(document.getElementById(stringarr[4]).value);
+    // var pytuple = eval(document.getElementById(stringarr[5]).value);
+    var int128=0;
+    var pytuple=0;
     var pylist = eval(document.getElementById(stringarr[6]).value);
     var MemoryLimit=eval(document.getElementById("MemoryLimit").value)
     var ispython=pylist | pytuple;
