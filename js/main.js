@@ -114,6 +114,10 @@ function showarray(string){
     document.getElementById(string).style.display="block"
 
 }
+function home(string){
+    document.getElementById("links").style.display="block"
+    document.getElementById(string).style.display="none"
+}
 function generate(){
     
     var arraysize = parseInt(eval(document.getElementById("arraySize").value));
