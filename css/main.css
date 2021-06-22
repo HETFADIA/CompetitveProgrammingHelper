@@ -107,7 +107,7 @@ header {
 #linker {
   size: 15px;
   padding-left: 2px;
-  color: rgb(7, 7, 6);
+  color: rgb(0, 0, 0);
   font-size:large;
   /* background-color: #1fdbe9; */
   /* border-radius: 4px; */
@@ -115,9 +115,7 @@ header {
   /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   font-family:'font-1';
   cursor:pointer;
-
- 
-  
+  font-style: italic;
 }
 .redcolor {
   padding: 0px;
