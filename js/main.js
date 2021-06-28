@@ -26,7 +26,7 @@ function power(x,y,mod){
             res=(res*x)%mod;
         }
         y>>=1;
-        x*=x;
+        x=(x*x)%mod;
     }
     return res;
 }
