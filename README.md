@@ -131,3 +131,6 @@ Here are the few Screenshots
 <p>
   <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/memory.png" alt="Logo" width="1080" height="500">
 </p>
+<p>
+  <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/scientificCalculator.png" alt="Logo" width="1080" height="500">
+</p>
