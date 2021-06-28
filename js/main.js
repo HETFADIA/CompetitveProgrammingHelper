@@ -28,6 +28,19 @@ function int(a,b=-1){
     if(b==-1){
         return parseInt(a);
     }
+    else if(b==0){
+        
+        if(a.slice(0,2)=='0b'){
+            return parseInt(a.slice(2),2)
+        }
+        else if(a.slice(0,2)=="0x"){
+            return parseInt(a.slice(2),16)
+        }
+        else if(a.slice(0,2)=="0o"){
+            return parseInt(a,slice(2),10)
+        }
+        return parseInt(a,10)
+    }
     else{
         return parseInt(a,b);
     }
@@ -673,8 +686,8 @@ function calculateExpression(){
     document.getElementById("sciexp").innerHTML=expressionResult;
 }
 function resetExp(){
-    document.getElementById("expression").value=0
-    document.getElementById("sciexp").innerHTML=value;
+    document.getElementById("expression").value=0;
+    document.getElementById("sciexp").innerHTML=0;
 }
 function calculateMemoryInfo(){
     var MemoryLimit=eval(document.getElementById("MemoryLimit").value);
