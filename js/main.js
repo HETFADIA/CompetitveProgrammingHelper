@@ -24,6 +24,7 @@ function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
 function str(a){ return a.toString()}
 function float(a){return parseFloat(a)}
+function ord(a){return a.codePointAt(0)}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function iterlog(a,base=-1){
     if(base==-1){
