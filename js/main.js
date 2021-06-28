@@ -30,6 +30,12 @@ function power(x,y,mod){
     }
     return res;
 }
+function bin(a){
+    return a.toString(2);
+}
+function hex(a){
+    return a.toString(16);
+}
 pi=Math.PI;
 Pi=Math.PI;
 pI=Math.PI;
