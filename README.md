@@ -45,7 +45,7 @@ The program automatically evaluates the input.
 
 - `10` Evaluated as 10
 - `1e7` Evaluated as 10000000
-- `2*10*3/2` Evaluated as its value ie. 30
+- `2*(10*3)/2` Evaluated as its value ie. 30
 - `pow(10,5)` Evaluated as 100000
 - `power(a,b,c)` Evaluated as (a**b)%c
 - `sqrt(100)` Evaluated as 10
@@ -63,6 +63,8 @@ The program automatically evaluates the input.
 - `bin(a)` Evaluated as string of binary representation of a
 - `oct(a)` Evaluated as string of octal representation of a
 - `hex(a)` Evaluated as string of hexadecimal representation of a
+- `int(a,0)` Evaluated to integer form of a by automatically detecting base of a
+- `int(a,b)` Evaluated to the value of a in base b (eg int("100",2)=4)
 <p>
   Many other expressions are also evaluated by writing Math.atan, Math.acos etc.
 </p>
