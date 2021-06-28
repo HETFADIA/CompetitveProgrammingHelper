@@ -24,6 +24,7 @@ function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
 function str(a){ return a.toString()}
 function float(a){return parseFloat(a)}
+function chr(a){return String.fromCharCode(a)}
 function ord(a){return a.codePointAt(0)}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function iterlog(a,base=-1){
@@ -696,9 +697,15 @@ function calculateMemory(){
     beautify("memory")
 }
 function calculateExpression(){
-    var expressionResult = eval(document.getElementById("expression").value);
-    document.getElementById("sciexp").innerHTML=expressionResult;
-    beautify('sciexp')
+    console.log(document.getElementById("expression"))
+    if(document.getElementById("expression").value==""){
+        document.getElementById("sciexp").innerHTML="";
+    }
+    else{
+        var expressionResult = eval(document.getElementById("expression").value);
+        document.getElementById("sciexp").innerHTML=expressionResult;
+        beautify('sciexp')
+    }
 }
 function resetExp(){
     document.getElementById("expression").value="";
