@@ -19,6 +19,17 @@ function log2(a) { return Math.log2(a) };
 function log10(a) { return Math.log10(a) };
 function pow(a, b) { return Math.pow(a, b) };
 function exp(a) { return Math.exp(a) };
+function power(x,y,mod){
+    var res=1;
+    while(y){
+        if(y&1){
+            res=(res*x)%mod;
+        }
+        y>>=1;
+        x*=x;
+    }
+    return res;
+}
 pi=Math.PI;
 Pi=Math.PI;
 pI=Math.PI;

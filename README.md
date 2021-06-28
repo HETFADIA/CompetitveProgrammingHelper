@@ -47,6 +47,7 @@ The program automatically evaluates the input.
 - `1e7` Evaluated as 10000000
 - `2*10*3/2` Evaluated as its value ie. 30
 - `pow(10,5)` Evaluated as 100000
+- `power(a,b,c)` Evaluated as (a**b)%c
 - `sqrt(100)` Evaluated as 10
 - `cbrt(1000)` Evaluated as 10
 - `log(1000)` Evaluated as Math.log(1000)=6.9
