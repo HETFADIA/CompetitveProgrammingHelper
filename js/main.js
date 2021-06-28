@@ -24,6 +24,19 @@ function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
 function str(a){ return a.toString()}
 function float(a){return parseFloat(a)}
+function logbase(a,b){return Math.log(a)/Math.log(b);}
+function iterlog(a,base=-1){
+    if(base==-1){
+        base=Math.E;
+    }
+    let res=0;
+    while(a>=1){
+        a=logbase(a,base);
+        res++;
+    }
+    return res;
+}
+function logstar(a,b=-1){if(b==-1){b=Math.E}return iterlog(a,b);}
 function int(a,b=-1){
     if(b==-1){
         return parseInt(a);
@@ -684,10 +697,11 @@ function calculateMemory(){
 function calculateExpression(){
     var expressionResult = eval(document.getElementById("expression").value);
     document.getElementById("sciexp").innerHTML=expressionResult;
+    beautify('sciexp')
 }
 function resetExp(){
-    document.getElementById("expression").value=0;
-    document.getElementById("sciexp").innerHTML=0;
+    document.getElementById("expression").value="";
+    document.getElementById("sciexp").innerHTML="";
 }
 function calculateMemoryInfo(){
     var MemoryLimit=eval(document.getElementById("MemoryLimit").value);
