@@ -61,6 +61,7 @@ The program automatically evaluates the input.
 - `cos(1)` Evaluated as cos of 1 radian
 - `tan(1)` Evaluated as tan of 1 radian
 - `bin(a)` Evaluated as string of binary representation of a
+- `oct(a)` Evaluated as string of octal representation of a
 - `hex(a)` Evaluated as string of hexadecimal representation of a
 <p>
   Many other expressions are also evaluated by writing Math.atan, Math.acos etc.
