@@ -55,6 +55,8 @@ The program automatically evaluates the input.
 - `log10(1000)` Evaluated as Math.log10(1000)=3
 - `logstar(a,b)` Evaluated as iterative logarithm of a to the base b
 - `iterlog(a,b)` Evaluated as iterative logarithm of a to the base b
+- `chr(a)` Evaluated as the character having ascii value a
+- `ord(a)` Evaluated as the ascii value of a
 - `exp(3)` Evaluated as e raised to 3= 20.08
 - `pi` Evaluated as pi(pi, Pi, PI, pI all works here)
 - `e` Evaluated as e ie 2.73
