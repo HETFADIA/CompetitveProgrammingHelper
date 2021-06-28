@@ -26,6 +26,8 @@ function str(a){ return a.toString()}
 function float(a){return parseFloat(a)}
 function chr(a){return String.fromCharCode(a)}
 function ord(a){return a.codePointAt(0)}
+function list(a){var res=[];for(let i=0;i<a.length;i++){res+=a[i]};return res}
+function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function iterlog(a,base=-1){
     if(base==-1){
@@ -70,6 +72,17 @@ function power(x,y,mod){
         x=(x*x)%mod;
     }
     return res;
+}
+function range(start,stop=-1.1,step=1){
+    if(stop==-1.1){
+        stop=start;
+        start=0;
+    }
+    let arr=[];
+    for(let i=start;i<stop;i+=step){
+        arr.push(i);
+    }
+    return arr;
 }
 pi=Math.PI;
 Pi=Math.PI;
