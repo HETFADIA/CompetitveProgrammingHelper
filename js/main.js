@@ -22,6 +22,7 @@ function exp(a) { return Math.exp(a) };
 function bin(a){ return a.toString(2);}
 function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
+function int(a){return parseInt(a);}
 function power(x,y,mod){
     var res=1;
     while(y){
