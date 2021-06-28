@@ -601,6 +601,10 @@ function calculate(){
     beautify("memory")
     document.body.style.backgroundImage="none";
 }
+function myFunction(){
+    calculate()
+    calculateExpression();
+}
 function __calculateMemory(sizearray,memory){
     var res=0;
     for(var i=0;i<sizearray.length;i++){
@@ -653,6 +657,14 @@ function calculateMemory(){
     }
     document.getElementById("memory").innerHTML=string;
     beautify("memory")
+}
+function calculateExpression(){
+    var expressionResult = eval(document.getElementById("expression").value);
+    document.getElementById("sciexp").innerHTML=expressionResult;
+}
+function resetExp(){
+    document.getElementById("expression").value=0
+    document.getElementById("sciexp").innerHTML=value;
 }
 function calculateMemoryInfo(){
     var MemoryLimit=eval(document.getElementById("MemoryLimit").value);

@@ -11,7 +11,7 @@
     <title>Competitive Programming Helper</title>
 </head>
 
-<body onload="calculate()">
+<body onload="myFunction()">
     <div open="open" id="links">
 
         <ul class="nav_links">
@@ -29,6 +29,7 @@
             <li><a id="linker" onclick="showarray('catalanGen')">nth Catalan</a></li>
             <li><a id="linker" onclick="showarray('timecalc')">Approx Time for a Program</a></li>
             <li><a id="linker" onclick="showarray('memorycalc')">Memory for a Program</a></li>
+            <li><a id="linker" onclick="showarray('scientific')">Calculator</a></li>
 
         </ul>
     </div>
@@ -499,6 +500,34 @@
         <div class="alert alert-primary Array" id="memoryinfo" role="alert">
 
         </div>
+
+    </div>
+    <div class="calculator label" id="scientific">
+        <h2>
+            Calculator
+        </h2>
+        <br>
+        
+        <span class="text">
+            Enter the Expression
+        </span>
+        <input type="text" id="expression" value="hex(100)">
+        
+        <br>
+        <br>
+
+        
+        <button type="button" class="btn btn-success" onclick="calculateExpression()">Calculate Expression</button>
+        <button type="button" class="btn btn-primary" onclick="resetExp()">Reset Expression</button>
+        <button type="button" class="btn btn-danger" onclick="home('scientific')">Back</button>
+
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('sciexp');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="sciexp" role="alert">
+            Value :0
+        </div>
+        
 
     </div>
     <script type="text/javascript" src="js/main.js"></script>
