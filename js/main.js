@@ -17,7 +17,7 @@ function cbrt(a) { return Math.cbrt(a) };
 function log(a) { return Math.log(a) };
 function log2(a) { return Math.log2(a) };
 function log10(a) { return Math.log10(a) };
-function pow(a, b) { return Math.pow(a, b) };
+
 function exp(a) { return Math.exp(a) };
 function bin(a){ return a.toString(2);}
 function oct(a){ return a.toString(8);}
@@ -62,7 +62,10 @@ function int(a,b=-1){
         return parseInt(a,b);
     }
 }
-function power(x,y,mod){
+function pow(x,y,mod=undefined){
+    if(mod==undefined){
+        return Math.pow(x,y);
+    }
     var res=1;
     while(y){
         if(y&1){
