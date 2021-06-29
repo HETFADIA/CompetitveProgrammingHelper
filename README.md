@@ -34,6 +34,7 @@ https://hetfadia.github.io/CompetitveProgrammingHelper/
 <p>Go to the github pages link</p>
 <p>Enter the numbers or array size in the input boxes</p>
 <p>The input boxes automatically evaluates the input.</p>
+<p>You can see the output by pressing enter</p>
 <p>Click on Generate button to generate the output(arrays or permutations or prime factors).</p>
 <p>Click on clear button to reset the generated output.</p>
 

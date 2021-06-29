@@ -877,3 +877,10 @@ document.getElementById("expression")
         document.getElementById("expcalc").click();
     }
 });
+document.getElementById("MemoryLimit")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("calcMem").click();
+    }
+});
