@@ -46,8 +46,8 @@ The program automatically evaluates the input.
 - `10**5` Evaluated as pow(10,5)
 - `1e7` Evaluated as 10000000
 - `2*(10*3)/2` Evaluated as its value ie. 30
-- `pow(10,5)` Evaluated as 10**5
-- `pow(a,b,c)` Evaluated as (a**b)%c
+- `pow(10,5)` Evaluated as 10\*\*5
+- `pow(a,b,c)` Evaluated as (a\*\*b)%c
 - `sqrt(100)` Evaluated as 10
 - `cbrt(1000)` Evaluated as 10
 - `log(1000)` Evaluated as Math.log(1000)=6.9
@@ -98,8 +98,6 @@ The Program automatically detects whether SPF and Sieve can fasten the code. If 
 <p>The program input accepts integers as well as scientific notations.</p>
 <p>The Test cases generator also gives a colored output.</p>
 
-
-
 ## Warning
 
 <p>
@@ -108,7 +106,6 @@ The program input currently only generates array of integers in random integers.
 <p>
 For using string and characters in sort, you have to input manually like 'a' 'abc' 'str' 't'
 </p>
-
 
 <p id="ScreenShots"></p>
 
