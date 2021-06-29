@@ -869,3 +869,11 @@ function generateCatalan(){
 function resetCatalan(){
     document.getElementById("catalan").innerHTML="";
 }
+
+document.getElementById("expression")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("expcalc").click();
+    }
+});
