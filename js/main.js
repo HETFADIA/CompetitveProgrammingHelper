@@ -26,7 +26,7 @@ function str(a){ return a.toString()}
 function float(a){return parseFloat(a)}
 function chr(a){return String.fromCharCode(a)}
 function ord(a){return a.codePointAt(0)}
-function list(a){var res=[];for(let i=0;i<a.length;i++){res+=a[i]};return res}
+function list(a){var res=[];for(let i=0;i<a.length;i++){res.push(a[i])};return res}
 function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function iterlog(a,base=-1){
@@ -84,6 +84,7 @@ function range(start,stop=-1.1,step=1){
     let arr=[];
     for(let i=start;i<stop;i+=step){
         arr.push(i);
+        // yield i;
     }
     return arr;
 }
