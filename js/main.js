@@ -22,12 +22,13 @@ function bin(a){ return a.toString(2);}
 function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
 function str(a){ return a.toString()}
-function float(a){if(a=="inf"){return Infinity}return parseFloat(a)}
+function float(a){if(typeof a=="string" && a.toLocaleLowerCase()=="inf"){return Infinity}return parseFloat(a)}
 function chr(a){return String.fromCharCode(a)}
 function ord(a){return a.codePointAt(0)}
 function list(a){var res=[];for(let i=0;i<a.length;i++){res.push(a[i])};return res}
 function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
+function logstar(a,b=undefined){return iterlog(a,b);}
 function iterlog(a,base=undefined){
     if(base==undefined){
         base=Math.E;
@@ -39,7 +40,7 @@ function iterlog(a,base=undefined){
     }
     return res;
 }
-function logstar(a,b=undefined){return iterlog(a,b);}
+
 function int(a,b=undefined){
     if(b==undefined){
         return parseInt(a);
