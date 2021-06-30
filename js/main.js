@@ -1,4 +1,3 @@
-var copyText="";
 const updatecolor=(string)=>{
     document.getElementById(string).style.color="blue";
 }
