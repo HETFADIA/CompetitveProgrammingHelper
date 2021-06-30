@@ -39,7 +39,7 @@ function iterlog(a,base=undefined){
     }
     return res;
 }
-function logstar(a,b=undefined){if(b==undefined){b=Math.E}return iterlog(a,b);}
+function logstar(a,b=undefined){return iterlog(a,b);}
 function int(a,b=undefined){
     if(b==undefined){
         return parseInt(a);
