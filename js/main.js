@@ -23,14 +23,14 @@ function bin(a){ return a.toString(2);}
 function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
 function str(a){ return a.toString()}
-function float(a){return parseFloat(a)}
+function float(a){if(a=="inf"){return Infinity}return parseFloat(a)}
 function chr(a){return String.fromCharCode(a)}
 function ord(a){return a.codePointAt(0)}
 function list(a){var res=[];for(let i=0;i<a.length;i++){res.push(a[i])};return res}
 function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
-function iterlog(a,base=-1){
-    if(base==-1){
+function iterlog(a,base=undefined){
+    if(base==undefined){
         base=Math.E;
     }
     let res=0;
@@ -40,9 +40,9 @@ function iterlog(a,base=-1){
     }
     return res;
 }
-function logstar(a,b=-1){if(b==-1){b=Math.E}return iterlog(a,b);}
-function int(a,b=-1){
-    if(b==-1){
+function logstar(a,b=undefined){if(b==undefined){b=Math.E}return iterlog(a,b);}
+function int(a,b=undefined){
+    if(b==undefined){
         return parseInt(a);
     }
     else if(b==0){
@@ -54,7 +54,8 @@ function int(a,b=-1){
             return parseInt(a.slice(2),16)
         }
         else if(a.slice(0,2)=="0o"){
-            return parseInt(a,slice(2),10)
+            console.log("oct")
+            return parseInt(a.slice(2),8)
         }
         return parseInt(a,10)
     }
@@ -67,6 +68,8 @@ function pow(x,y,mod=undefined){
         return Math.pow(x,y);
     }
     var res=1;
+    x%=mod;
+    if(x==0){return 0}
     while(y){
         if(y&1){
             res=(res*x)%mod;
@@ -76,15 +79,14 @@ function pow(x,y,mod=undefined){
     }
     return res;
 }
-function range(start,stop=-1.1,step=1){
-    if(stop==-1.1){
+function range(start,stop=undefined,step=1){
+    if(stop==undefined){
         stop=start;
         start=0;
     }
     let arr=[];
     for(let i=start;i<stop;i+=step){
         arr.push(i);
-        // yield i;
     }
     return arr;
 }
@@ -261,7 +263,7 @@ function arraytostring(array){
     }
     return string;
 }
-function splitarray(arr){
+function split(arr){
     arr=arr.split(" ");
     newarr=[]
     for(var i=0;i<arr.length;i++){
@@ -274,7 +276,7 @@ function splitarray(arr){
 function sortarray(){
     var array=document.getElementById("array").value;
 
-    array=splitarray(array);
+    array=split(array);
     for(var i=0;i<array.length;i++){
         array[i]=eval(array[i]);
     }
