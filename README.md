@@ -61,13 +61,14 @@ The program automatically evaluates the input.
 - `exp(3)` Evaluated as e raised to 3= 20.08
 - `pi` Evaluated as pi(pi, Pi, PI, pI all works here)
 - `e` Evaluated as e ie 2.73
-- `pi*e` Evaluated as pi into e
 - `sin(1)` Evaluated as sin of 1 radian
 - `cos(1)` Evaluated as cos of 1 radian
 - `tan(1)` Evaluated as tan of 1 radian
 - `bin(a)` Evaluated as string of binary representation of a
 - `oct(a)` Evaluated as string of octal representation of a
 - `hex(a)` Evaluated as string of hexadecimal representation of a
+- `float(a)` Evaluated as the float form of a
+- `int(a)` Evaluated as the integral form of a
 - `int(a,0)` Evaluated to integer form of a by automatically detecting base of a
 - `int(a,b)` Evaluated to the value of a in base b (eg int("100",2)=4)
 <p>

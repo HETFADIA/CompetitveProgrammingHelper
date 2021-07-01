@@ -42,10 +42,10 @@
         <br>
 
 
-        <span class="text">Array size :</span><input type="text" id="arraySize" value="5">
+        <span class="text">Array size :</span><input type="text" id="arraySize" value="5" onKeyDown="if(event.keyCode==13) generate();">
 
-        <span class="text">Min value:</span> <input type="text" id="minValue" value="0">
-        <span class="text">Max value:</span> <input type="text" id="maxValue" value="10">
+        <span class="text">Min value:</span> <input type="text" id="minValue" value="0" onKeyDown="if(event.keyCode==13) generate();">
+        <span class="text">Max value:</span> <input type="text" id="maxValue" value="10" onKeyDown="if(event.keyCode==13) generate();">
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="generate()">Generate Array</button>
@@ -72,7 +72,7 @@
 
         <span class="text">Array :</span>
         <br>
-        <input type="text" id="array" value="1 2 3 -8" size="30">
+        <input type="text" id="array" value="1 2 3 -8" size="30"  onKeyDown="if(event.keyCode==13) sortarray();">
 
         <br>
         <br>
@@ -97,16 +97,18 @@
             Generate String
         </h2>
         <br>
-        <span class="text">Enter length :</span><input type="text" id="stringSize" value="5"><br>
-        <span class="text">Enter lines :</span><input type="text" id="stringwidth" value="1"><br>
-        <input type="radio" id="01" name="string" value="01" checked="true">
+        <span class="text">Enter length :</span><input type="text" id="stringSize" value="5"  onKeyDown="if(event.keyCode==13) genString();">
+        <br>
+        <span class="text">Enter lines :</span><input type="text" id="stringwidth" value="1" onKeyDown="if(event.keyCode==13) genString();">
+        <br>
+        <input type="radio" id="01" name="string" value="01" checked="true" onKeyDown="if(event.keyCode==13) genString();">
         <label for="01">01</label><br>
-        <input type="radio" id="a-z" name="string" value="a-z">
+        <input type="radio" id="a-z" name="string" value="a-z" onKeyDown="if(event.keyCode==13) genString();">
         <label for="a-z">a-z</label><br>
-        <input type="radio" id="0-9" name="string" value="0-9">
+        <input type="radio" id="0-9" name="string" value="0-9" onKeyDown="if(event.keyCode==13) genString();">
         <label for="0-9">0-9</label><br>
 
-        <input type="radio" id="*." name="string" value="*.">
+        <input type="radio" id="*." name="string" value="*." onKeyDown="if(event.keyCode==13) genString();">
         <label for=".*">*.</label><br>
 
 
@@ -130,7 +132,7 @@
         <br>
 
         <span class="text">Test Cases:</span>
-        <input class="check-input" type="checkbox" id="testCases" name="testCases" value="TC" checked="true">
+        <input class="check-input" type="checkbox" id="testCases" name="testCases" value="TC" checked="true"  onKeyDown="if(event.keyCode==13) genTC();">
 
 
 
@@ -157,7 +159,7 @@
         <span class="text">
             Enter n:
         </span>
-        <input type="text" id="permutation" value="1e2">
+        <input type="text" id="permutation" value="1e2"  onKeyDown="if(event.keyCode==13) generatePermutation();">
         <br>
         <br>
         <button type="button" class="btn btn-success" id="genPermutation" onclick="generatePermutation()">Generate Permutation</button>
@@ -440,41 +442,28 @@
         <span class="bitset">
             Bitset
         </span>
-        <input type="text" id="bitsetSize" value="0">
+        <input type="text" id="bitsetSize" value="">
         <br>
         <span class="bool">
             Bool array
         </span>
-        <input type="text" id="boolSize" value="0">
+        <input type="text" id="boolSize" value="">
         <br>
         <span class="intarray">
             int array
         </span>
-        <input type="text" id="intarraySize" value="0">
+        <input type="text" id="intarraySize" value="">
         <br>
         <span class="longlongarray">
             long long array
         </span>
-        <input type="text" id="longlongarraySize" value="0">
-        <!-- <br> -->
-        <!-- <span class="text">
-            
-            __int128_t array
-        </span>
-        <input type="text" id="__int128_tarraySize" value="0"> -->
-        <!-- <br>
-        
-        <span class="text">
-            
-            python tuple
-        </span>
-        <input type="text" id="pythontupleSize" value="0" > -->
+        <input type="text" id="longlongarraySize" value="">
         <br>
         <span class="text">
 
             python list
         </span>
-        <input type="text" id="pythonlistSize" value="0">
+        <input type="text" id="pythonlistSize" value="">
         <br>
         <span class="text">
 
@@ -512,7 +501,7 @@
             Enter the Expression below
         </span>
         <br>
-        <input type="text" id="expression" size="30" value=''>
+        <input type="text" id="expression" size="30" value='' placeholder="1+3">
         
         <br>
         <br>

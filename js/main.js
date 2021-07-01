@@ -226,9 +226,9 @@ function home(string){
 }
 function generate(){
     
-    var arraysize = parseInt(eval(document.getElementById("arraySize").value));
-    var minValue=eval(document.getElementById("minValue").value);
-    var maxValue=eval(document.getElementById("maxValue").value)+1;
+    var arraysize = parseInt(evaladv(document.getElementById("arraySize").value));
+    var minValue=evaladv(document.getElementById("minValue").value);
+    var maxValue=evaladv(document.getElementById("maxValue").value)+1;
     minValue=parseInt(minValue);
     maxValue=parseInt(maxValue);
     console.log(minValue,maxValue);
@@ -312,7 +312,7 @@ function sortarray(){
 
     array=split(array);
     for(var i=0;i<array.length;i++){
-        array[i]=eval(array[i]);
+        array[i]=evaladv(array[i]);
     }
     array.sort(function(a,b){return a-b;});
 
@@ -433,7 +433,7 @@ function resetPermutation(){
     document.getElementsByClassName("Permutation")[0].innerHTML="";
 }
 function generatePermutation(){
-    var n=eval(document.getElementById("permutation").value);
+    var n=evaladv(document.getElementById("permutation").value);
     Permutation(n);
 }
 function isPrime(n){
@@ -458,9 +458,9 @@ function isPrime(n){
     return 1;
 }
 function GeneratePrevPrime(){
-    var num=eval(document.getElementById("numberForPrevPrime").value);
+    var num=evaladv(document.getElementById("numberForPrevPrime").value);
     num=parseInt(num);
-    var counter=eval(document.getElementById("numberOfPrevPrime").value);
+    var counter=evaladv(document.getElementById("numberOfPrevPrime").value);
     counter=parseInt(counter);
     var arr=[]
     for(var i=num;i>=2;i--){
@@ -482,8 +482,8 @@ function GeneratePrevPrime(){
     beautify("PrevPrimes");
 }
 function GenerateNextPrime(){
-    var num=eval(document.getElementById("numberForNextPrime").value);
-    var counter=eval(document.getElementById("numberOfNextPrime").value);
+    var num=evaladv(document.getElementById("numberForNextPrime").value);
+    var counter=evaladv(document.getElementById("numberOfNextPrime").value);
     num=parseInt(num);
     counter=parseInt(counter);
     console.log(num,counter);
@@ -510,8 +510,8 @@ function GenerateNextPrime(){
     beautify("NextPrimes");
 }
 function GeneratePrimesInRange(){
-    var start=eval(document.getElementById("startnumber").value);
-    var end=eval(document.getElementById("endnumber").value);
+    var start=evaladv(document.getElementById("startnumber").value);
+    var end=evaladv(document.getElementById("endnumber").value);
     start=parseInt(start);
     end=parseInt(end);
     if(start<0){
@@ -559,8 +559,8 @@ function GeneratePrimesInRange(){
     beautify("PrimesInRange");
 }
 function CountPrimesInRange(){
-    var start=eval(document.getElementById("startnumberPrimeCount").value);
-    var end=eval(document.getElementById("endnumberPrimeCount").value);
+    var start=evaladv(document.getElementById("startnumberPrimeCount").value);
+    var end=evaladv(document.getElementById("endnumberPrimeCount").value);
     start=parseInt(start);
     end=parseInt(end);
     if(start<0){
@@ -603,8 +603,8 @@ function CountPrimesInRange(){
     beautify("countnumberOfPrimesInRange");
 }
 function spfPrimesInRange(){
-    var start=eval(document.getElementById("startnumberspf").value);
-    var end=eval(document.getElementById("endnumberspf").value);
+    var start=evaladv(document.getElementById("startnumberspf").value);
+    var end=evaladv(document.getElementById("endnumberspf").value);
     start=parseInt(start);
     end=parseInt(end);
     if(start<=0){
@@ -674,9 +674,9 @@ function time(input,output,loop,inputspeed,outputspeed,loopspeed){
     return input/inputspeed+output/outputspeed+loop/loopspeed;
 }
 function calculate(){
-    var input = eval(document.getElementById("inputSize").value);
-    var output=eval(document.getElementById("outputSize").value);
-    var loop=eval(document.getElementById("loop").value);
+    var input = evaladv(document.getElementById("inputSize").value);
+    var output=evaladv(document.getElementById("outputSize").value);
+    var loop=evaladv(document.getElementById("loop").value);
     var tcpp=time(input,output,loop,8*1e6,2*1e6,5*1e8).toFixed(3)
     var tpy=time(input,output,loop,1e6,9*1e5,1e7).toFixed(3)
     var tpypy=time(input,output,loop,1e6,3*1e5,4*1e8).toFixed(3)
@@ -705,18 +705,23 @@ function __calculateMemory(sizearray,memory){
     
     return res;
 }
+function evaladv(a){
+    if(a==""){
+        return 0
+    }
+    return eval(a)
+}
 function calculateMemory(){
     var stringarr=["bitsetSize","boolSize","intarraySize","longlongarraySize","__int128_tarraySize","pythontupleSize","pythonlistSize"]
-    var bitset = eval(document.getElementById(stringarr[0]).value);
-    var bool = eval(document.getElementById(stringarr[1]).value);
-    var int = eval(document.getElementById(stringarr[2]).value);
-    var ll = eval(document.getElementById(stringarr[3]).value);
-    // var int128 = eval(document.getElementById(stringarr[4]).value);
-    // var pytuple = eval(document.getElementById(stringarr[5]).value);
+    var bitset = evaladv(document.getElementById(stringarr[0]).value);
+    var bool = evaladv(document.getElementById(stringarr[1]).value);
+    var int = evaladv(document.getElementById(stringarr[2]).value);
+    var ll = evaladv(document.getElementById(stringarr[3]).value);
+    
     var int128=0;
     var pytuple=0;
-    var pylist = eval(document.getElementById(stringarr[6]).value);
-    var MemoryLimit=eval(document.getElementById("MemoryLimit").value)
+    var pylist = evaladv(document.getElementById(stringarr[6]).value);
+    var MemoryLimit=evaladv(document.getElementById("MemoryLimit").value)
     var ispython=pylist | pytuple;
     console.log(bool)
     var sizearray=[bitset,bool,int,ll,int128,pytuple,pylist]
@@ -755,7 +760,7 @@ function calculateExpression(){
         document.getElementById("sciexp").innerHTML="";
     }
     else{
-        var expressionResult = eval(document.getElementById("expression").value);
+        var expressionResult = evaladv(document.getElementById("expression").value);
         document.getElementById("sciexp").innerHTML=expressionResult;
         beautify('sciexp')
     }
@@ -765,7 +770,7 @@ function resetExp(){
     document.getElementById("sciexp").innerHTML="";
 }
 function calculateMemoryInfo(){
-    var MemoryLimit=eval(document.getElementById("MemoryLimit").value);
+    var MemoryLimit=evaladv(document.getElementById("MemoryLimit").value);
     var string="";
     string+=`In a program of ${MemoryLimit} MB Limit you can make<br>`
     string+=`Bitset of max ${(MemoryLimit*10**6*8).toExponential(2)} size or<br>`
@@ -843,7 +848,7 @@ function printTreeEdges(prufier){
     return tree;
 }
 function generateRandomTree(){
-    var n=eval(document.getElementById("startnumbertree").value);
+    var n=evaladv(document.getElementById("startnumbertree").value);
     var arr=[];
     for(var i=0;i<n-2;i++){
         var randomnumber=random(1,n+1);
@@ -892,7 +897,7 @@ function nthCatalan(n){
     return catalanarr[n-1]
 }
 function generateCatalan(){
-    var n=eval(document.getElementById("catalanNumber").value);
+    var n=evaladv(document.getElementById("catalanNumber").value);
     n=parseInt(n);
     result=nthCatalan(n);
     if(typeof result=="bigint"){
@@ -905,11 +910,41 @@ function generateCatalan(){
 function resetCatalan(){
     document.getElementById("catalan").innerHTML="";
 }
-document.getElementById("permutation")
+
+
+document.getElementById("bitsetSize")
     .addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-        document.getElementById("genPermutation").click();
+        document.getElementById("calcMem").click();
+    }
+});
+document.getElementById("boolSize")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("calcMem").click();
+    }
+});
+document.getElementById("intarraySize")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("calcMem").click();
+    }
+});
+document.getElementById("longlongarraySize")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("calcMem").click();
+    }
+});
+document.getElementById("pythonlistSize")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("calcMem").click();
     }
 });
 document.getElementById("MemoryLimit")
