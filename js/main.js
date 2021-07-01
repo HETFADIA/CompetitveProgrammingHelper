@@ -30,6 +30,17 @@ function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function logstar(a,b=undefined){return iterlog(a,b);}
 function reversed(a){var res=[];for(let i=a.length-1;i>=0;i--){res.push(a[i])}return res;}
+function biginttoString(result){
+    var limit=20;
+    if(result<10**limit){
+        return parseInt(result);
+    }
+    result=result.toString();
+    result=result.slice(0,1)+"."+result.slice(1,limit-5)+"e+"+(result.length-1);
+    return result
+}
+
+function factorial(n){var res=1n;for(let i=1n;i<=n;i++){res*=i}return biginttoString(res);}
 function iterlog(a,base=undefined){
     if(base==undefined){
         base=Math.E;

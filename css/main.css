@@ -196,3 +196,6 @@ header {
 #scientific{
   display: none;
 }
+#sciexp{
+  overflow-y: auto;
+}
