@@ -8,6 +8,9 @@ const beautify=(string)=>{
     updatecolor(string);
     updatefont(string);
 }
+abcd="abcdefghijklmnopqrstuvwxyz"
+digits="0123456789"
+ABCD="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 function sin(a) { return Math.sin(a) };
 function cos(a) { return Math.cos(a) };
 function tan(a) { return Math.tan(a) };
