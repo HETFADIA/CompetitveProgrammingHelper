@@ -16,7 +16,26 @@ function cbrt(a) { return Math.cbrt(a) };
 function log(a) { return Math.log(a) };
 function log2(a) { return Math.log2(a) };
 function log10(a) { return Math.log10(a) };
+function ceil(a,b=undefined){if(b==undefined){return Math.ceil(a)}return Math.ceil(a/b);}
+function floor(a){return Math.floor(a);}
+function gcd(a,b){if (!b) {return a;}  return gcd(b, a % b);}
+function lcm(a,b){return a*b/gcd(a,b);}
+function values(a){var arr=[];for(var i in a){arr.push(a[i])}return arr}
+function keys(a){var arr=[];for(var i in a){arr.push(i)}return arr}
 
+function Counter(a){
+    var dict={}
+    for(var i of a){
+        if(i in dict){
+            dict[i]++
+        }
+        else{
+            dict[i]=1
+        }
+    }
+    
+    return dict;
+}
 function exp(a) { return Math.exp(a) };
 function bin(a){ return a.toString(2);}
 function oct(a){ return a.toString(8);}
