@@ -29,6 +29,7 @@ function list(a){var res=[];for(let i=0;i<a.length;i++){res.push(a[i])};return r
 function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function logstar(a,b=undefined){return iterlog(a,b);}
+function reversed(a){var res=[];for(let i=a.length-1;i>=0;i--){res.push(a[i])}return res;}
 function iterlog(a,base=undefined){
     if(base==undefined){
         base=Math.E;
