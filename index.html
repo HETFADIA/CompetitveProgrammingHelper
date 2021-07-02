@@ -183,14 +183,14 @@
         <span class="text">
             Number :
         </span>
-        <input type="text" id="numberForPrevPrime" value="1e9+7">
+        <input type="text" id="numberForPrevPrime" value="1e9+7" onKeyDown="if(event.keyCode==13) GeneratePrevPrime();">
         <br>
         <br>
         <span class="text">
 
             Number of Prev primes:
         </span>
-        <input type="text" id="numberOfPrevPrime" value="10">
+        <input type="text" id="numberOfPrevPrime" value="10" onKeyDown="if(event.keyCode==13) GeneratePrevPrime();">
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="GeneratePrevPrime()">Generate Prev Primes</button>
@@ -215,14 +215,14 @@
 
             Number :
         </span>
-        <input type="text" id="numberForNextPrime" value="1e9+7">
+        <input type="text" id="numberForNextPrime" value="1e9+7"  onKeyDown="if(event.keyCode==13) GenerateNextPrime();">
         <br>
         <br>
         <span class="text">
 
             Number of Next primes:
         </span>
-        <input type="text" id="numberOfNextPrime" value="10">
+        <input type="text" id="numberOfNextPrime" value="10" onKeyDown="if(event.keyCode==13) GenerateNextPrime();">
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="GenerateNextPrime()">Generate Next Primes</button>
@@ -245,14 +245,14 @@
 
             Start Number :
         </span>
-        <input type="text" id="startnumber" value="2">
+        <input type="text" id="startnumber" value="2" onKeyDown="if(event.keyCode==13) GeneratePrimesInRange();">
         <br>
         <br>
         <span class="text">
 
             End Number:
         </span>
-        <input type="text" id="endnumber" value="1e2">
+        <input type="text" id="endnumber" value="1e2" onKeyDown="if(event.keyCode==13) GeneratePrimesInRange();">
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="GeneratePrimesInRange()">Generate Primes</button>
@@ -282,14 +282,14 @@
 
             Start Number :
         </span>
-        <input type="text" id="startnumberPrimeCount" value="1">
+        <input type="text" id="startnumberPrimeCount" value="1" onKeyDown="if(event.keyCode==13) CountPrimesInRange();">
         <br>
         <br>
         <span class="text">
 
             End Number:
         </span>
-        <input type="text" id="endnumberPrimeCount" value="1e6">
+        <input type="text" id="endnumberPrimeCount" value="1e6" onKeyDown="if(event.keyCode==13) CountPrimesInRange();">
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="CountPrimesInRange()">Count Primes</button>
@@ -312,14 +312,14 @@
 
             Start Number :
         </span>
-        <input type="text" id="startnumberspf" value="1">
+        <input type="text" id="startnumberspf" value="1" onKeyDown="if(event.keyCode==13) spfPrimesInRange();">
         <br>
         <br>
         <span class="text">
 
             End Number:
         </span>
-        <input type="text" id="endnumberspf" value="10">
+        <input type="text" id="endnumberspf" value="10" onKeyDown="if(event.keyCode==13) spfPrimesInRange();">
         <br>
         <br>
         <button type="button" class="btn btn-success" onclick="spfPrimesInRange()">Prime Factorize</button>
@@ -343,7 +343,7 @@
 
             Enter n:
         </span>
-        <input type="text" id="startnumbertree" value="5">
+        <input type="text" id="startnumbertree" value="5" onKeyDown="if(event.keyCode==13) generateRandomTree();">
         <br>
         <br>
 
@@ -370,7 +370,7 @@
 
             Enter n (max 300000):
         </span>
-        <input type="text" id="catalanNumber" value="9">
+        <input type="text" id="catalanNumber" value="9" onKeyDown="if(event.keyCode==13) generateCatalan();">
         <br>
         <br>
 
@@ -397,18 +397,18 @@
 
             Input size:
         </span>
-        <input type="text" id="inputSize" value="1e4">
+        <input type="text" id="inputSize" value="1e4" onKeyDown="if(event.keyCode==13) calculate();">
         <span class="text">
 
             Output size:
         </span>
-        <input type="text" id="outputSize" value="1e4">
+        <input type="text" id="outputSize" value="1e4" onKeyDown="if(event.keyCode==13) calculate();">
         <br>
         <span class="text">
 
             Loop:
         </span>
-        <input type="text" id="loop" value="2*1e5*log2(2*1e5)" size="30">
+        <input type="text" id="loop" value="2*1e5*log2(2*1e5)" size="30" onKeyDown="if(event.keyCode==13) calculate();">
         <br>
         <br>
         <br>
@@ -442,34 +442,34 @@
         <span class="bitset">
             Bitset
         </span>
-        <input type="text" id="bitsetSize" value="">
+        <input type="text" id="bitsetSize" value="" onKeyDown="if(event.keyCode==13) calculateMemory();">
         <br>
         <span class="bool">
             Bool array
         </span>
-        <input type="text" id="boolSize" value="">
+        <input type="text" id="boolSize" value="" onKeyDown="if(event.keyCode==13) calculateMemory();">
         <br>
         <span class="intarray">
             int array
         </span>
-        <input type="text" id="intarraySize" value="">
+        <input type="text" id="intarraySize" value="" onKeyDown="if(event.keyCode==13) calculateMemory();">
         <br>
         <span class="longlongarray">
             long long array
         </span>
-        <input type="text" id="longlongarraySize" value="">
+        <input type="text" id="longlongarraySize" value="" onKeyDown="if(event.keyCode==13) calculateMemory();">
         <br>
         <span class="text">
 
             python list
         </span>
-        <input type="text" id="pythonlistSize" value="">
+        <input type="text" id="pythonlistSize" value="" onKeyDown="if(event.keyCode==13) calculateMemory();">
         <br>
         <span class="text">
 
             Memory limit (in MB)
         </span>
-        <input type="text" id="MemoryLimit" value="256">
+        <input type="text" id="MemoryLimit" value="256" onKeyDown="if(event.keyCode==13) calculateMemory();">
 
         <br>
         <br>
@@ -501,7 +501,7 @@
             Enter the Expression below
         </span>
         <br>
-        <input type="text" id="expression" size="30" value='' placeholder="1+3">
+        <input type="text" id="expression" size="30" value='' placeholder="1+3" onKeyDown="if(event.keyCode==13) calculateExpression();">
         
         <br>
         <br>
