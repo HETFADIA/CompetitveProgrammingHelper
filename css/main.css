@@ -85,20 +85,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-/* .nav_links {
-  list-style: none;
-} */
-/* .nav_links li {
-  display: inline-block;
-  padding: 0px 20px;
-} */
-/* .nav_links li a {
-  transition: all 0.3s ease 0s;
-} */
-/* .nav_links{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-} */
+
 .nav_links li a:hover {
   cursor: pointer;
   color: blue;
@@ -197,5 +184,8 @@ header {
   display: none;
 }
 #sciexp{
+  overflow-y: auto;
+}
+div{
   overflow-y: auto;
 }

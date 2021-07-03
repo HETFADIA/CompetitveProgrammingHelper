@@ -47,7 +47,8 @@ function str(a){ return a.toString()}
 function float(a){if(typeof a=="string" && a.toLocaleLowerCase()=="inf"){return Infinity}return parseFloat(a)}
 function chr(a){return String.fromCharCode(a)}
 function ord(a){return a.codePointAt(0)}
-function list(a){var res=[];for(let i=0;i<a.length;i++){res.push(a[i])};return res}
+function list(a){var res=[];for(let i of a){res.push(i)};return res}
+function set(a){var res=new Set();for(let i=0;i<a.length;i++){res.add(a[i])};return res}
 function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function logstar(a,b=undefined){return iterlog(a,b);}
@@ -691,6 +692,18 @@ function calculate(){
     beautify("time");
     beautify("memory")
     document.body.style.backgroundImage="none";
+}
+
+function addBracketStyle(id){
+    
+    
+    // if(event.key=="("){
+    //     setTimeout(function(){ 
+        
+    //         document.getElementById(id).value+=")"
+            
+    //     }, 10);
+    // }    
 }
 function myFunction(){
     calculate()

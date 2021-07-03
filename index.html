@@ -501,7 +501,7 @@
             Enter the Expression below
         </span>
         <br>
-        <input type="text" id="expression" size="30" value='' placeholder="1+3" onKeyDown="if(event.keyCode==13) calculateExpression();">
+        <input type="text" id="expression" size="30" value='' placeholder="1+3" onKeyDown="if(event.keyCode==13) {calculateExpression();}if(event.keyCode){addBracketStyle('expression')}">
         
         <br>
         <br>
