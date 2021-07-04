@@ -21,8 +21,11 @@ function log2(a) { return Math.log2(a) };
 function log10(a) { return Math.log10(a) };
 function ceil(a,b=undefined){if(b==undefined){return Math.ceil(a)}return Math.ceil(a/b);}
 function floor(a){return Math.floor(a);}
-function gcd(a,b){if (!b) {return a;}  return gcd(b, a % b);}
-function lcm(a,b){return a*b/gcd(a,b);}
+function len(a){if(typeof a=="number"){return len(str(a))}return a.length}
+function gcdarr(a){var gcda=a[0];for(var i of a){gcda=gcd(gcda,i)};return gcda;}
+function gcd(a,b=undefined){if(b==undefined){return gcdarr(a)};if (!b) {return a;};  return gcd(b, a % b);}
+function lcmarr(a){var lcma=a[0];for(var i of a){lcma=lcm(lcma,i)};return lcma;}
+function lcm(a,b=undefined){if(b==undefined){return lcmarr(a)}return a*b/gcd(a,b);}
 function values(a){var arr=[];for(var i in a){arr.push(a[i])}return arr}
 function keys(a){var arr=[];for(var i in a){arr.push(i)}return arr}
 
