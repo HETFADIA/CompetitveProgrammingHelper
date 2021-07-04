@@ -49,6 +49,8 @@ function bin(a,twoCompelment=1){
     }
     return a.toString(2);
 }
+function min(a,b){return Math.min(a,b)}
+function max(a,b){return Math.max(a,b)}
 function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
 function str(a){ return a.toString()}
