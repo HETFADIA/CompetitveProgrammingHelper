@@ -43,7 +43,12 @@ function Counter(a){
     return dict;
 }
 function exp(a) { return Math.exp(a) };
-function bin(a){ return a.toString(2);}
+function bin(a,twoCompelment=1){
+    if(twoCompelment && a<0){
+        return (a>>>0).toString(2);
+    }
+    return a.toString(2);
+}
 function oct(a){ return a.toString(8);}
 function hex(a){return a.toString(16);}
 function str(a){ return a.toString()}
@@ -65,7 +70,8 @@ function biginttoString(result){
     result=result.slice(0,1)+"."+result.slice(1,limit-5)+"e+"+(result.length-1);
     return result
 }
-
+function abs(a){return Math.abs(a);}
+function bit_length(a){return len(bin(abs(a)));}
 function factorial(n){var res=1n;for(let i=1n;i<=n;i++){res*=i}return biginttoString(res);}
 function iterlog(a,base=undefined){
     if(base==undefined){
