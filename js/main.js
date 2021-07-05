@@ -63,6 +63,13 @@ function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function logstar(a,b=undefined){return iterlog(a,b);}
 function reversed(a){var res=[];for(let i=a.length-1;i>=0;i--){res.push(a[i])}return res;}
+function sorted(a,reverse=false){
+    a.sort(function(a,b){return a-b;})
+    if(reverse==false){
+        return a;
+    }
+    return reversed(a)
+}
 function biginttoString(result){
     var limit=20;
     if(result<10**limit){
