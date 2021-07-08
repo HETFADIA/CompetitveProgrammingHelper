@@ -38,6 +38,7 @@ body {
       background-attachment: fixed;
       background-size: cover; */
   background-color: lightblue;
+  word-wrap: break-word;
 }
 
 div {
