@@ -43,6 +43,17 @@ function Counter(a){
     
     return dict;
 }
+function mex(a,start=0){
+    var temp={}
+    for(var i of a){
+        temp[i]=1;
+    }
+    for(var i=start;i<1e9;i++){
+        if(!(i in temp)){
+            return i;
+        }
+    }
+}
 function exp(a) { return Math.exp(a) };
 function bin(a,twoCompelment=1){
     if(twoCompelment && a<0){
