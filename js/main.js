@@ -63,6 +63,7 @@ function sum(a){var res=0;for(let i=0;i<a.length;i++){res+=a[i]}return res}
 function logbase(a,b){return Math.log(a)/Math.log(b);}
 function logstar(a,b=undefined){return iterlog(a,b);}
 function reversed(a){var res=[];for(let i=a.length-1;i>=0;i--){res.push(a[i])}return res;}
+function index(a,x){for(let i=0;i<a.length;i++){if(a[i]==x){return i;}} return -1}
 function sorted(a,reverse=false){
     a.sort(function(a,b){return a-b;})
     if(reverse==false){
@@ -138,8 +139,19 @@ function range(start,stop=undefined,step=1){
         start=0;
     }
     let arr=[];
-    for(let i=start;i<stop;i+=step){
-        arr.push(i);
+    iterations=abs(stop-start)/step;
+    if(iterations>10**8){
+        return []
+    }
+    if(step>0){
+        for(let i=start;i<stop;i+=step){
+            arr.push(i);
+        }
+    }
+    else if(step<0){
+        for(let i=start;i>stop;i+=step){
+            arr.push(i);
+        }
     }
     return arr;
 }
