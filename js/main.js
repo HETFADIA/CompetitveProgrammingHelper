@@ -229,6 +229,21 @@ function countTrailingZeros(a){
     }
     return counter;
 }
+function matrix(n, m, initialize = 0) {
+    var arr = []
+    for (var i = 0; i < n; i++) {
+        arr.push([])
+        for (var j = 0; j < m; j++) {
+            arr[i].push(initialize)
+        }
+    }
+    
+    return arr;
+}
+LONG_MAX=2**31-1
+LONG_MIN=-(2**31)+1
+LLONG_MAX=2**63-1
+LLONG_MIN=-(2**63)+1
 pi=Math.PI;
 Pi=Math.PI;
 pI=Math.PI;
