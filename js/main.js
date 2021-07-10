@@ -25,20 +25,25 @@ function floor(a){return Math.floor(a);}
 function len(a){if(typeof a=="number"){return len(str(a))}return a.length}
 function gcdarr(a){var gcda=a[0];for(var i of a){gcda=gcd(gcda,i)};return gcda;}
 function gcd(a,b=undefined){if(b==undefined){return gcdarr(a)};if (!b) {return a;};  return gcd(b, a % b);}
+function __gcd(a,b){return gcd(a,b)}
 function lcmarr(a){var lcma=a[0];for(var i of a){lcma=lcm(lcma,i)};return lcma;}
 function lcm(a,b=undefined){if(b==undefined){return lcmarr(a)}return a*b/gcd(a,b);}
 function values(a){var arr=[];for(var i in a){arr.push(a[i])}return arr}
 function keys(a){var arr=[];for(var i in a){arr.push(i)}return arr}
 function count(a,string){counter=0;for(var i of a){if(i==string){counter++;}}return counter;}
 
-function __builtin_popcount(a){return count(bin(a),'1')}
-function __builtin_popcountl(a){return count(bin(a),'1')}
-function __builtin_popcountll(a){return count(bin(a),'1')}
+function __builtin_popcount(a){return count(bin(a,1,32),'1')}
+function __builtin_popcountl(a){return count(bin(a,1,64),'1')}
+function __builtin_popcountll(a){return count(bin(a,1,64),'1')}
 function setb(a){return __builtin_popcountll(a)}
 function sort(a){a.sort(function(a,b){return a-b;})}
 function sorta(a){sort(a)}
 function sortd(a){a.sort(function(a,b){return b-a;})}
-
+function __builtin_parity(a){return count(bin(a),'1')%2}
+function __builtin_parityl(a){return count(bin(a),'1')%2}
+function __builtin_parityll(a){return count(bin(a),'1')%2}
+function __builtin_clz(a){return 32-bit_length(a)}
+function __builtin_clzll(a){return 64-bit_length(a)}
 function Counter(a){
     var dict={}
     for(var i of a){
@@ -64,9 +69,9 @@ function mex(a,start=0){
     }
 }
 function exp(a) { return Math.exp(a) };
-function bin(a,twoCompelment=1){
+function bin(a,twoCompelment=1,dtype=64){
     if(twoCompelment && a<0){
-        return (a>>>0).toString(2);
+        return twosComplement(a,dtype)
     }
     return a.toString(2);
 }
@@ -103,6 +108,7 @@ function biginttoString(result){
 }
 function abs(a){return Math.abs(a);}
 function bit_length(a){return len(bin(abs(a)));}
+function msb(a){return len(bin(abs(a)))}
 function factorial(n){var res=1n;for(let i=1n;i<=n;i++){res*=i}return biginttoString(res);}
 function iterlog(a,base=undefined){
     if(base==undefined){
@@ -175,6 +181,30 @@ function range(start,stop=undefined,step=1){
         }
     }
     return arr;
+}
+function flip(a){
+    let string=""
+    for(var i of a){
+        string+=i=='1'?'0':'1';
+    }
+    return string
+}
+function twosComplement(a,dtype=64){
+    // a is interger
+    if(a>=0){
+        return a.toString(2);
+    }
+    else{
+        a+=1
+        a=a.toString(2).slice(1)
+        left=dtype-a.length;
+        let answer=""
+        for(var i = 0 ;i<left;i++){
+            answer+='0';
+        }
+        answer+=a;
+        return flip(answer);
+    }
 }
 pi=Math.PI;
 Pi=Math.PI;
