@@ -4,6 +4,16 @@ https://hetfadia.github.io/CompetitveProgrammingHelper/
 </p>
 <br>
 <br>
+<p align="center">
+  
+  <p align = "center">
+    <a href="https://github.com/HETFADIA/CompetitveProgrammingHelper"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/HETFADIA/CompetitveProgrammingHelper/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/HETFADIA/CompetitveProgrammingHelper/issues">Request Feature</a>
+  </p>
+</p>
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
