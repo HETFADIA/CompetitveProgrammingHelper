@@ -29,6 +29,15 @@ function lcmarr(a){var lcma=a[0];for(var i of a){lcma=lcm(lcma,i)};return lcma;}
 function lcm(a,b=undefined){if(b==undefined){return lcmarr(a)}return a*b/gcd(a,b);}
 function values(a){var arr=[];for(var i in a){arr.push(a[i])}return arr}
 function keys(a){var arr=[];for(var i in a){arr.push(i)}return arr}
+function count(a,string){counter=0;for(var i of a){if(i==string){counter++;}}return counter;}
+
+function __builtin_popcount(a){return count(bin(a),'1')}
+function __builtin_popcountl(a){return count(bin(a),'1')}
+function __builtin_popcountll(a){return count(bin(a),'1')}
+function setb(a){return __builtin_popcountll(a)}
+function sort(a){a.sort(function(a,b){return a-b;})}
+function sorta(a){sort(a)}
+function sortd(a){a.sort(function(a,b){return b-a;})}
 
 function Counter(a){
     var dict={}
