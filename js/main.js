@@ -240,8 +240,8 @@ function matrix(n, m, initialize = 0) {
     
     return arr;
 }
-LONG_MAX=2**31-1
-LONG_MIN=-(2**31)+1
+INT_MAX=2**31-1
+INT_MIN=-(2**31)+1
 LLONG_MAX=2**63-1
 LLONG_MIN=-(2**63)+1
 pi=Math.PI;
