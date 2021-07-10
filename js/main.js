@@ -240,6 +240,15 @@ function matrix(n, m, initialize = 0) {
     
     return arr;
 }
+function join(a,joinVal=""){
+    var string="";
+    for(var i of a){
+        string+=i;
+        string+=joinVal;
+    }
+    
+    return string.slice(0,(string.length)-joinVal.length)
+}
 INT_MAX=2**31-1
 INT_MIN=-(2**31)+1
 LLONG_MAX=2**63-1
