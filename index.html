@@ -19,7 +19,8 @@
             <li><a id="linker" onclick="showarray('arrayGenSort')">Sort Array</a></li>
             <li><a id="linker" onclick="showarray('stringGen')">Random String</a></li>
             <li><a id="linker" onclick="showarray('tcGen')">Test Cases Generator</a></li>
-            <li><a id="linker" onclick="showarray('permutationGen')">Permutation Generator</a></li>
+            <li><a id="linker" onclick="showarray('permutationGen')">Permutation of 1:n</a></li>
+            <li><a id="linker" onclick="showarray('permutationOfArray')">Permutation of Array</a></li>
             <li><a id="linker" onclick="showarray('prevPrimeGen')">Prev Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('nextPrimeGen')">Next Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('primeRangeGen')">Get Primes in a Range</a></li>
@@ -169,6 +170,29 @@
         <br>
         <a href="#" onclick="CopyToClipboard('outPermutation');return false;">Copy Text</a>
         <div class="alert alert-primary Permutation" id="outPermutation" role="alert">
+
+        </div>
+    </div>
+    <div class="permutation label" id="permutationOfArray">
+        <h2>
+            Permutation(product) of Array
+        </h2>
+
+        <br>
+        <span class="text">Array :</span><input type="text" id="arrayPermutation" value="" onKeyDown="if(event.keyCode==13) ArrayPermutation();">
+
+        <span class="text">Min value:</span> <input type="text" id="minValuePermutation" value="1" onKeyDown="if(event.keyCode==13) ArrayPermutation();">
+        <span class="text">Max value:</span> <input type="text" id="maxValuePermutation" value="1" onKeyDown="if(event.keyCode==13) ArrayPermutation();">
+        
+        <br>
+        <br>
+        <button type="button" class="btn btn-success" id="genArrayPermutation" onclick="ArrayPermutation()">Generate Permutation</button>
+        <button type="button" class="btn btn-primary" id="resArrayPermutation" onclick="resetArrayPermutation()">Clear</button>
+        <button type="button" class="btn btn-danger" onclick="home('permutationOfArray')">Back</button>
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('outArrayPermutation');return false;">Copy Text</a>
+        <div class="alert alert-primary Permutation" id="outArrayPermutation" role="alert">
 
         </div>
     </div>

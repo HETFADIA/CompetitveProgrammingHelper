@@ -319,8 +319,9 @@ function permutations(l,minsize=undefined,maxsize=undefined,defaulttype="arr",dt
 
             arr.push(password.value);  
         }
+        arr.push("<br>")
     }
-    return arr;
+    return join(arr);
 }
 INT_MAX=2**31-1
 INT_MIN=-(2**31)+1
@@ -637,6 +638,14 @@ function resetPermutation(){
 function generatePermutation(){
     var n=evaladv(document.getElementById("permutation").value);
     Permutation(n);
+}
+function ArrayPermutation(){
+    var array=document.getElementById("arrayPermutation").value
+    var min=document.getElementById("minValuePermutation").value;
+    var max=document.getElementById("maxValuePermutation").value;
+    console.log(array,min,max)
+    console.log(permutations(array,min,max))
+    document.getElementById("outArrayPermutation").innerHTML=permutations(array,min,max,"")
 }
 function isPrime(n){
     if(Number.isInteger(n)==0){
