@@ -57,6 +57,16 @@ function __builtin_ctz(a){return countTrailingZeros(a)}
 function __builtin_ctzl(a){return countTrailingZeros(a)}
 function __builtin_ctzll(a){return countTrailingZeros(a)}
 function is_sorted(a){for(var i=0;i<a.length-1;i++){if(a[i]>a[i+1]){return 0;}}return 1;}
+function count_if(a,func,start=0,end=undefined){
+    if(end==undefined){end=a.length;}
+    var counter=0;
+    for(var i=start;i<end;i++){
+        if(func(a[i])){
+            counter++;
+        }
+    }
+    return counter;
+}
 function next_permutation(a){
     if(is_sorted(reversed(a))){
         sort(a)

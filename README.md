@@ -113,6 +113,7 @@ The program also evaluates these c++ features
 - `__builtin_ctzll(a)` Returns the number of trailing zeros in the 64 bit binary representation of the number a
 - `is_sorted(a)` Returns true if a is ascending sorted else false
 - `next_permutation(a)` a is next permutated and 1 is returned if a is sorted else 0
+- `count_if(a,func,start,end)` return the count of elements of a where func(element) satisfies. Start and end are not necessary to be given during call
 
 
 <p>
