@@ -57,23 +57,27 @@ The program automatically evaluates the input.
 - `10**5` Evaluated as pow(10,5)
 - `1e7` Evaluated as 10000000
 - `2*(10*3)/2` Evaluated as its value ie. 30
-- `pow(10,5)` Evaluated as 10\*\*5
-- `pow(a,b,c)` Evaluated as (a\*\*b)%c
-- `sqrt(100)` Evaluated as 10
-- `cbrt(1000)` Evaluated as 10
-- `log(1000)` Evaluated as Math.log(1000)=6.9
-- `log2(1000)` Evaluated as Math.log2(1000)=9.96
-- `log10(1000)` Evaluated as Math.log10(1000)=3
 - `logstar(a,b)` Evaluated as iterative logarithm of a to the base b
 - `iterlog(a,b)` Evaluated as iterative logarithm of a to the base b
-- `chr(a)` Evaluated as the character having ascii value a
-- `ord(a)` Evaluated as the ascii value of a
 - `exp(3)` Evaluated as e raised to 3= 20.08
 - `pi` Evaluated as pi(pi, Pi, PI, pI all works here)
 - `e` Evaluated as e ie 2.73
 - `sin(1)` Evaluated as sin of 1 radian
 - `cos(1)` Evaluated as cos of 1 radian
 - `tan(1)` Evaluated as tan of 1 radian
+- `pow(10,5)` Evaluated as 10\*\*5
+- `sqrt(100)` Evaluated as 10
+- `cbrt(1000)` Evaluated as 10
+- `log(1000)` Evaluated as Math.log(1000)=6.9
+- `log2(1000)` Evaluated as Math.log2(1000)=9.96
+- `log10(1000)` Evaluated as Math.log10(1000)=3
+- `mex(a)` Evaluated to the mex of the array a
+
+The Program also evaluates these python features
+
+- `pow(a,b,c)` Evaluated as (a\*\*b)%c
+- `chr(a)` Evaluated as the character having ascii value a
+- `ord(a)` Evaluated as the ascii value of a
 - `bin(a)` Evaluated as string of binary representation of a
 - `oct(a)` Evaluated as string of octal representation of a
 - `hex(a)` Evaluated as string of hexadecimal representation of a
@@ -81,6 +85,32 @@ The program automatically evaluates the input.
 - `int(a)` Evaluated as the integral form of a
 - `int(a,0)` Evaluated to integer form of a by automatically detecting base of a
 - `int(a,b)` Evaluated to the value of a in base b (eg int("100",2)=4)
+- `len(a)` Evaluated to the length of the object
+- `factorial(a)` Evaluated to the factorial of the number
+- `sorted(a,reverse=True)` Sorts the array according to reverse argument
+- `keys(a)` Returns the keys of the dictionary object
+- `values(a)` Returns the values of the dictionary object
+- `bit_length(a)` Returns the number of significant bits in the binary representation of the number a
+- `Counter(a)` Returns the key value pair of the array a
+- `count(a,b)` Returns the number of occurences of b in the array a
+- `range` Returns the list of python range function
+- `list(a)` Returns list of the object a
+- `reversed(a)` Returns the reversed list of the object a
+- `join(a,b)` Returns the "b".join(a) ie joins b within each consequitive items of a
+
+The program also evaluates these c++ features
+
+- `setb(a)` Returns the count of 1 in the 64 bit binary representation of the number a
+- `msb(a)` Returns the most significant bits in the 64 bit binary representation of the number a
+- `rb(a)` Returns the decimal value of rightmost bit in the 64 bit binary representation of the number a
+- `rbm(a)` Returns the rightmost bit in the 64 bit binary representation of the number a
+- `sorta(a)` Sorts the array a in ascending order
+- `sortd(a)` Sorts the array a in descending order
+- `__gcd(a,b)` Returns the gcd of a and b
+- `__builtin_popcountll(a)` Returns the count of 1 in the 64 bit binary representation of the number a
+- `__builtin_parityll(a)` Returns the parity of count of 1 in the 64 bit binary representation of the number a
+- `__builtin_clzll(a)` Returns the number of leading zeros in the 64 bit binary representation of the number a
+- `__builtin_ctzll(a)` Returns the number of trailing zeros in the 64 bit binary representation of the number a
 <p>
   Many other expressions are also evaluated by writing Math.atan, Math.acos etc.
 </p>
