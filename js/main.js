@@ -684,8 +684,13 @@ function nextArrayPermutation(){
         array=split(array)
     }
     var counter=0;
-    var string=''
+    next_permutation(array)
+    var string='Next permutation of the array is: <br>'
+    string+=arraytostring(array)
+    string+="<br>"
+
     while(next_permutation(array)){
+        if(counter==0){string+="Other next permutations are:<br>"}
         string+=arraytostring(array)
         string+='<br>'
         counter+=array.length;
@@ -693,9 +698,7 @@ function nextArrayPermutation(){
             break;
         }
     }
-    if(string==""){
-        string+=arraytostring(array);
-    }
+    
 
     document.getElementById("outnextArrayPermutation").innerHTML=string
 }
