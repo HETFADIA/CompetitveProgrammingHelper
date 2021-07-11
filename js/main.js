@@ -122,7 +122,7 @@ function biginttoString(result){
     return result
 }
 function abs(a){return Math.abs(a);}
-function bit_length(a){return len(bin(abs(a)));}
+function bit_length(a){if(a==0){return 0}return len(bin(abs(a)));}
 
 function factorial(n){var res=1n;for(let i=1n;i<=n;i++){res*=i}return biginttoString(res);}
 function iterlog(a,base=undefined){
