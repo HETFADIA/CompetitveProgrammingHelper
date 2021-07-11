@@ -12,6 +12,8 @@ const beautify=(string)=>{
 abcd="abcdefghijklmnopqrstuvwxyz"
 digits="0123456789"
 ABCD="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+True=true;
+False=false;
 function sin(a) { return Math.sin(a) };
 function cos(a) { return Math.cos(a) };
 function tan(a) { return Math.tan(a) };
@@ -26,13 +28,17 @@ function floor(a){return Math.floor(a);}
 function len(a){if(typeof a=="number"){return len(str(a))}return a.length}
 function gcdarr(a){var gcda=a[0];for(var i of a){gcda=gcd(gcda,i)};return gcda;}
 function gcd(a,b=undefined){if(b==undefined){return gcdarr(a)};if (!b) {return a;};  return gcd(b, a % b);}
-
+function itself(a){return a;}
 function lcmarr(a){var lcma=a[0];for(var i of a){lcma=lcm(lcma,i)};return lcma;}
 function lcm(a,b=undefined){if(b==undefined){return lcmarr(a)}return a*b/gcd(a,b);}
 function values(a){var arr=[];for(var i in a){arr.push(a[i])}return arr}
 function keys(a){var arr=[];for(var i in a){arr.push(i)}return arr}
 function count(a,string){counter=0;for(var i of a){if(i==string){counter++;}}return counter;}
-function sort(a){a.sort(function(a,b){return a-b;})}
+function sort(a,key=itself,reverse=false){
+    var mul=1;
+    if(reverse){mul=-1;}
+    a.sort(function(a,b){return mul*(key(a)-key(b));})
+}
 
 
 
@@ -149,12 +155,10 @@ function reverse(a,start=undefined,end=undefined){
 
 }
 function index(a,x){for(let i=0;i<a.length;i++){if(a[i]==x){return i;}} return -1}
-function sorted(a,reverse=false){
-    a.sort(function(a,b){return a-b;})
-    if(reverse==false){
-        return a;
-    }
-    return reversed(a)
+function sorted(a,key=itself,reverse=false){
+    var arr=a.slice();
+    sort(arr,key,reverse);
+    return arr;
 }
 function biginttoString(result){
     var limit=20;
@@ -977,6 +981,7 @@ function myFunction(){
     calculate()
     calculateExpression();
     document.getElementById("expression").value=localStorage.getItem('expression')
+    // document.querySelector("#expression").style.size=40
 }
 function __calculateMemory(sizearray,memory){
     var res=0;

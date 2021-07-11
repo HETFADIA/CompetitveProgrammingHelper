@@ -9,20 +9,20 @@
   /* background: linear-gradient(0deg, #000, #262626); */
 }
 @font-face {
-  font-family: 'font-1';
-  src:url('fonts/AstroSpace-eZ2Bg.ttf');
+  font-family: "font-1";
+  src: url("fonts/AstroSpace-eZ2Bg.ttf");
 }
 @font-face {
-  font-family: 'font-2';
-  src:url('fonts/MandatoryPlaything-nRRd0.ttf');
+  font-family: "font-2";
+  src: url("fonts/MandatoryPlaything-nRRd0.ttf");
 }
 @font-face {
-  font-family: 'font-3';
-  src:url('fonts/Revamped-X3q1a.ttf');
+  font-family: "font-3";
+  src: url("fonts/Revamped-X3q1a.ttf");
 }
 @font-face {
-  font-family: 'font-4';
-  src:url('fonts/Squaresharps-D663.ttf');
+  font-family: "font-4";
+  src: url("fonts/Squaresharps-D663.ttf");
 }
 body {
   color: blue;
@@ -91,19 +91,18 @@ header {
 .nav_links li a:hover {
   cursor: pointer;
   color: blue;
-
 }
 #linker {
   size: 15px;
   padding-left: 2px;
   color: rgb(230, 48, 236);
-  font-size:large;
+  font-size: large;
   /* background-color: #1fdbe9; */
   /* border-radius: 4px; */
   /* filter:blur(0.1px); */
   /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-  font-family:'font-1';
-  cursor:pointer;
+  font-family: "font-1";
+  cursor: pointer;
   font-style: italic;
   text-decoration: underline;
 }
@@ -158,8 +157,8 @@ header {
 #permutationOfArray {
   display: none;
 }
-#nextpermutationOfArray{
-  display:none;
+#nextpermutationOfArray {
+  display: none;
 }
 #prevPrimeGen {
   display: none;
@@ -188,12 +187,12 @@ header {
 #memorycalc {
   display: none;
 }
-#scientific{
+#scientific {
   display: none;
 }
-#sciexp{
+#sciexp {
   overflow-y: auto;
 }
-div{
+div {
   overflow-y: auto;
 }
