@@ -1,5 +1,17 @@
 function is_sorted(a){for(var i=0;i<a.length-1;i++){if(a[i]>a[i+1]){return 0;}}return 1;}
 function reversed(a){var res=[];for(let i=a.length-1;i>=0;i--){res.push(a[i])}return res;}
+function reverse(a,start=undefined,end=undefined){
+    if(start==undefined){start=0;}
+    if(end==undefined){end=a.length}
+    var iter1=start;
+    var iter2=end-1;
+    while(iter1<iter2){
+        [a[iter1],a[iter2]]=[a[iter2],a[iter1]]
+        iter1++;
+        iter2--;
+    }
+
+}
 function sort(a){a.sort(function(a,b){return a-b;})}
 function next_permutation(a){
     if(is_sorted(reversed(a))){
@@ -20,15 +32,20 @@ function next_permutation(a){
             break;
         }
     }
-    swap(a[pnt], a[pnt2]);
-    reverse(a.begin() + pnt + 1, a.end());
+    [a[pnt], a[pnt2]]=[a[pnt2],a[pnt]]
+    reverse(a,pnt+1)
     return 1;
 }
-a=[3,2,1]
+a=[1,2,3]
 console.log(next_permutation(a))
 console.log(a)
-function swap(a,b){[a,b]=[b,a]}
-a=4
-b=3
-swap(a,b)
-console.log(a,b)
+console.log(next_permutation(a))
+console.log(a)
+console.log(next_permutation(a))
+console.log(a)
+console.log(next_permutation(a))
+console.log(a)
+console.log(next_permutation(a))
+console.log(a)
+console.log(next_permutation(a))
+console.log(a)
