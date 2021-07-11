@@ -166,6 +166,9 @@ Here are the few Screenshots
   <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/permutation.png" alt="Logo" width="1080" height="500">
 </p>
 <p>
+  <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/next_permutation.png" alt="Logo" width="1080" height="500">
+</p>
+<p>
   <img src="https://github.com/HETFADIA/CompetitveProgrammingHelper/blob/main/img/prevprimes.png" alt="Logo" width="1080" height="500">
 </p>
 <p>
