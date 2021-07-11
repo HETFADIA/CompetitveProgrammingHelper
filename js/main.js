@@ -898,20 +898,11 @@ function calculate(){
     document.body.style.backgroundImage="none";
 }
 
-function addBracketStyle(id){
-    
-    
-    // if(event.key=="("){
-    //     setTimeout(function(){ 
-        
-    //         document.getElementById(id).value+=")"
-            
-    //     }, 10);
-    // }    
-}
+
 function myFunction(){
     calculate()
     calculateExpression();
+    document.getElementById("expression").value=localStorage.getItem('expression')
 }
 function __calculateMemory(sizearray,memory){
     var res=0;
@@ -973,6 +964,8 @@ function calculateMemory(){
 }
 function calculateExpression(){
     console.log(document.getElementById("expression"))
+    localStorage.setItem("expression",document.getElementById("expression").value)
+    console.log(localStorage.getItem("expression"))
     if(document.getElementById("expression").value==""){
         document.getElementById("sciexp").innerHTML="";
     }
