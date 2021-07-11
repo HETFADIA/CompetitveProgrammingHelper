@@ -111,6 +111,9 @@ The program also evaluates these c++ features
 - `__builtin_parityll(a)` Returns the parity of count of 1 in the 64 bit binary representation of the number a
 - `__builtin_clzll(a)` Returns the number of leading zeros in the 64 bit binary representation of the number a
 - `__builtin_ctzll(a)` Returns the number of trailing zeros in the 64 bit binary representation of the number a
+- `is_sorted(a)` Returns true if a is ascending sorted else false
+- `swap(a,b)` Swaps a and b
+
 <p>
   Many other expressions are also evaluated by writing Math.atan, Math.acos etc.
 </p>

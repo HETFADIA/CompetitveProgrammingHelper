@@ -56,8 +56,8 @@ function __builtin_clzll(a){return 64-bit_length(a)}
 function __builtin_ctz(a){return countTrailingZeros(a)}
 function __builtin_ctzl(a){return countTrailingZeros(a)}
 function __builtin_ctzll(a){return countTrailingZeros(a)}
-
-
+function is_sorted(a){for(var i=0;i<a.length-1;i++){if(a[i]>a[i+1]){return 0;}}return 1;}
+function swap(a,b){[a,b]=[b,a]}
 
 function Counter(a){
     var dict={}
