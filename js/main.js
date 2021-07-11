@@ -675,6 +675,33 @@ function ArrayPermutation(){
     
     document.getElementById("outArrayPermutation").innerHTML=permutations(array,min,max,"")
 }
+function resetArrayPermutation(){
+    document.getElementById("outArrayPermutation").innerHTML=""
+}
+function nextArrayPermutation(){
+    var array=document.getElementById("nextarrayPermutation").value
+    if(exists(array," ")){
+        array=split(array)
+    }
+    var counter=0;
+    var string=''
+    while(next_permutation(array)){
+        string+=arraytostring(array)
+        string+='<br>'
+        counter+=array.length;
+        if(counter>=5*10**4){
+            break;
+        }
+    }
+    if(string==""){
+        string+=arraytostring(array);
+    }
+
+    document.getElementById("outnextArrayPermutation").innerHTML=string
+}
+function resetnextArrayPermutation(){
+    document.getElementById("outnextArrayPermutation").innerHTML=""
+}
 function isPrime(n){
     if(Number.isInteger(n)==0){
         return 0;

@@ -158,6 +158,9 @@ header {
 #permutationOfArray {
   display: none;
 }
+#nextpermutationOfArray{
+  display:none;
+}
 #prevPrimeGen {
   display: none;
 }
