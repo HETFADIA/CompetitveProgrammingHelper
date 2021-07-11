@@ -44,8 +44,8 @@ function sort(a,key=itself,reverse=false){
 
 
 function setb(a){return __builtin_popcountll(a)}
-function sorta(a){sort(a)}
-function sortd(a){a.sort(function(a,b){return b-a;})}
+function sorta(a,key=itself){sort(a,key)}
+function sortd(a,key=itself){sort(a,key,reverse=True)}
 function msb(a){return len(bin(abs(a)))}
 function rb(a){a&=-a; return a;/*get rightmost bit*/}
 function rbm(a){a&=(a-1);return a;/*remove rightmost bit */}
@@ -981,7 +981,6 @@ function myFunction(){
     calculate()
     calculateExpression();
     document.getElementById("expression").value=localStorage.getItem('expression')
-    // document.querySelector("#expression").style.size=40
 }
 function __calculateMemory(sizearray,memory){
     var res=0;
