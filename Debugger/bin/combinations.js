@@ -71,9 +71,9 @@ function arraytostring(array){
 }
 function combinations(given_arr,given_length){
     var out=""
-    var mina=2**given_arr.length
+    var mina=2**given_arr.length-1
     var counter=0
-    for(var i=mina;i>=0;i--){
+    for(var i=mina;i>=1;i--){
         counter++;
         if(counter==10**6){return out}
         var selector=binBits(i,dtype=given_arr.length)
