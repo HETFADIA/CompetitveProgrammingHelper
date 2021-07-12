@@ -688,6 +688,7 @@ function ArrayPermutation(){
     var max=document.getElementById("maxValuePermutation").value;
     
     document.getElementById("outArrayPermutation").innerHTML=permutations(array,min,max,"")
+    beautify("outArrayPermutation")
 }
 function resetArrayPermutation(){
     document.getElementById("outArrayPermutation").innerHTML=""
@@ -715,6 +716,7 @@ function nextArrayPermutation(){
     
 
     document.getElementById("outnextArrayPermutation").innerHTML=string
+    beautify("outnextArrayPermutation")
 }
 function resetnextArrayPermutation(){
     document.getElementById("outnextArrayPermutation").innerHTML=""

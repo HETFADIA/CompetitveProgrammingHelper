@@ -87,7 +87,8 @@ The Program also evaluates these python features
 - `int(a,b)` Evaluated to the value of a in base b (eg int("100",2)=4)
 - `len(a)` Evaluated to the length of the object
 - `factorial(a)` Evaluated to the factorial of the number
-- `sorted(a,reverse=True)` Sorts the array according to reverse argument
+- `sort(a,key=itself,reverse=True)` sorts the array according to key in the reverse arg. Here key and reverse are optional
+- `sorted(a,key=itself,reverse=True)` Returns the sorted form of array according to key in the reverse arg. Here key and reverse are optional
 - `keys(a)` Returns the keys of the dictionary object
 - `values(a)` Returns the values of the dictionary object
 - `bit_length(a)` Returns the number of significant bits in the binary representation of the number a
@@ -104,8 +105,8 @@ The program also evaluates these c++ features
 - `msb(a)` Returns the most significant bits in the 64 bit binary representation of the number a
 - `rb(a)` Returns the decimal value of rightmost bit in the 64 bit binary representation of the number a
 - `rbm(a)` Returns the rightmost bit in the 64 bit binary representation of the number a
-- `sorta(a)` Sorts the array a in ascending order
-- `sortd(a)` Sorts the array a in descending order
+- `sorta(a,key)` Sorts the array a ascending according to key. Here key(default=ascending) is optional
+- `sortd(a)` Sorts the array a in descending order according to key. Here key(default=descending) is optional
 - `__gcd(a,b)` Returns the gcd of a and b
 - `__builtin_popcountll(a)` Returns the count of 1 in the 64 bit binary representation of the number a
 - `__builtin_parityll(a)` Returns the parity of count of 1 in the 64 bit binary representation of the number a
@@ -113,7 +114,7 @@ The program also evaluates these c++ features
 - `__builtin_ctzll(a)` Returns the number of trailing zeros in the 64 bit binary representation of the number a
 - `is_sorted(a)` Returns true if a is ascending sorted else false
 - `next_permutation(a)` a is next permutated and 1 is returned if a is sorted else 0
-- `count_if(a,func,start,end)` return the count of elements of a where func(element) satisfies. Start and end are not necessary to be given during call
+- `count_if(a,func,start,end)` return the count of elements of a where func(element) satisfies. Start(default=0) and end(def=n) are optional
 
 
 <p>
