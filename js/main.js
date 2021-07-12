@@ -444,7 +444,10 @@ function normalFactorization(n){
     }
     return ret;
 }
-function random(a,b){
+function random(a,b=undefined){
+    if(b==undefined){
+        return random(0,a)
+    }
     let minimum=a;
     let difference=b-a;
     return Math.floor(minimum+Math.random()*difference);
@@ -544,7 +547,7 @@ function split(arr){
 }
 function sortarray(){
     var array=document.getElementById("array").value;
-    var key=eval(document.getElementById("arraykey").value);
+    var key=evaladv(document.getElementById("arraykey").value);
     if(key==""){
         key=itself
     }
@@ -552,7 +555,9 @@ function sortarray(){
     for(var i=0;i<array.length;i++){
         array[i]=evaladv(array[i]);
     }
-    
+    if(Array.isArray(array[0]) && array.length==1){
+        array=array[0]
+    }
     console.log(key)
     sort(array,key)
 
