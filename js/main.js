@@ -544,15 +544,20 @@ function split(arr){
 }
 function sortarray(){
     var array=document.getElementById("array").value;
-
+    var key=eval(document.getElementById("arraykey").value);
+    if(key==""){
+        key=itself
+    }
     array=split(array);
     for(var i=0;i<array.length;i++){
         array[i]=evaladv(array[i]);
     }
-    array.sort(function(a,b){return a-b;});
+    
+    console.log(key)
+    sort(array,key)
 
     document.getElementById("sortedout").innerHTML=arraytostring(array);
-    array.reverse();
+    sort(array,key,reverse=True)
     document.getElementById("revsortedout").innerHTML=arraytostring(array);
 }
 function zeroone01(n,m){
