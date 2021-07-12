@@ -378,7 +378,11 @@ function choiceArrByString(arr,string){
     }
     return answer;
 }
-function combinations(given_arr,given_length){
+function combinations(given_arr,given_length=undefined){
+    if(given_length==undefined){
+        given_length=given_arr.length
+        return arraytostring(given_arr)
+    }
     if(given_length>given_arr.length){
         return ""
     }
@@ -731,11 +735,21 @@ function exists(a,b){
 }
 function ArrayPermutation(){
     var array=document.getElementById("arrayPermutation").value
+    if(array==""){
+        document.getElementById("outArrayPermutation").innerHTML=""
+        return;
+    }
     if(exists(array," ")){
         array=split(array)
     }
     var min=document.getElementById("minValuePermutation").value;
     var max=document.getElementById("maxValuePermutation").value;
+    if(min==""){
+        min=1;
+    }
+    if(max==""){
+        max=array.length
+    }
     
     document.getElementById("outArrayPermutation").innerHTML=permutations(array,min,max,"")
     beautify("outArrayPermutation")
@@ -745,11 +759,17 @@ function resetArrayPermutation(){
 }
 function ArrayComb(){
     var array=document.getElementById("arrayComb").value
+    if(array==""){
+        document.getElementById("outArrayComb").innerHTML=""
+        return;
+    }
     if(exists(array," ")){
         array=split(array)
     }
     var min=document.getElementById("minValueComb").value;
-
+    if(min==""){
+        min=array.length
+    }
     
     document.getElementById("outArrayComb").innerHTML=combinations(array,min)
     beautify("outArrayComb")

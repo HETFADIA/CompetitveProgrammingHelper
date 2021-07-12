@@ -98,6 +98,7 @@ The Program also evaluates these python features
 - `list(a)` Returns list of the object a
 - `reversed(a)` Returns the reversed list of the object a
 - `join(a,b)` Returns the "b".join(a) ie joins b within each consequitive items of a
+- `combinations(arr,len)` Returns all the combinations of arr of size len
 
 The program also evaluates these c++ features
 
