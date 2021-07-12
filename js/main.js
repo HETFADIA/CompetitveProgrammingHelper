@@ -306,6 +306,7 @@ function* charCombinations (chars, minLength, maxLength) {
       yield word;
       for (j = 1; j < Math.pow(chars.length, i); j++) {
         for(k = 0; k < i; k++) {
+            
           if(!(j % Math.pow(chars.length, k))) {
             let charIndex = chars.indexOf(word[k]) + 1;
             char = chars[charIndex < chars.length ? charIndex : 0];
@@ -316,15 +317,7 @@ function* charCombinations (chars, minLength, maxLength) {
       }
     }
 }
-  function join(a,joinVal=""){
-    var string="";
-    for(var i of a){
-        string+=i;
-        string+=joinVal;
-    }
-    
-    return string.slice(0,(string.length)-joinVal.length)
-}
+
 function list(a){var res=[];for(let i of a){res.push(i)};return res}
 function permutations(l,minsize=undefined,maxsize=undefined,defaulttype="arr",dtype='int'){
     if(Array.isArray(l)){
