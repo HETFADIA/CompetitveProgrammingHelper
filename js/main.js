@@ -379,6 +379,9 @@ function choiceArrByString(arr,string){
     return answer;
 }
 function combinations(given_arr,given_length){
+    if(given_length>given_arr.length){
+        return ""
+    }
     var out=""
     var mina=2**given_arr.length
     var counter=0
@@ -739,6 +742,20 @@ function ArrayPermutation(){
 }
 function resetArrayPermutation(){
     document.getElementById("outArrayPermutation").innerHTML=""
+}
+function ArrayComb(){
+    var array=document.getElementById("arrayComb").value
+    if(exists(array," ")){
+        array=split(array)
+    }
+    var min=document.getElementById("minValueComb").value;
+
+    
+    document.getElementById("outArrayComb").innerHTML=combinations(array,min)
+    beautify("outArrayComb")
+}
+function resetArrayComb(){
+    document.getElementById("outArrayComb").innerHTML=""
 }
 function nextArrayPermutation(){
     var array=document.getElementById("nextarrayPermutation").value

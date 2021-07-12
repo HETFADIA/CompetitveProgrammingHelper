@@ -157,6 +157,9 @@ header {
 #permutationOfArray {
   display: none;
 }
+#CombOfArray{
+  display: none;
+}
 #nextpermutationOfArray {
   display: none;
 }
