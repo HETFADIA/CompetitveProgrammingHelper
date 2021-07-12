@@ -74,11 +74,11 @@
 
         <span class="text">Array :</span>
         <br>
-        <input type="text" id="array" value="1 2 3 -8" size="25"  onKeyDown="if(event.keyCode==13) sortarray();">
+        <input type="text" id="array" value="1 2 3 -8" size="25"  onKeyDown="if(event.keyCode==13) sortarray();" onkeyup="this.size = Math.max(this.value.length, 25)">
         <br>
         <span class="text">key :</span>
         <br>
-        <input type="text" id="arraykey" value="" size="25"  onKeyDown="if(event.keyCode==13) sortarray();">
+        <input type="text" id="arraykey" value="" size="25"  onKeyDown="if(event.keyCode==13) sortarray();" onkeyup="this.size = Math.max(this.value.length, 25)">
 
         <br>
         <br>
