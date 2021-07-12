@@ -348,6 +348,50 @@ function permutations(l,minsize=undefined,maxsize=undefined,defaulttype="arr",dt
     }
     return join(arr);
 }
+function binBits(a,dtype=64){
+    if(a>=0){
+        var string=a.toString(2);
+        var string2=""
+        for(var i=0;i<dtype-string.length;i++){
+            string2+="0"
+        }
+        return string2+string;
+    }
+    else{
+        a+=1
+        a=a.toString(2).slice(1)
+        left=dtype-a.length;
+        let answer=""
+        for(var i = 0 ;i<left;i++){
+            answer+='0';
+        }
+        answer+=a;
+        return flip(answer);
+    }
+}
+function choiceArrByString(arr,string){
+    let answer=[]
+    for(var i=0;i<arr.length;i++){
+        if(string[i]=='1'){
+            answer.push(arr[i])
+        }
+    }
+    return answer;
+}
+function combinations(given_arr,given_length){
+    var out=""
+    var mina=2**given_arr.length
+    var counter=0
+    for(var i=mina;i>=0;i--){
+        counter++;
+        if(counter==10**6){return out}
+        var selector=binBits(i,dtype=given_arr.length)
+        if(count(selector,'1')==given_length){
+            out+=arraytostring(choiceArrByString(given_arr,selector))+"<br>"
+        }
+    }
+    return out
+}
 INT_MAX=2**31-1
 INT_MIN=-(2**31)+1
 LLONG_MAX=2**63-1
