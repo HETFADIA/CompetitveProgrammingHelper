@@ -6,7 +6,7 @@ https://hetfadia.github.io/CompetitveProgrammingHelper/
 <p align="center">
   
   <p align = "center">
-    <a href="https://github.com/HETFADIA/CompetitveProgrammingHelper"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/HETFADIA/CompetitveProgrammingHelper/Documentation"><strong>Explore the docs »</strong></a>
     <br />
     <a href="https://github.com/HETFADIA/CompetitveProgrammingHelper/issues/new">Report Bug</a>
     
