@@ -343,7 +343,7 @@ function* charCombinations (chars, minLength, maxLength) {
 }
 
 function list(a){var res=[];for(let i of a){res.push(i)};return res}
-function permutations(l,minsize=undefined,maxsize=undefined,defaulttype="arr",dtype='int'){
+function product(l,minsize=undefined,maxsize=undefined,defaulttype="arr",dtype='int'){
     if(Array.isArray(l)){
         l=join(l)
         
@@ -412,6 +412,28 @@ function combinations(given_arr,given_length){
         var selector=binBits(i,dtype=given_arr.length)
         if(count(selector,'1')==given_length){
             out+=arraytostring(choiceArrByString(given_arr,selector))+"<br>"
+        }
+    }
+    return out
+}
+function permutations(given_arr,given_length=undefined){
+    if(given_length==undefined){given_length=given_arr.length}
+    var out=""
+    var mina=2**given_arr.length-1
+    var counter=0
+    var fac=1;
+    for(var i=1;i<=given_length;i++){fac*=i;}
+    console.log(fac)
+    for(var i=mina;i>=1;i--){
+        counter++;
+        if(counter==10**6){return out}
+        var selector=binBits(i,dtype=given_arr.length)
+        if(count(selector,'1')==given_length){
+            var temparr=choiceArrByString(given_arr,selector)
+            for(var j=0;j<fac;j++){
+                out+=arraytostring(temparr)+"<br>"
+                next_permutation(temparr)
+            }
         }
     }
     return out
@@ -768,7 +790,7 @@ function ArrayPermutation(){
         max=array.length
     }
     
-    document.getElementById("outArrayPermutation").innerHTML=permutations(array,min,max,"")
+    document.getElementById("outArrayPermutation").innerHTML=product(array,min,max,"")
     beautify("outArrayPermutation")
 }
 function resetArrayPermutation(){

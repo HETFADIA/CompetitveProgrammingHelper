@@ -1,6 +1,6 @@
 function is_sorted(a){for(var i=0;i<a.length-1;i++){if(a[i]>a[i+1]){return 0;}}return 1;}
 function reversed(a){var res=[];for(let i=a.length-1;i>=0;i--){res.push(a[i])}return res;}
-function reverse(a,start=undefined,end=undefined){
+function reversearr(a,start=undefined,end=undefined){
     if(start==undefined){start=0;}
     if(end==undefined){end=a.length}
     var iter1=start;
@@ -33,7 +33,7 @@ function next_permutation(a){
         }
     }
     [a[pnt], a[pnt2]]=[a[pnt2],a[pnt]]
-    reverse(a,pnt+1)
+    reversearr(a,pnt+1)
     return 1;
 }
 a=[1,2,3]
