@@ -22,7 +22,7 @@
             <li><a id="linker" onclick="showarray('permutationGen')">Permutation of 1:n</a></li>
             <li><a id="linker" onclick="showarray('permutationOfArray')">Permutation of Array</a></li>
             <li><a id="linker" onclick="showarray('CombOfArray')">Combinations of Array</a></li>
-            <li><a id="linker" onclick="showarray('nextpermutationOfArray')"> Next Permutation of Array</a></li>
+            <li><a id="linker" onclick="showarray('nextpermutationOfArray')"> Next and Prev Permutation of Array</a></li>
             <li><a id="linker" onclick="showarray('prevPrimeGen')">Prev Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('nextPrimeGen')">Next Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('primeRangeGen')">Get Primes in a Range</a></li>
@@ -228,7 +228,7 @@
     </div>
     <div class="permutation label" id="nextpermutationOfArray">
         <h2>
-            Next permutation of array
+            Next and Prev Permutation
         </h2>
 
         <br>
@@ -239,7 +239,8 @@
         
         <br>
         <br>
-        <button type="button" class="btn btn-success" id="genArrayPermutation" onclick="nextArrayPermutation()">Generate Permutation</button>
+        <button type="button" class="btn btn-success" id="genArrayPermutation" onclick="nextArrayPermutation()">Next Permutation</button>
+        <button type="button" class="btn btn-success" id="genArrayPermutation" onclick="prevArrayPermutation()">Prev Permutation</button>
         <button type="button" class="btn btn-primary" id="resArrayPermutation" onclick="resetnextArrayPermutation()">Clear</button>
         <button type="button" class="btn btn-danger" onclick="home('nextpermutationOfArray')">Back</button>
         <br>
