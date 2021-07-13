@@ -166,6 +166,9 @@ button{
 #nextpermutationOfArray {
   display: none;
 }
+#permutationsOfArray {
+  display: none;
+}
 #prevPrimeGen {
   display: none;
 }

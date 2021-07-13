@@ -99,6 +99,8 @@ The Program also evaluates these python features
 - `reversed(a)` Returns the reversed list of the object a
 - `join(a,b)` Returns the "b".join(a) ie joins b within each consequitive items of a
 - `combinations(arr,len)` Returns all the combinations of arr of size len
+- `permutations(arr,len)` Returns all the permutations of arr of size len
+- `product(arr,len)` Returns all the products of arr with the repeat r
 - `binBits(n,len=64)` Returns the binary representation of n in len bits
 
 The program also evaluates these c++ features

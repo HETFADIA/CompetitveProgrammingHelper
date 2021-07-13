@@ -126,11 +126,12 @@ function combinations(given_arr,given_length){
 function permutations(given_arr,given_length=undefined){
     if(given_length==undefined){given_length=given_arr.length}
     var out=""
+    var outs=[]
     var mina=2**given_arr.length-1
     var counter=0
     var fac=1;
     for(var i=1;i<=given_length;i++){fac*=i;}
-    console.log(fac)
+    for(var i=0;i<fac;i++){outs.push("")}
     for(var i=mina;i>=1;i--){
         counter++;
         if(counter==10**6){return out}
@@ -138,14 +139,19 @@ function permutations(given_arr,given_length=undefined){
         if(count(selector,'1')==given_length){
             var temparr=choiceArrByString(given_arr,selector)
             for(var j=0;j<fac;j++){
-                out+=arraytostring(temparr)+"<br>"
+                // out+=arraytostring(temparr)+"<br>"
+                outs[j]+=arraytostring(temparr)+"<br>";
                 next_permutation(temparr)
+
             }
         }
     }
+    for(var i=0;i<outs.length;i++){
+        out+=outs[i];
+    }
     return out
 }
-arr=[1,2,3,4,5,6]
+arr=[1,2,3]
 lena=2
-arr=permutations(arr,lena)
+arr=permutations(arr)
 console.log(arr)
