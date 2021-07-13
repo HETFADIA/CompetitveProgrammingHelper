@@ -811,13 +811,18 @@ function exists(a,b){
     return 0;
 }
 function ArrayPermutation(){
-    var array=document.getElementById("arrayPermutation").value
-    if(array==""){
-        document.getElementById("outArrayPermutation").innerHTML=""
-        return;
-    }
-    if(exists(array," ")){
-        array=split(array)
+    try {
+        var array=evaladv(document.getElementById("arrayPermutation").value)
+    } catch (error) {
+        
+        var array=document.getElementById("arrayPermutation").value
+        if(array==""){
+            document.getElementById("outArrayPermutation").innerHTML=""
+            return;
+        }
+        if(exists(array," ")){
+            array=split(array)
+        }
     }
     var min=document.getElementById("minValuePermutation").value;
     var max=document.getElementById("maxValuePermutation").value;
@@ -832,13 +837,18 @@ function ArrayPermutation(){
     beautify("outArrayPermutation")
 }
 function ArrayPermutations(){
-    var array=document.getElementById("arrayPermutations").value
-    if(array==""){
-        document.getElementById("outArrayPermutations").innerHTML=""
-        return;
-    }
-    if(exists(array," ")){
-        array=split(array)
+    try {
+        var array=evaladv(document.getElementById("arrayPermutations").value)
+    } catch (error) {
+        
+        var array=document.getElementById("arrayPermutations").value
+        if(array==""){
+            document.getElementById("outArrayPermutations").innerHTML=""
+            return;
+        }
+        if(exists(array," ")){
+            array=split(array)
+        }
     }
     var min=document.getElementById("minValuePermutations").value;
 
@@ -856,7 +866,7 @@ function resetArrayPermutation(){
 function resetArrayPermutations(){
     document.getElementById("outArrayPermutations").innerHTML=""
 }
-var comb_or_combrep=""
+var comb_or_combrep="comb"
 function comb_and_combrep(){
     if(comb_or_combrep=="comb"){
         ArrayComb()
@@ -867,14 +877,19 @@ function comb_and_combrep(){
 }
 function ArrayComb(){
     comb_or_combrep="comb"
-    var array=document.getElementById("arrayComb").value
-    if(array==""){
-        document.getElementById("outArrayComb").innerHTML=""
-        return;
+    try {
+        var array=evaladv(document.getElementById("arrayComb").value)
+    } catch (error) {
+        var array=document.getElementById("arrayComb").value
+        if(array==""){
+            document.getElementById("outArrayComb").innerHTML=""
+            return;
+        }
+        if(exists(array," ")){
+            array=split(array)
+        }
     }
-    if(exists(array," ")){
-        array=split(array)
-    }
+    
     var min=document.getElementById("minValueComb").value;
     if(min==""){
         min=array.length
@@ -886,13 +901,17 @@ function ArrayComb(){
 
 function ArrayCombReplacement(){
     comb_or_combrep="comb_rep"
-    var array=document.getElementById("arrayComb").value
-    if(array==""){
-        document.getElementById("outArrayComb").innerHTML=""
-        return;
-    }
-    if(exists(array," ")){
-        array=split(array)
+    try {
+        var array=evaladv(document.getElementById("arrayComb").value)
+    } catch (error) {
+        var array=document.getElementById("arrayComb").value
+        if(array==""){
+            document.getElementById("outArrayComb").innerHTML=""
+            return;
+        }
+        if(exists(array," ")){
+            array=split(array)
+        }
     }
     var min=evaladv(document.getElementById("minValueComb").value);
     if(min==""){
@@ -917,9 +936,14 @@ function lastprevnext(){
 }
 function nextArrayPermutation(){
     last_prev_next="next"
-    var array=document.getElementById("nextarrayPermutation").value
-    if(exists(array," ")){
-        array=split(array)
+    try {
+        var array=evaladv(document.getElementById("nextarrayPermutation").value)
+    } catch (error) {
+        
+        var array=document.getElementById("nextarrayPermutation").value
+        if(exists(array," ")){
+            array=split(array)
+        }
     }
     var counter=0;
     var go=next_permutation(array)
@@ -943,9 +967,14 @@ function nextArrayPermutation(){
 }
 function prevArrayPermutation(){
     last_prev_next="prev"
-    var array=document.getElementById("nextarrayPermutation").value
-    if(exists(array," ")){
-        array=split(array)
+    try {
+        var array=evaladv(document.getElementById("nextarrayPermutation").value)
+    } catch (error) {
+        
+        var array=document.getElementById("nextarrayPermutation").value
+        if(exists(array," ")){
+            array=split(array)
+        }
     }
     var counter=0;
     var go=prev_permutation(array)
