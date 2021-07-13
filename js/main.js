@@ -96,7 +96,9 @@ function next_permutation(a){
     reversearr(a,pnt+1)
     return 1;
 }
+
 function prev_permutation(a){
+    
     if(is_sorted(a)){
         sort(a,itself,reverse=true)
         return 0;
@@ -844,7 +846,17 @@ function ArrayComb(){
 function resetArrayComb(){
     document.getElementById("outArrayComb").innerHTML=""
 }
+var last_prev_next=""
+function lastprevnext(){
+    if (last_prev_next=="next"){
+        nextArrayPermutation()
+    }
+    else{
+        prevArrayPermutation()
+    }
+}
 function nextArrayPermutation(){
+    last_prev_next="next"
     var array=document.getElementById("nextarrayPermutation").value
     if(exists(array," ")){
         array=split(array)
@@ -870,6 +882,7 @@ function nextArrayPermutation(){
     beautify("outnextArrayPermutation")
 }
 function prevArrayPermutation(){
+    last_prev_next="prev"
     var array=document.getElementById("nextarrayPermutation").value
     if(exists(array," ")){
         array=split(array)

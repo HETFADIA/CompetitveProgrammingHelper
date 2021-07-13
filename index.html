@@ -20,10 +20,10 @@
             <li><a id="linker" onclick="showarray('stringGen')">Random String</a></li>
             <li><a id="linker" onclick="showarray('tcGen')">Test Cases Generator</a></li>
             <li><a id="linker" onclick="showarray('permutationGen')">Permutation of 1:n</a></li>
-            <li><a id="linker" onclick="showarray('permutationOfArray')">Product of Array</a></li>
-            <li><a id="linker" onclick="showarray('permutationsOfArray')">Permutations of Array</a></li>
             <li><a id="linker" onclick="showarray('CombOfArray')">Combinations of Array</a></li>
+            <li><a id="linker" onclick="showarray('permutationsOfArray')">Permutations of Array</a></li>
             <li><a id="linker" onclick="showarray('nextpermutationOfArray')"> Prev and Next Permutation of Array</a></li>
+            <li><a id="linker" onclick="showarray('permutationOfArray')">Product of Array</a></li>
             <li><a id="linker" onclick="showarray('prevPrimeGen')">Prev Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('nextPrimeGen')">Next Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('primeRangeGen')">Get Primes in a Range</a></li>
@@ -237,7 +237,7 @@
         <br>
         <span class="text">Array :</span><input type="text" id="arrayComb" value="1 2 3 4" onKeyDown="if(event.keyCode==13) ArrayComb();"  onkeyup="this.size = Math.max(this.value.length, 20)">
         <br>
-        <span class="text">Length:</span> <input type="text" id="minValueComb" value="2" onKeyDown="if(event.keyCode==13) ArrayComb();"   onkeyup="this.size = Math.max(this.value.length, 20)">
+        <span class="text">Length:</span> <input type="text" id="minValueComb" value="" onKeyDown="if(event.keyCode==13) ArrayComb();"   onkeyup="this.size = Math.max(this.value.length, 20)">
         
         
         <br>
@@ -260,7 +260,7 @@
 
         <br>
         <span class="text">Array :</span>
-        <input type="text" id="nextarrayPermutation" value="1 2 3 4" placeholder="1 2 3 4" onKeyDown="if(event.keyCode==13) nextArrayPermutation();">
+        <input type="text" id="nextarrayPermutation" value="1 2 3 4" placeholder="1 2 3 4" onKeyDown="if(event.keyCode==13) lastprevnext();">
 
         
         
