@@ -139,6 +139,9 @@ header {
   font-size: 28px;
   color: rgb(26, 179, 250);
 }
+button{
+  margin:10px 5px;
+}
 #arrayGen {
   display: none;
 }

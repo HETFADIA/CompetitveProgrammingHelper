@@ -22,7 +22,7 @@
             <li><a id="linker" onclick="showarray('permutationGen')">Permutation of 1:n</a></li>
             <li><a id="linker" onclick="showarray('permutationOfArray')">Permutation of Array</a></li>
             <li><a id="linker" onclick="showarray('CombOfArray')">Combinations of Array</a></li>
-            <li><a id="linker" onclick="showarray('nextpermutationOfArray')"> Next and Prev Permutation of Array</a></li>
+            <li><a id="linker" onclick="showarray('nextpermutationOfArray')"> Prev and Next Permutation of Array</a></li>
             <li><a id="linker" onclick="showarray('prevPrimeGen')">Prev Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('nextPrimeGen')">Next Primes Finder</a></li>
             <li><a id="linker" onclick="showarray('primeRangeGen')">Get Primes in a Range</a></li>
@@ -75,11 +75,11 @@
 
         <span class="text">Array :</span>
         <br>
-        <input type="text" id="array" value="" size="25"  onKeyDown="if(event.keyCode==13) sortarray();" onkeyup="this.size = Math.max(this.value.length, 25)">
+        <input type="text" id="array" value="" size="20"  onKeyDown="if(event.keyCode==13) sortarray();" onkeyup="this.size = Math.max(this.value.length, 20)">
         <br>
         <span class="text">key :</span>
         <br>
-        <input type="text" id="arraykey" value="" size="25"  onKeyDown="if(event.keyCode==13) sortarray();" onkeyup="this.size = Math.max(this.value.length, 25)">
+        <input type="text" id="arraykey" value="" size="20"  onKeyDown="if(event.keyCode==13) sortarray();" onkeyup="this.size = Math.max(this.value.length, 20)">
 
         <br>
         <br>
@@ -209,9 +209,9 @@
         </h2>
 
         <br>
-        <span class="text">Array :</span><input type="text" id="arrayComb" value="1 2 3 4" onKeyDown="if(event.keyCode==13) ArrayComb();"  onkeyup="this.size = Math.max(this.value.length, 25)">
+        <span class="text">Array :</span><input type="text" id="arrayComb" value="1 2 3 4" onKeyDown="if(event.keyCode==13) ArrayComb();"  onkeyup="this.size = Math.max(this.value.length, 20)">
         <br>
-        <span class="text">Length:</span> <input type="text" id="minValueComb" value="2" onKeyDown="if(event.keyCode==13) ArrayComb();"   onkeyup="this.size = Math.max(this.value.length, 25)">
+        <span class="text">Length:</span> <input type="text" id="minValueComb" value="2" onKeyDown="if(event.keyCode==13) ArrayComb();"   onkeyup="this.size = Math.max(this.value.length, 20)">
         
         
         <br>
@@ -227,20 +227,21 @@
         </div>
     </div>
     <div class="permutation label" id="nextpermutationOfArray">
+        
         <h2>
-            Next and Prev Permutation
+            Prev and Next Permutations
         </h2>
 
         <br>
         <span class="text">Array :</span>
-        <input type="text" id="nextarrayPermutation" value="1 2 3 4" onKeyDown="if(event.keyCode==13) nextArrayPermutation();">
+        <input type="text" id="nextarrayPermutation" value="1 2 3 4" placeholder="1 2 3 4" onKeyDown="if(event.keyCode==13) nextArrayPermutation();">
 
         
         
         <br>
         <br>
-        <button type="button" class="btn btn-success" id="genArrayPermutation" onclick="nextArrayPermutation()">Next Permutation</button>
         <button type="button" class="btn btn-success" id="genArrayPermutation" onclick="prevArrayPermutation()">Prev Permutation</button>
+        <button type="button" class="btn btn-success" id="genArrayPermutation" onclick="nextArrayPermutation()">Next Permutation</button>
         <button type="button" class="btn btn-primary" id="resArrayPermutation" onclick="resetnextArrayPermutation()">Clear</button>
         <button type="button" class="btn btn-danger" onclick="home('nextpermutationOfArray')">Back</button>
         <br>
@@ -486,7 +487,7 @@
 
             Loop:
         </span>
-        <input type="text" id="loop" value="2*1e5*log2(2*1e5)" size="25" onKeyDown="if(event.keyCode==13) calculate();" onkeyup="this.size = Math.max(this.value.length, 25)">
+        <input type="text" id="loop" value="2*1e5*log2(2*1e5)" size="20" onKeyDown="if(event.keyCode==13) calculate();" onkeyup="this.size = Math.max(this.value.length, 20)">
         <br>
         <br>
         <br>
@@ -580,7 +581,7 @@
             Enter the Expression below
         </span>
         <br>
-        <input type="text" id="expression" size="25" value='' placeholder="1+3" onKeyDown="if(event.keyCode==13){calculateExpression();}" onkeyup="this.size = Math.max(this.value.length, 25)" >
+        <input type="text" id="expression" size="20" value='' placeholder="1+3" onKeyDown="if(event.keyCode==13){calculateExpression();}" onkeyup="this.size = Math.max(this.value.length, 20)" >
         <!-- <br> -->
         <!-- <textarea id="expression" rows="4" cols="50" value='' placeholder="1+3" onKeyDown="if(event.keyCode==13) {calculateExpression();}if(event.keyCode){addBracketStyle('expression')}">
             
