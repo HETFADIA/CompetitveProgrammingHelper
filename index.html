@@ -235,14 +235,15 @@
         </h2>
 
         <br>
-        <span class="text">Array :</span><input type="text" id="arrayComb" value="1 2 3 4" onKeyDown="if(event.keyCode==13) ArrayComb();"  onkeyup="this.size = Math.max(this.value.length, 20)">
+        <span class="text">Array :</span><input type="text" id="arrayComb" value="1 2 3 4" onKeyDown="if(event.keyCode==13) comb_and_combrep();"  onkeyup="this.size = Math.max(this.value.length, 20)">
         <br>
-        <span class="text">Length:</span> <input type="text" id="minValueComb" value="" onKeyDown="if(event.keyCode==13) ArrayComb();"   onkeyup="this.size = Math.max(this.value.length, 20)">
+        <span class="text">Length:</span> <input type="text" id="minValueComb" value="" onKeyDown="if(event.keyCode==13) comb_and_combrep();"   onkeyup="this.size = Math.max(this.value.length, 20)">
         
         
         <br>
         <br>
         <button type="button" class="btn btn-success" id="genArrayComb" onclick="ArrayComb()">Combinations</button>
+        <button type="button" class="btn btn-success" id="genArrayComb" onclick="ArrayCombReplacement()">Combinations with replacement</button>
         <button type="button" class="btn btn-primary" id="resArrayComb" onclick="resetArrayComb()">Clear</button>
         <button type="button" class="btn btn-danger" onclick="home('CombOfArray')">Back</button>
         <br>

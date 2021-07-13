@@ -407,6 +407,7 @@ function choiceArrByString(arr,string,base=2){
 }
 function customBase(a,dtype=64,base=b){
     if(a>=0){
+        console.log(base)
         var string=a.toString(base);
         var string2=""
         for(var i=0;i<dtype-string.length;i++){
@@ -430,7 +431,9 @@ function combinations(given_arr,given_length){
     }
     return out
 }
-function combinations_with_replacement(given_arr,given_length){
+function combinations_with_replacement(given_arr,given_length=undefined){
+    if(given_length==undefined){given_length=given_arr.length}
+    console.log(given_length)
     var out=""
     var mina=(given_length+1)**given_arr.length-1
     var counter=0
@@ -852,7 +855,17 @@ function resetArrayPermutation(){
 function resetArrayPermutations(){
     document.getElementById("outArrayPermutations").innerHTML=""
 }
+var comb_or_combrep=""
+function comb_and_combrep(){
+    if(comb_or_combrep=="comb"){
+        ArrayComb()
+    }
+    else{
+        ArrayCombReplacement()
+    }
+}
 function ArrayComb(){
+    comb_or_combrep="comb"
     var array=document.getElementById("arrayComb").value
     if(array==""){
         document.getElementById("outArrayComb").innerHTML=""
@@ -867,6 +880,26 @@ function ArrayComb(){
     }
     
     document.getElementById("outArrayComb").innerHTML=combinations(array,min)
+    beautify("outArrayComb")
+}
+
+function ArrayCombReplacement(){
+    comb_or_combrep="comb_rep"
+    var array=document.getElementById("arrayComb").value
+    if(array==""){
+        document.getElementById("outArrayComb").innerHTML=""
+        return;
+    }
+    if(exists(array," ")){
+        array=split(array)
+    }
+    var min=evaladv(document.getElementById("minValueComb").value);
+    if(min==""){
+        min=array.length
+    }
+
+    
+    document.getElementById("outArrayComb").innerHTML=combinations_with_replacement(array,min)
     beautify("outArrayComb")
 }
 function resetArrayComb(){

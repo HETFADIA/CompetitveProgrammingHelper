@@ -83,7 +83,8 @@ function arraytostring(array){
     }
     return string;
 }
-function combinations_with_replacement(given_arr,given_length){
+function combinations_with_replacement(given_arr,given_length=undefined){
+    if(given_length==undefined){given_length=given_arr.length}
     var out=""
     var mina=(given_length+1)**given_arr.length-1
     var counter=0
