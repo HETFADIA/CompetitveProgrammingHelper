@@ -407,7 +407,7 @@ function choiceArrByString(arr,string,base=2){
 }
 function customBase(a,dtype=64,base=b){
     if(a>=0){
-        console.log(base)
+        
         var string=a.toString(base);
         var string2=""
         for(var i=0;i<dtype-string.length;i++){
@@ -438,8 +438,9 @@ function combinations_with_replacement(given_arr,given_length=undefined){
     var mina=(given_length+1)**given_arr.length-1
     var counter=0
     for(var i=mina;i>=1;i--){
-        counter++;
-        if(counter==10**6){return out}
+        counter+=given_length;
+        
+        if(counter==10**5){return out}
         var selector=customBase(i,dtype=given_arr.length,base=given_length+1)
         if(sumOfString(selector,given_length+1)==given_length){
             out+=arraytostring(choiceArrByString(given_arr,selector,base=given_length+1))+"<br>"
