@@ -395,15 +395,27 @@ function binBits(a,dtype=64){
         return flip(answer);
     }
 }
-function choiceArrByString(arr,string){
+function choiceArrByString(arr,string,base=2){
     let answer=[]
     for(var i=0;i<arr.length;i++){
-        if(string[i]=='1'){
+        var repeat=parseInt(string[i],base)
+        for(var j=0;j<repeat;j++){
             answer.push(arr[i])
         }
     }
     return answer;
 }
+function customBase(a,dtype=64,base=b){
+    if(a>=0){
+        var string=a.toString(base);
+        var string2=""
+        for(var i=0;i<dtype-string.length;i++){
+            string2+="0"
+        }
+        return string2+string;
+    }
+}
+function sumOfString(a,base=2){counter=0;for(var i of a){counter+=parseInt(i,base)}return counter}
 function combinations(given_arr,given_length){
     var out=""
     var mina=2**given_arr.length-1
@@ -414,6 +426,20 @@ function combinations(given_arr,given_length){
         var selector=binBits(i,dtype=given_arr.length)
         if(count(selector,'1')==given_length){
             out+=arraytostring(choiceArrByString(given_arr,selector))+"<br>"
+        }
+    }
+    return out
+}
+function combinations_with_replacement(given_arr,given_length){
+    var out=""
+    var mina=(given_length+1)**given_arr.length-1
+    var counter=0
+    for(var i=mina;i>=1;i--){
+        counter++;
+        if(counter==10**6){return out}
+        var selector=customBase(i,dtype=given_arr.length,base=given_length+1)
+        if(sumOfString(selector,given_length+1)==given_length){
+            out+=arraytostring(choiceArrByString(given_arr,selector,base=given_length+1))+"<br>"
         }
     }
     return out
