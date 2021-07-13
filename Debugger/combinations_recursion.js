@@ -9,7 +9,7 @@ function arraytostring(array){
 }
 function _combinations(given_arr,given_length,temp,index,saved){
     if(temp.length==given_length && saved==0){
-        console.log(temp)
+
         string+=arraytostring(temp)+"<br>"
     }
     if(index>=given_arr.length){
