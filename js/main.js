@@ -458,13 +458,14 @@ function permutations(given_arr,given_length=undefined){
     for(var i=1;i<=given_length;i++){fac*=i;}
     for(var i=0;i<fac;i++){outs.push("")}
     for(var i=mina;i>=1;i--){
-        counter++;
-        if(counter==10**6){return out}
+        
         var selector=binBits(i,dtype=given_arr.length)
         if(count(selector,'1')==given_length){
             var temparr=choiceArrByString(given_arr,selector)
             for(var j=0;j<fac;j++){
                 // out+=arraytostring(temparr)+"<br>"
+                counter+=temparr.length;
+                if(counter>=10**6){return out}
                 outs[j]+=arraytostring(temparr)+"<br>";
                 next_permutation(temparr)
 
