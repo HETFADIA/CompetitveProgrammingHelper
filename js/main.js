@@ -1362,14 +1362,7 @@ function split(arr){
     }
     return newarr;
 }
-function evaladv(a){
-    a=a.split("or").join("||")
-    a=a.split("and").join("&&")
-    if(a==""){
-        return 0
-    }
-    return eval(a)
-}
+
 function evaluatepostfix(s){
     s=split(s)
     var stack=[]
@@ -1388,6 +1381,7 @@ function evaluatepostfix(s){
             stack.push(s[i])
         }
     }
+    console.log(stack[0])
     return stack[0]
 }
 function inftoPost(){
@@ -1398,7 +1392,14 @@ function postfixvalue(){
     var input=document.getElementById('postfix').value;
     console.log(input)
     var out=evaluatepostfix(input)
-    var output="The infix expression is "+out+"<br>"+"Its value is "+evaladv(out);
+    var output="The infix expression is "+out+"<br>"
+    try{
+        output+="Its value is "+evaladv(out);
+    }
+    catch(err)
+    {
+
+    }
     document.getElementById('postfixout').innerHTML=output
 }
 
@@ -1422,13 +1423,14 @@ function __calculateMemory(sizearray,memory){
     
     return res;
 }
-function evaladv(a){
-    a=a.split("or").join("||")
-    a=a.split("and").join("&&")
-    if(a==""){
+function evaladv(a123){
+    a123=a123.split("or").join("||")
+    a123=a123.split("and").join("&&")
+    
+    if(a123==""){
         return 0
     }
-    return eval(a)
+    return eval(a123)
 }
 function calculateMemory(){
     var stringarr=["bitsetSize","boolSize","intarraySize","longlongarraySize","__int128_tarraySize","pythontupleSize","pythonlistSize"]
