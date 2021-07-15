@@ -1292,9 +1292,9 @@ function infixToPostfix(s) {
         console.log(c)
         if(c==' '){continue}
         
-        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
+        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')||(c=='.')){
             c = s[i];
-            while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
+            while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')||(c=='.')){
 
                 result += c;
                 i++
@@ -1362,18 +1362,26 @@ function split(arr){
     }
     return newarr;
 }
+function evaladv(a){
+    a=a.split("or").join("||")
+    a=a.split("and").join("&&")
+    if(a==""){
+        return 0
+    }
+    return eval(a)
+}
 function evaluatepostfix(s){
     s=split(s)
     var stack=[]
     for(var i=0;i<s.length;i++){
         if (s[i] in priority){
             if(stack.length==1){
-                stack[stack.length - 1]=s[i]+stack[stack.length - 1]
+                stack[stack.length - 1]="("+s[i]+stack[stack.length - 1]+")"
             }
             else{
                 var pop1=stack.pop()
                 var pop2=stack.pop()
-                stack.push(pop2+s[i]+pop1)
+                stack.push("("+pop2+s[i]+pop1+")")
             }
         }
         else{
