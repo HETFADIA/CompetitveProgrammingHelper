@@ -1,18 +1,41 @@
+//https://en.cppreference.com/w/c/language/operator_precedence
 var priority={}
 function init_priority(){
-    priority['**']=6;
-    priority['++']=6;
-    priority['--']=6;
-    priority['<<']=5;
-    priority['>>']=5;
-    priority['%']=5;
-    priority['~']=5
-    priority['*']=priority['/']=3
-    priority['-']=priority['+']=2
-    priority['==']=1
-    priority['!=']=1
-    priority['^']=priority['&']=priority['|']=0;
-    priority['&&']=priority['||']=0;
+    priority['**']=14
+    priority['++']=14
+    priority['--']=14
+    
+    priority['~']=priority['!']=13
+    priority['*']=priority['/']=priority['%']=12
+    priority['-']=priority['+']=11
+    priority['<<']=10
+    priority['>>']=10
+    priority['<<=']=9
+    priority['>>=']=9
+    priority['==']=8
+    priority['!=']=8
+    priority['&']=7
+    priority['^']=6
+    priority['|']=5
+    priority['&&']=4;
+
+    priority['||']=3
+
+    priority['&=']=1
+    priority['^=']=1
+    priority['|=']=1
+    priority['%=']=1
+    priority['-=']=1
+    priority['+=']=1
+    priority['*=']=1
+    priority['/=']=1
+    priority['>=']=1
+    priority['<=']=1
+    priority['<<=']=1
+    priority['>>=']=1
+    priority['=']=1
+    
+    
     priority['or']=0
     priority['and']=0
 }
@@ -31,11 +54,23 @@ function infixToPostfix(s) {
  
     for(var i = 0; i < s.length; i++) {
         var c = s[i];
-        if(i+2<s.length && (s.slice(i,i+2) in priority)){
+        if(i+1<s.length && (s.slice(i,i+2) in priority)){
             c=s.slice(i,i+2)
         }
         console.log(c)
         if(c==' '){continue}
+        if(c=="++"){
+            result+=c;
+            i+=1
+            result+=' '
+            continue
+        }
+        else if (c=="--"){
+            result+=c;
+            i+=1;
+            result+=' '
+            continue
+        }
         
         if((c.length==1)&&((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')||(c=='.'))){
             c = s[i];
@@ -135,7 +170,8 @@ function evaluatepostfix(s){
     }
     return stack[0]
 }
-ans=infixToPostfix("1+3==0 or 2")
+theta=3;
+ans=infixToPostfix("1<<2+3")
 console.log(ans)
 ans2=evaluatepostfix(ans)
 console.log(ans2)
