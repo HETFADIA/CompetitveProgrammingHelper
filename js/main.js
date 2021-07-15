@@ -1263,6 +1263,10 @@ function init_priority(){
     priority['<<']=5;
     priority['>>']=5;
     priority['%']=5;
+    priority['&&']=4
+    priority['||']=4
+    priority['or']=4
+    priority['and']=4
     priority['^']=priority['&']=priority['|']=4;
     priority['*']=priority['/']=3
     priority['-']=priority['+']=2
@@ -1283,10 +1287,17 @@ function infixToPostfix(s) {
     for(var i = 0; i < s.length; i++) {
         var c = s[i];
         if(c==' '){continue}
+        if(i+2<s.length && (s.slice(i,i+2) in priority)){
+            c=s.slice(i,i+2)
+        }
+        if(i+2<s.length && (s.slice(i,i+3)) in priority){
+            c=s.slice(i,i+3)
+        }
+        console.log(c)
         
-        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
+        if((c.length==1) && ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))){
             c = s[i];
-            while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
+            while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || (c=='.')){
 
                 result += c;
                 i++
@@ -1316,12 +1327,25 @@ function infixToPostfix(s) {
             st.pop();
         }
         else {
-            while(!st==[] && prec(s[i]) <= prec(st[st.length-1])) {
+            var out=st[st.length-1]
+            console.log("out",out)
+            while(!st==[] && prec(c) <= prec(out)) {
                 result += st[st.length-1];
                 result+=' '
                 st.pop(); 
+                if(st.length)
+                out=st[st.length-1]
+                else{
+                    break;
+                }
             }
             st.push(c);
+        }
+        if(c.length==2){
+            i+=1
+        }
+        if(c.length==3){
+            i+=2;
         }
     }
     
