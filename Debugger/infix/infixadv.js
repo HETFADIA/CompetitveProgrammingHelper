@@ -1,19 +1,23 @@
 var priority={}
 function init_priority(){
-    priority['**']=5;
+    priority['**']=6;
     priority['<<']=5;
     priority['>>']=5;
     priority['%']=5;
+    priority['~']=5
     priority['^']=priority['&']=priority['|']=4;
+    priority['&&']=priority['||']=4;
     priority['*']=priority['/']=3
     priority['-']=priority['+']=2
+    priority['==']=1
+    priority['!=']=1
 }
 init_priority()
 function prec(c) {
     if (c in priority){
         return priority[c]
     }
-    return -1;
+    return -10;
 }
 
 function infixToPostfix(s) {
@@ -89,5 +93,46 @@ function infixToPostfix(s) {
  
     return result
 }
-ans=infixToPostfix("1<<4-334&5")
+function split(arr){
+    arr=arr.split(" ");
+    newarr=[]
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]!=""){
+            newarr.push(arr[i]);
+        }
+    }
+    return newarr;
+}
+function evaladv(a){
+    a=a.split("or").join("||")
+    a=a.split("and").join("&&")
+    if(a==""){
+        return 0
+    }
+    return eval(a)
+}
+function evaluatepostfix(s){
+    s=split(s)
+    var stack=[]
+    for(var i=0;i<s.length;i++){
+        if (s[i] in priority){
+            if(stack.length==1){
+                stack[stack.length - 1]=s[i]+stack[stack.length - 1]
+            }
+            else{
+                var pop1=stack.pop()
+                var pop2=stack.pop()
+                stack.push(pop2+s[i]+pop1)
+            }
+        }
+        else{
+            stack.push(s[i])
+        }
+    }
+    return stack[0]
+}
+ans=infixToPostfix("-2**4")
 console.log(ans)
+ans2=evaluatepostfix(ans)
+console.log(ans2)
+console.log(eval(ans2))

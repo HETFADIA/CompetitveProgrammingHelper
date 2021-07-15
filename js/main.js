@@ -1259,24 +1259,24 @@ function calculate(){
 }
 var priority={}
 function init_priority(){
-    priority['**']=5;
+    priority['**']=6;
     priority['<<']=5;
     priority['>>']=5;
     priority['%']=5;
-    priority['&&']=4
-    priority['||']=4
-    priority['or']=4
-    priority['and']=4
+    priority['~']=5
     priority['^']=priority['&']=priority['|']=4;
+    priority['&&']=priority['||']=4;
     priority['*']=priority['/']=3
     priority['-']=priority['+']=2
+    priority['==']=1
+    priority['!=']=1
 }
 init_priority()
 function prec(c) {
     if (c in priority){
         return priority[c]
     }
-    return -1;
+    return -10;
 }
 
 function infixToPostfix(s) {
@@ -1286,18 +1286,15 @@ function infixToPostfix(s) {
  
     for(var i = 0; i < s.length; i++) {
         var c = s[i];
-        if(c==' '){continue}
         if(i+2<s.length && (s.slice(i,i+2) in priority)){
             c=s.slice(i,i+2)
         }
-        if(i+2<s.length && (s.slice(i,i+3)) in priority){
-            c=s.slice(i,i+3)
-        }
         console.log(c)
+        if(c==' '){continue}
         
-        if((c.length==1) && ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))){
+        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
             c = s[i];
-            while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || (c=='.')){
+            while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
 
                 result += c;
                 i++
@@ -1328,7 +1325,7 @@ function infixToPostfix(s) {
         }
         else {
             var out=st[st.length-1]
-            console.log("out",out)
+            
             while(!st==[] && prec(c) <= prec(out)) {
                 result += st[st.length-1];
                 result+=' '
@@ -1344,9 +1341,6 @@ function infixToPostfix(s) {
         if(c.length==2){
             i+=1
         }
-        if(c.length==3){
-            i+=2;
-        }
     }
     
     
@@ -1358,10 +1352,48 @@ function infixToPostfix(s) {
  
     return result
 }
+function split(arr){
+    arr=arr.split(" ");
+    newarr=[]
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]!=""){
+            newarr.push(arr[i]);
+        }
+    }
+    return newarr;
+}
+function evaluatepostfix(s){
+    s=split(s)
+    var stack=[]
+    for(var i=0;i<s.length;i++){
+        if (s[i] in priority){
+            if(stack.length==1){
+                stack[stack.length - 1]=s[i]+stack[stack.length - 1]
+            }
+            else{
+                var pop1=stack.pop()
+                var pop2=stack.pop()
+                stack.push(pop2+s[i]+pop1)
+            }
+        }
+        else{
+            stack.push(s[i])
+        }
+    }
+    return stack[0]
+}
 function inftoPost(){
     var input=document.getElementById('infix').value;
     document.getElementById('inftopost').innerHTML=infixToPostfix(input)
 }
+function postfixvalue(){
+    var input=document.getElementById('postfix').value;
+    console.log(input)
+    var out=evaluatepostfix(input)
+    var output="The infix expression is "+out+"<br>"+"Its value is "+evaladv(out);
+    document.getElementById('postfixout').innerHTML=output
+}
+
 function resetinftoPost(){
     document.getElementById('inftopost').innerHTML=""
 }
@@ -1380,6 +1412,8 @@ function __calculateMemory(sizearray,memory){
     return res;
 }
 function evaladv(a){
+    a=a.split("or").join("||")
+    a=a.split("and").join("&&")
     if(a==""){
         return 0
     }
