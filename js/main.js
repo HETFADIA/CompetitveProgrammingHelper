@@ -1405,6 +1405,9 @@ function postfixvalue(){
 function resetinftoPost(){
     document.getElementById('inftopost').innerHTML=""
 }
+function resetPostfixValue(){
+    document.getElementById('postfixout').innerHTML=""
+}
 function myFunction(){
     calculate()
     calculateExpression();
