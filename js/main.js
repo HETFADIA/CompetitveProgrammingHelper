@@ -1260,17 +1260,25 @@ function calculate(){
 var priority={}
 function init_priority(){
     priority['**']=6;
+    priority['++']=6;
+    priority['--']=6;
     priority['<<']=5;
     priority['>>']=5;
     priority['%']=5;
     priority['~']=5
-    priority['^']=priority['&']=priority['|']=4;
-    priority['&&']=priority['||']=4;
     priority['*']=priority['/']=3
     priority['-']=priority['+']=2
     priority['==']=1
     priority['!=']=1
+    priority['^']=0
+    priority['&']=0
+    priority['|']=0;
+    priority['&&']=0
+    priority['||']=0;
+    priority['or']=0
+    priority['and']=0
 }
+
 init_priority()
 function prec(c) {
     if (c in priority){
@@ -1292,7 +1300,7 @@ function infixToPostfix(s) {
         console.log(c)
         if(c==' '){continue}
         
-        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')||(c=='.')){
+        if((c.length==1)&&((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')||(c=='.'))){
             c = s[i];
             while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')||(c=='.')){
 
@@ -1362,7 +1370,14 @@ function split(arr){
     }
     return newarr;
 }
-
+function evaladv(a){
+    a=a.split("or").join("||")
+    a=a.split("and").join("&&")
+    if(a==""){
+        return 0
+    }
+    return eval(a)
+}
 function evaluatepostfix(s){
     s=split(s)
     var stack=[]
@@ -1381,7 +1396,6 @@ function evaluatepostfix(s){
             stack.push(s[i])
         }
     }
-    console.log(stack[0])
     return stack[0]
 }
 function inftoPost(){
