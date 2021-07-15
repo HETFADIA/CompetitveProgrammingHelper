@@ -1,13 +1,14 @@
 var priority={}
 function init_priority(){
     priority['**']=5;
+    priority['<<']=5;
+    priority['>>']=5;
+    priority['%']=5;
     priority['^']=priority['&']=priority['|']=4;
     priority['*']=priority['/']=3
     priority['-']=priority['+']=2
-    
-
-
 }
+init_priority()
 function prec(c) {
     if (c in priority){
         return priority[c]
@@ -16,7 +17,7 @@ function prec(c) {
 }
 
 function infixToPostfix(s) {
-    init_priority()
+    
     st=[]; 
     var result=[];
  
@@ -24,18 +25,33 @@ function infixToPostfix(s) {
         var c = s[i];
         if(c==' '){continue}
         
-        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
-            result += c;
+        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
+            c = s[i];
+            while((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')){
+
+                result += c;
+                i++
+                if(i==s.length){
+                    break;
+                }
+                c = s[i];
+            }
+            i--;
+            result+=' '
+        }
  
         
-        else if(c == '(')
+        else if(c == '('){
+
             st.push('(');
+        }
  
         
         else if(c == ')') {
             while(st[st.length-1] != '(')
             {
                 result += st[st.length-1];
+                result+=' '
                 st.pop();
             }
             st.pop();
@@ -43,6 +59,7 @@ function infixToPostfix(s) {
         else {
             while(!st==[] && prec(s[i]) <= prec(st[st.length-1])) {
                 result += st[st.length-1];
+                result+=' '
                 st.pop(); 
             }
             st.push(c);
@@ -52,9 +69,11 @@ function infixToPostfix(s) {
     
     while(st.length) {
         result += st[st.length-1];
+        result+=' '
         st.pop();
     }
  
     return result
 }
-infixToPostfix("(2+4)-5")
+ans=infixToPostfix("111+22-334&5")
+console.log(ans)
