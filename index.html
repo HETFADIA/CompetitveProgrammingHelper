@@ -34,6 +34,7 @@
             <li><a id="linker" onclick="showarray('timecalc')">Approx Time for a Program</a></li>
             <li><a id="linker" onclick="showarray('memorycalc')">Memory for a Program</a></li>
             <li><a id="linker" onclick="showarray('scientific')">Calculator</a></li>
+            <li><a id="linker" onclick="showarray('infixtopostfix')">Infix to Postfix</a></li>
 
         </ul>
     </div>
@@ -626,6 +627,36 @@
         <a href="#" onclick="CopyToClipboard('sciexp');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="sciexp" role="alert">
             Value :0
+        </div>
+        
+
+    </div>
+    <div class="infixtopostfix label" id="infixtopostfix">
+        
+        <h2>
+            Infix to Postfix
+        </h2>
+        <br>
+        
+        <span class="text" >
+            Enter the Expression below
+        </span>
+        <br>
+        <input type="text" id="infix" size="20" value='' placeholder="1+3" onKeyDown="if(event.keyCode==13){inftoPost();}" onkeyup="this.size = Math.max(this.value.length, 20)" >
+        
+        <br>
+        <br>
+
+        
+        <button type="button" id="expcalc" class="btn btn-success" onclick="inftoPost()">Evaluate</button>
+        <button type="button" class="btn btn-primary" onclick="resetinftoPost()">Reset</button>
+        <button type="button" class="btn btn-danger" onclick="home('infixtopostfix')">Back</button>
+
+        <br>
+        <br>
+        <a href="#" onclick="CopyToClipboard('inftopost');return false;">Copy Text</a>
+        <div class="alert alert-primary Array" id="inftopost" role="alert">
+            
         </div>
         
 
