@@ -1282,7 +1282,9 @@ function infixToPostfix(s) {
     for(var i = 0; i < s.length; i++) {
         var c = s[i];
  
-        
+        if(c==' '){
+            continue
+        }
         if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
             result += c;
  
