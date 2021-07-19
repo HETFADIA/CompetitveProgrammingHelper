@@ -34,6 +34,9 @@ function lcm(a,b=undefined){if(b==undefined){return lcmarr(a)}return a*b/gcd(a,b
 function values(a){var arr=[];for(var i in a){arr.push(a[i])}return arr}
 function keys(a){var arr=[];for(var i in a){arr.push(i)}return arr}
 function count(a,string){counter=0;for(var i of a){if(i==string){counter++;}}return counter;}
+function nothing(a){
+    return 0;
+}
 function sort(a,key=itself,reverse=false){
     var mul=1;
     if(reverse){mul=-1;}
@@ -667,6 +670,42 @@ function split(arr){
     }
     return newarr;
 }
+function arraytolist(arr){
+    var arraysize=arr.length
+    
+    var second="[";
+    for(let i=0;i<arraysize;i++){
+        
+        
+        
+        if(i!=arraysize-1){
+            second+=arr[i]+", ";
+        }
+        else{
+            second+=arr[i];
+        }
+    }
+    second+="]";
+    return second;
+}
+function arraytovector(arr){
+    var arraysize=arr.length
+    
+    var second="{";
+    for(let i=0;i<arraysize;i++){
+        
+        
+        
+        if(i!=arraysize-1){
+            second+=arr[i]+", ";
+        }
+        else{
+            second+=arr[i];
+        }
+    }
+    second+="}";
+    return second;
+}
 function sortarray(){
     var array=document.getElementById("array").value;
     var key=evaladv(document.getElementById("arraykey").value);
@@ -684,8 +723,16 @@ function sortarray(){
     sort(array,key)
 
     document.getElementById("sortedout").innerHTML=arraytostring(array);
+    document.getElementById("sortedoutlist").innerHTML=arraytolist(array);
+    document.getElementById("sortedoutvector").innerHTML=arraytovector(array);
     sort(array,key,reverse=True)
     document.getElementById("revsortedout").innerHTML=arraytostring(array);
+}
+function resetsortarray(){
+    document.getElementById("sortedout").innerHTML="Sorted Output";
+    document.getElementById("revsortedout").innerHTML="Sorted Output with reverse key";
+    document.getElementById("sortedoutlist").innerHTML="Sorted Output in form of List";
+    document.getElementById("sortedoutvector").innerHTML="Sorted Output in form of vector";
 }
 function zeroone01(n,m){
     let arr=['0','1']
@@ -772,10 +819,7 @@ function genString(){
 function resetgenString(){
     document.getElementById("string").innerHTML=""
 }
-function resetsortarray(){
-    document.getElementById("sortedout").innerHTML="";
-    document.getElementById("revsortedout").innerHTML="";
-}
+
 function resetarray(){
     document.getElementById("myInput").innerHTML="";
     document.getElementById("myInput1").innerHTML="";
@@ -1495,6 +1539,7 @@ function resetPostfixValue(){
 function myFunction(){
     calculate()
     calculateExpression();
+    resetsortarray()
     document.getElementById("expression").value=localStorage.getItem('expression')
 }
 function __calculateMemory(sizearray,memory){
