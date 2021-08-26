@@ -1147,10 +1147,12 @@ function GenerateNextPrime(){
     beautify("NextPrimes");
 }
 function getMiller(){
-    var num=abs(evaladv(document.getElementById("LargeNUm").value));
+    // https://www.rieselprime.de/ziki/List_of_known_Mersenne_primes
+    var num=BigInt(document.getElementById("LargeNum").value);
+    console.log(num)
     primenumornot=millerrabin(num)
     var outputted=document.getElementById("LargeNumOut")
-    if(num==1 || num==0){
+    if(num==1n || num==0n){
         outputted.innerHTML="Neither prime nor Composite"
     }
     else if(primenumornot){
