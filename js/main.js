@@ -1828,7 +1828,10 @@ function check_composite(n,a,d,s){
     return 1;
 }
 function millerrabin(n){
-    n=BigInt(n)
+    if(typeof(n)!=BigInt){
+        n=BigInt(n)
+        console.log("converted to bigint",n)
+    }
     if(n<2n){
         return 0;
     }
@@ -1850,4 +1853,18 @@ function millerrabin(n){
         }
     }
     return 1;
+}
+function rm(n){
+    if(0<=n && n<=1){
+        return "Neither Prime nor Composite"
+    }
+    if(millerrabin(n)){
+        return "Prime"
+    }
+    else{
+        return "Composite"
+    }
+}
+function mr(n){
+    return rm(n)
 }
