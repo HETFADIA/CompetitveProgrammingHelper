@@ -236,21 +236,49 @@ function int(a,b=undefined){
         return parseInt(a,b);
     }
 }
-function pow(x,y,mod=undefined){
+function pow(a,b,n=undefined){
+    mod=n;
     if(mod==undefined){
         return Math.pow(x,y);
     }
-    var res=1;
-    x%=mod;
-    if(x==0){return 0}
-    while(y){
-        if(y&1){
-            res=(res*x)%mod;
+    a=BigInt(a)
+    b=BigInt(b)
+    n=BigInt(n)
+    a = a % n;
+    var result = 1n;
+    var x = a;
+    while (b > 0) {
+        var leastSignificantBit = b % 2n;
+        b = b / 2n;
+        if (leastSignificantBit == 1n) {
+            result = result * x;
+            result = result % n;
         }
-        y>>=1;
-        x=(x*x)%mod;
+        x = x * x;
+        x = x % n;
     }
-    return res;
+    return Number(result);
+}
+function powb(a,b,n=undefined){
+    mod=n;
+    if(mod==undefined){
+        return Math.pow(x,y);
+    }
+    
+    a = a % n;
+    var result = 1n;
+    var x = a;
+    while (b > 0) {
+        var leastSignificantBit = b % 2n;
+        b = b / 2n;
+        if (leastSignificantBit == 1n) {
+            result = result * x;
+            result = result % n;
+        }
+        x = x * x;
+        x = x % n;
+    }
+    return result;
 }
 function range(start,stop=undefined,step=1){
     if(stop==undefined){
@@ -1118,6 +1146,20 @@ function GenerateNextPrime(){
     document.getElementById("NextPrimes").innerHTML=string;
     beautify("NextPrimes");
 }
+function getMiller(){
+    var num=abs(evaladv(document.getElementById("LargeNUm").value));
+    primenumornot=millerrabin(num)
+    var outputted=document.getElementById("LargeNumOut")
+    if(num==1 || num==0){
+        outputted.innerHTML="Neither prime nor Composite"
+    }
+    else if(primenumornot){
+        outputted.innerHTML="Prime Number"
+    }
+    else{
+        outputted.innerHTML="Composite Number"
+    }
+}
 function GeneratePrimesInRange(){
     var start=evaladv(document.getElementById("startnumber").value);
     var end=evaladv(document.getElementById("endnumber").value);
@@ -1760,4 +1802,47 @@ function generateCatalan(){
 }
 function resetCatalan(){
     document.getElementById("catalan").innerHTML="";
+}
+//https://www.rieselprime.de/ziki/List_of_known_Mersenne_primes
+let selfsize=500
+let selfprimes=sieveOfErantosthenes(selfsize)
+function check_composite(n,a,d,s){
+    x=powb(a,d,n)
+    
+    if((x==1n) || (x==(n-1n))){
+        return 0;
+    }
+    for(let r=0n;r<s;r++){
+        x=(x*x)%(n);
+        
+        
+        if(x==(n-1n)){
+            return 0;
+        }
+    }
+    return 1;
+}
+function millerrabin(n){
+    n=BigInt(n)
+    if(n<2n){
+        return 0;
+    }
+    r=0n
+    d=n-1n
+    while((d&1n)==0){
+        d=d/2n;
+        r+=1n;
+    }
+    
+    for(let a of selfprimes){
+        
+        if(n==BigInt(a)){
+            
+            return 1;
+        }
+        if(check_composite(n,BigInt(a),d,r)===1){
+            return 0;
+        }
+    }
+    return 1;
 }
