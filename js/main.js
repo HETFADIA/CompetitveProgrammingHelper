@@ -1149,7 +1149,7 @@ function GenerateNextPrime(){
 function getMiller(){
     // https://www.rieselprime.de/ziki/List_of_known_Mersenne_primes
     var num=BigInt(document.getElementById("LargeNum").value);
-    console.log(num)
+    
     primenumornot=millerrabin(num)
     var outputted=document.getElementById("LargeNumOut")
     if(num==1n || num==0n){
@@ -1161,6 +1161,9 @@ function getMiller(){
     else{
         outputted.innerHTML="Composite Number"
     }
+}
+function getMillerReset(){
+    document.getElementById("LargeNumOut").innerHTML=""
 }
 function GeneratePrimesInRange(){
     var start=evaladv(document.getElementById("startnumber").value);

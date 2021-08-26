@@ -139,8 +139,8 @@ header {
   font-size: 28px;
   color: rgb(26, 179, 250);
 }
-button{
-  margin:10px 5px;
+button {
+  margin: 10px 5px;
 }
 #arrayGen {
   display: none;
@@ -160,7 +160,7 @@ button{
 #permutationOfArray {
   display: none;
 }
-#CombOfArray{
+#CombOfArray {
   display: none;
 }
 #nextpermutationOfArray {
@@ -169,8 +169,8 @@ button{
 #permutationsOfArray {
   display: none;
 }
-#productOfArray{
-  display:none;
+#productOfArray {
+  display: none;
 }
 #prevPrimeGen {
   display: none;
@@ -202,9 +202,13 @@ button{
 #scientific {
   display: none;
 }
-#infixtopostfix{
+#infixtopostfix {
   display: none;
 }
+#largeprime {
+  display: none;
+}
+
 #sciexp {
   overflow-y: auto;
 }

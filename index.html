@@ -35,6 +35,7 @@
             <li><a id="linker" onclick="showarray('memorycalc')">Memory for a Program</a></li>
             <li><a id="linker" onclick="showarray('scientific')">Calculator</a></li>
             <li><a id="linker" onclick="showarray('infixtopostfix')">Infix to Postfix</a></li>
+            <li><a id="linker" onclick="showarray('largeprime')">Large Primes Check</a></li>
 
         </ul>
     </div>
@@ -717,16 +718,13 @@
         
         <br>
         <br>
-
-        
         <button type="button" id="expcalc" class="btn btn-success" onclick="getMiller()">isprime</button>
         
-        <button type="button" class="btn btn-primary" onclick="resetinftoPost()">Reset</button>
-        <button type="button" class="btn btn-danger" onclick="home('infixtopostfix')">Back</button>
-
+        <button type="button" class="btn btn-primary" onclick="getMillerReset()">Reset</button>
+        <button type="button" class="btn btn-danger" onclick="home('largeprime')">Back</button>
         <br>
         <br>
-        <a href="#" onclick="CopyToClipboard('inftopost');return false;">Copy Text</a>
+        <a href="#" onclick="CopyToClipboard('LargeNumOut');return false;">Copy Text</a>
         <div class="alert alert-primary Array" id="LargeNumOut" role="alert">
             
         </div>
