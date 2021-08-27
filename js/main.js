@@ -1492,14 +1492,7 @@ function split(arr){
     }
     return newarr;
 }
-function evaladv(a){
-    a=a.split("or").join("||")
-    a=a.split("and").join("&&")
-    if(a==""){
-        return 0
-    }
-    return eval(a)
-}
+
 function evaluatepostfix(s){
     s=split(s)
     var stack=[]
@@ -1530,14 +1523,7 @@ function split(arr){
     }
     return newarr;
 }
-function evaladv(a){
-    a=a.split("or").join("||")
-    a=a.split("and").join("&&")
-    if(a==""){
-        return 0
-    }
-    return eval(a)
-}
+
 function evaluatepostfix(s){
     s=split(s)
     var stack=[]
@@ -1599,13 +1585,23 @@ function __calculateMemory(sizearray,memory){
     return res;
 }
 function evaladv(a123){
-    a123=a123.split("or").join("||")
-    a123=a123.split("and").join("&&")
-    
-    if(a123==""){
-        return 0
+    try{
+        a123=a123.split(" or ").join("||")
+        a123=a123.split(" and ").join("&&")
+        
+        if(a123==""){
+            return 0
+        }
+        answera=eval(a123)
+        return answera
     }
-    return eval(a123)
+    catch{
+        if(a123==""){
+            return 0
+        }
+        return eval(a123)
+    }
+    
 }
 function calculateMemory(){
     var stringarr=["bitsetSize","boolSize","intarraySize","longlongarraySize","__int128_tarraySize","pythontupleSize","pythonlistSize"]
