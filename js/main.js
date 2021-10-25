@@ -1074,11 +1074,19 @@ function resetnextArrayPermutation(){
     document.getElementById("outnextArrayPermutation").innerHTML=""
 }
 function isPrime(n){
+    if(typeof(n)=="bigint"){
+        console.log("hi big int");
+        return millerrabin(n);
+    }
     if(Number.isInteger(n)==0){
         return 0;
     }
     if(n<0){
         return 0;
+    }
+    if(n>10**6){
+        console.log("used miller");
+        return millerrabin(n);
     }
     var sqrta=Math.sqrt(n);
     if(n<=2){
@@ -1100,15 +1108,40 @@ function GeneratePrevPrime(){
     var counter=evaladv(document.getElementById("numberOfPrevPrime").value);
     counter=parseInt(counter);
     var arr=[]
-    for(var i=num;i>=2;i--){
-        if(isPrime(i)){
-            arr.push(i);
-            counter--;
-        }
-        if(counter==0){
-            break;
+    if(num>10**6){
+        console.log(num);
+        console.log(BigInt(num))
+        for(var i=BigInt(num);i>=2n;i--){
+            console.log(i);
+            if(isPrime(i)){
+                arr.push(i);
+                counter--;
+                console.log(counter);
+    
+            }
+            if(counter==0){
+                console.log(counter);
+                console.log(arr.length)
+                break;
+            }
         }
     }
+    else{
+        for(var i=num;i>=2;i--){
+            if(isPrime(i)){
+                arr.push(i);
+                counter--;
+                console.log(counter);
+    
+            }
+            if(counter==0){
+                console.log(counter);
+                console.log(arr.length)
+                break;
+            }
+        }
+    }
+    
     arr.reverse();
     var string="";
     for(var i=0;i<arr.length;i++){
@@ -1128,13 +1161,27 @@ function GenerateNextPrime(){
     if(num<0){
         num=0;
     }
-    for(var i=num;;i++){
-        if(isPrime(i)){
-            arr.push(i);
-            counter--;
+    if(num>10**5){
+        for(var i=BigInt(num);;i++){
+            if(isPrime(i)){
+                arr.push(i);
+                counter--;
+            }
+            if(counter==0){
+                break;
+            }
         }
-        if(counter==0){
-            break;
+    }
+    else{
+
+        for(var i=num;;i++){
+            if(isPrime(i)){
+                arr.push(i);
+                counter--;
+            }
+            if(counter==0){
+                break;
+            }
         }
     }
 
