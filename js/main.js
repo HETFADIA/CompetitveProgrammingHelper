@@ -1217,29 +1217,42 @@ function GeneratePrimesInRange(){
     var end=evaladv(document.getElementById("endnumber").value);
     start=parseInt(start);
     end=parseInt(end);
-    if(start<0){
-        start=1;
-    }
-    if (end>1){
-        sievetime=end*Math.log(Math.log(end));
-    }
-    else{
-        sievetime=0;
-    }
-    if(end>=0){
-        normaltime=Math.sqrt(end)*(end-start);
-    }
-    else{
-        normaltime=0;
-    }
-    if(sievetime<=normaltime){
-        var arr=sieveOfErantosthenes(end+1,start);
-    }
-    else{
-        var arr=[];
+    if(end>10**6){
+        start=BigInt(start)
+        end=BigInt(end)
+        var arr=[]
         for(var i=start;i<=end;i++){
             if(isPrime(i)){
                 arr.push(i);
+            }
+        }
+    }
+    else{
+
+        if(start<0){
+            start=1;
+        }
+        if (end>1){
+            sievetime=end*Math.log(Math.log(end));
+        }
+        else{
+            sievetime=0;
+        }
+        if(end>=0){
+            normaltime=Math.sqrt(end)*(end-start);
+        }
+        else{
+            normaltime=0;
+        }
+        if(sievetime<=normaltime){
+            var arr=sieveOfErantosthenes(end+1,start);
+        }
+        else{
+            var arr=[];
+            for(var i=start;i<=end;i++){
+                if(isPrime(i)){
+                    arr.push(i);
+                }
             }
         }
     }
@@ -1266,32 +1279,45 @@ function CountPrimesInRange(){
     var end=evaladv(document.getElementById("endnumberPrimeCount").value);
     start=parseInt(start);
     end=parseInt(end);
-    if(start<0){
-        start=1;
-    }
-    var sievetime,normaltime;
-    if (end>1){
-        sievetime=end*Math.log(Math.log(end));
-    }
-    else{
-        sievetime=0;
-    }
-    if(end>=0){
-        normaltime=Math.sqrt(end)*(end-start);
-    }
-    else{
-        normaltime=0;
-    }
-    console.log(sievetime,normaltime);
-    if(sievetime<=normaltime){
-        var arr=sieveOfErantosthenes(end+1,start);
-        
-    }
-    else{
-        var arr=[];
+    if(end>10**6){
+        start=BigInt(start)
+        end=BigInt(end)
+        var arr=[]
         for(var i=start;i<=end;i++){
             if(isPrime(i)){
                 arr.push(i);
+            }
+        }
+    }
+    else{
+
+        if(start<0){
+            start=1;
+        }
+        var sievetime,normaltime;
+        if (end>1){
+            sievetime=end*Math.log(Math.log(end));
+        }
+        else{
+            sievetime=0;
+        }
+        if(end>=0){
+            normaltime=Math.sqrt(end)*(end-start);
+        }
+        else{
+            normaltime=0;
+        }
+        console.log(sievetime,normaltime);
+        if(sievetime<=normaltime){
+            var arr=sieveOfErantosthenes(end+1,start);
+            
+        }
+        else{
+            var arr=[];
+            for(var i=start;i<=end;i++){
+                if(isPrime(i)){
+                    arr.push(i);
+                }
             }
         }
     }
