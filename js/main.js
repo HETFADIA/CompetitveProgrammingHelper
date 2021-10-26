@@ -1104,7 +1104,7 @@ function isPrime(n){
 }
 function GeneratePrevPrime(){
     var num=evaladv(document.getElementById("numberForPrevPrime").value);
-    num=parseInt(num);
+    
     var counter=evaladv(document.getElementById("numberOfPrevPrime").value);
     counter=parseInt(counter);
     var arr=[]
@@ -1127,6 +1127,7 @@ function GeneratePrevPrime(){
         }
     }
     else{
+        num=parseInt(num);
         for(var i=num;i>=2;i--){
             if(isPrime(i)){
                 arr.push(i);
@@ -1154,7 +1155,7 @@ function GeneratePrevPrime(){
 function GenerateNextPrime(){
     var num=evaladv(document.getElementById("numberForNextPrime").value);
     var counter=evaladv(document.getElementById("numberOfNextPrime").value);
-    num=parseInt(num);
+    
     counter=parseInt(counter);
     console.log(num,counter);
     var arr=[]
@@ -1173,7 +1174,7 @@ function GenerateNextPrime(){
         }
     }
     else{
-
+        num=parseInt(num);
         for(var i=num;;i++){
             if(isPrime(i)){
                 arr.push(i);
@@ -1215,8 +1216,7 @@ function getMillerReset(){
 function GeneratePrimesInRange(){
     var start=evaladv(document.getElementById("startnumber").value);
     var end=evaladv(document.getElementById("endnumber").value);
-    start=parseInt(start);
-    end=parseInt(end);
+    
     if(end>10**6){
         start=BigInt(start)
         end=BigInt(end)
@@ -1228,7 +1228,8 @@ function GeneratePrimesInRange(){
         }
     }
     else{
-
+        start=parseInt(start);
+    end=parseInt(end);
         if(start<0){
             start=1;
         }
@@ -1277,8 +1278,7 @@ function GeneratePrimesInRange(){
 function CountPrimesInRange(){
     var start=evaladv(document.getElementById("startnumberPrimeCount").value);
     var end=evaladv(document.getElementById("endnumberPrimeCount").value);
-    start=parseInt(start);
-    end=parseInt(end);
+    
     if(end>10**6){
         start=BigInt(start)
         end=BigInt(end)
@@ -1290,7 +1290,8 @@ function CountPrimesInRange(){
         }
     }
     else{
-
+        start=parseInt(start);
+        end=parseInt(end);
         if(start<0){
             start=1;
         }
