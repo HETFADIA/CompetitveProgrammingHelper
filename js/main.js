@@ -1196,9 +1196,9 @@ function GenerateNextPrime(){
 }
 function getMiller(){
     // https://www.rieselprime.de/ziki/List_of_known_Mersenne_primes
-    var num=BigInt(document.getElementById("LargeNum").value);
+    var num=(document.getElementById("LargeNum").value);
     
-    primenumornot=millerrabin(num)
+    primenumornot=eval("millerrabin("+num+")")
     var outputted=document.getElementById("LargeNumOut")
     if(num==1n || num==0n){
         outputted.innerHTML="Neither prime nor Composite"
